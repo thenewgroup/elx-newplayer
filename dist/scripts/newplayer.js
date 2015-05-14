@@ -1647,11 +1647,10 @@
 //                                checkmark = $element.find('svg#Layer_1'),
 //                                cmpData = $scope.component.data || {}; // already defined above
                         vm.isCorrect = cmpData.correct;
-                      // updateCheck is currently not defined but needed. Should it be the code below?
-                      var updateCheck = angular.noop;
+                        // updateCheck is currently not defined but needed. Should it be the code below?
+                        var updateCheck = angular.noop;
 //                        var updateCheck = function () {
 //                            var tweenOptions = {ease: Power3.easeOut};
-
 //                            if (vm.checked) {
 //                                tweenOptions.autoAlpha = 1;
 //                            } else {
@@ -1704,6 +1703,11 @@
                             var checkboxX = $element.find('.checkbox-x');
                             TweenMax.set(checkboxX, {autoAlpha: 0, scale: 2.5, force3D: true});
                             $scope.update = function (event) {
+                                console.log(
+                                        '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::update:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                        '\n::this::', this,
+                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                        );
                                 var clickedCheckbox = event.currentTarget;
                                 var $checkbox = $(clickedCheckbox).find('.checkbox-x');
                                 $checkbox.attr('checked', !$checkbox.attr('checked'), ('true'));
@@ -1711,20 +1715,28 @@
                                 //update states on click
                                 //////////////////////////////////////////////////////////////////////////////////////
                                 if ($checkbox.attr('checked') === 'checked') {
-//                                    console.log(
-//                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
-//                                            '\n::this::', this,
-//                                            '\n::this.npAnswer::', this.npAnswer,
-//                                            '\n::this.label::', this.label,
-//                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
-//                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-//                                            );
+                                    console.log(
+                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                            '\n::this::', this,
+                                            '\n::this.npAnswer::', this.npAnswer,
+                                            '\n::this.label::', this.label,
+                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
+                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                            );
                                     TweenMax.to($(clickedCheckbox).find('.checkbox-x'), 0.75, {
                                         autoAlpha: 1,
                                         scale: 0.7,
                                         ease: Power3.easeOut
                                     });
                                 } else if ($checkbox.attr('checked') !== 'checked') {
+                                    console.log(
+                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                            '\n::this::', this,
+                                            '\n::this.npAnswer::', this.npAnswer,
+                                            '\n::this.label::', this.label,
+                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
+                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                            );
                                     TweenMax.to($(clickedCheckbox).find('.checkbox-x'), 0.25, {
                                         autoAlpha: 0,
                                         scale: 2.5,
@@ -2671,6 +2683,7 @@
                                 this.id = cmpData.id;
                                 this.positiveFeedback = cmpData.positiveFeedback;
                                 this.negativeFeedback = cmpData.negativeFeedback;
+                                this.submitLabel = cmpData.submitLabel;
                                 this.baseURL = cmpData.baseURL;
                                 this.src = cmpData.image;
                                 $scope.positiveFeedback = this.positiveFeedback = cmpData.positiveFeedback;
@@ -3739,13 +3752,6 @@
                         this.questionLabel = cmpData.questionLabel;
                         this.answerLabel = cmpData.answerLabel;
                         this.submitLabel = cmpData.submitLabel;
-                        console.log(
-                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                '\n::vm.content::', this.content,
-                                '\n::vm.question::', this.question,
-                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
-                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                );
                         this.questionImage = $sce.trustAsHtml(cmpData.questionImage);
                         this.type = cmpData.type;
                         this.feedback = '';
@@ -3756,11 +3762,19 @@
                         var negativeFeedbackIcon = '';
                         var positiveFeedbackIcon = '';
                         var contentAreaHeight = 0;
-                        //////////////////////////////////////////////////////////////////////////////////////
-                        //build that 
-                        //////////////////////////////////////////////////////////////////////////////////////
+                        console.log(
+                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                '\n::vm.content::', this.content,
+                                '\n::vm.question::', this.question,
+                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
+                                '\n::feedback.immediate::', feedback.immediate,
+                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                );
                         setTimeout(function () {
                             $scope.$apply(function () {
+                                //////////////////////////////////////////////////////////////////////////////////////
+                                //set that 
+                                //////////////////////////////////////////////////////////////////////////////////////
                                 TweenMax.set(feedbackWrapper, {
                                     autoAlpha: 0,
                                     force3D: true
@@ -3770,6 +3784,15 @@
                                     scale: 0.5,
                                     force3D: true
                                 });
+                                $log.debug('npQuestion::answer changed::update::feedback.immediate:', feedback.immediate);
+                                if (feedback.immediate) {
+                                    TweenMax.set($(".btn-submit"), {
+                                        autoAlpha: 0
+                                    });
+                                }
+                                //////////////////////////////////////////////////////////////////////////////////////
+                                //build that 
+                                //////////////////////////////////////////////////////////////////////////////////////
                                 TweenMax.staggerTo($(".response-item"), 2, {
                                     scale: 1,
                                     autoAlpha: 1,
@@ -3782,20 +3805,22 @@
                         this.update = function (event) {
                             $log.debug('npQuestion::answer changed');
                             if (feedback.immediate) {
-                                this.feedback = '';
-                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
-                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
-                                TweenMax.set(negativeFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-//                                    width: '2em',
-                                    force3D: true
-                                });
-                                TweenMax.set(positiveFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-                                    force3D: true
-                                });
+                                $log.debug('npQuestion::answer changed::update::feedback.immediate:', feedback.immediate);
+//                                this.feedback = '';
+//                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
+//                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
+//                                TweenMax.set(negativeFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+////                                    width: '2em',
+//                                    force3D: true
+//                                });
+//                                TweenMax.set(positiveFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+//                                    force3D: true
+//                                });
+                                this.evaluate();
                             }
                         };
                         this.evaluate = function () {
@@ -5195,6 +5220,12 @@
                                     scale: 0.5,
                                     force3D: true
                                 });
+                                $log.debug('npAsQuestion::build::feedback.immediate:',feedback.immediate);
+                                if (feedback.immediate) {
+                                    TweenMax.set($(".btn-submit"), {
+                                        autoAlpha: 0
+                                    });
+                                }
                                 TweenMax.staggerTo($(".response-item"), 0.75, {
                                     scale: 1,
                                     autoAlpha: 1,
@@ -5211,24 +5242,25 @@
                             $log.debug('npAsQuestion::answer changed');
                             if (feedback.immediate) {
                                 vm.feedback = '';
-                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
-                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
-                                TweenMax.set(negativeFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-                                    force3D: true
-                                });
-                                TweenMax.to($element.find('.negative-feedback-icon svg'), 0.25, {
-                                    height: '100%',
-                                    force3D: true
-                                });
-                                TweenMax.set(positiveFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-                                    force3D: true
-                                });
+//                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
+//                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
+//                                TweenMax.set(negativeFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+//                                    force3D: true
+//                                });
+//                                TweenMax.to($element.find('.negative-feedback-icon svg'), 0.25, {
+//                                    height: '100%',
+//                                    force3D: true
+//                                });
+//                                TweenMax.set(positiveFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+//                                    force3D: true
+//                                });
 //                                TweenMax.set($element.find('.negative-feedback-icon svg'), {height: '100%'});
-                                TweenMax.set(positiveFeedbackIcon, {height: '100%'});
+//                                TweenMax.set(positiveFeedbackIcon, {height: '100%'});
+                                this.evaluate();
                             }
                         };
                         vm.evaluate = function () {
@@ -6404,7 +6436,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "<div class=\"debug\">\n" +
     "    <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>\n" +
     "</div>\n" +
-    "<div np-answer-checkbox ng-if=\"npQuestion.type === 'checkbox'\" class=\"row np-cmp-wrapper {{component.type}} checkbox answer-wrapper\" ng-controller=\"npAnswerController as npAnswer\" ng-click=\"update($event)\">\n" +
+    "<div np-answer-checkbox ng-if=\"npQuestion.type === 'checkbox'\" class=\"row np-cmp-wrapper {{component.type}} checkbox answer-wrapper\" ng-controller=\"npAnswerController as npAnswer\" ng-click=\"update($event); npQuestion.update($event)\">\n" +
     "    <div class=\"col-xs-1 npAnswer-checkbox np-cmp-main answer-checkbox\" name=\"checkbox{{npAnswer.id}}\" ng-model=\"npQuestion.answer[component.idx]\" value=\"{{component.idx}}\" id=\"{{npAnswer.id}}\">\n" +
     "        <div class=\"checkbox-box\">\n" +
     "            <svg  version=\"1.2\" baseProfile=\"tiny\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
@@ -6461,7 +6493,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "<div class=\"debug\">\n" +
     "    <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>\n" +
     "</div>\n" +
-    "<div np-as-answer-checkbox ng-if=\"npQuestion.type === 'checkbox'\" class=\"row np-cmp-wrapper {{component.type}} checkbox answer-wrapper\" ng-controller=\"npAnswerController as npAnswer\" ng-init=\"npAnswer.setQuestion(component.idx, npQuestion);\" ng-click=\"update($event)\">\n" +
+    "<div np-as-answer-checkbox ng-if=\"npQuestion.type === 'checkbox'\" class=\"row np-cmp-wrapper {{component.type}} checkbox answer-wrapper\" ng-controller=\"npAnswerController as npAnswer\" ng-init=\"npAnswer.setQuestion(component.idx, npQuestion);\" ng-click=\"update($event); npQuestion.update($event)\">\n" +
     "    <div class=\"col-xs-1 npAnswer-checkbox np-cmp-main answer-checkbox\" name=\"checkbox{{npAnswer.id}}\" ng-model=\"npQuestion.answer[component.idx]\" value=\"{{component.idx}}\" id=\"{{npAnswer.id}}\">\n" +
     "        <div class=\"checkbox-box\">\n" +
     "            <svg  version=\"1.2\" baseProfile=\"tiny\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
@@ -6527,7 +6559,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "    <div class=\"row\">\n" +
     "        <div class=\"col-sm-3 question-submit-wrapper\">\n" +
     "            <button type=\"submit\" class=\"btn-submit btn\" ng-click=\"npQuestion.evaluate()\">\n" +
-    "                <span ng-bind-html=\"npQuestion.submitLabel\">Submit</span>\n" +
+    "                <span ng-bind-html=\"npQuestion.submitLabel\">x</span>\n" +
     "            </button>\n" +
     "        </div>\n" +
     "        <div class=\"col-sm-9\">\n" +
@@ -6572,7 +6604,6 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                            </svg>\n" +
     "                        </div>\n" +
     "                        <div class=\"npQuestion-feedback body-copy question-feedback-text\" ng-if=\"npQuestion.feedback\" ng-bind-html=\"npQuestion.feedback\"></div>\n" +
-    "                        <!--<div class=\"question-feedback-label\">Feedback area</div>-->\n" +
     "                    </div\n" +
     "                </div\n" +
     "            </div>\n" +
@@ -7064,7 +7095,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                <div class=\"col-xs-12\">\n" +
     "                    <div class=\"select-button-wrapper\">\n" +
     "                        <button class=\"btn-submit btn\" is-clickable=\"true\" ng-click=\"evaluate()\">\n" +
-    "                            <span>SUBMIT</span>\n" +
+    "                            <span ng-bind-html=\"npDragAndDropSelect.submitLabel\">SUBMIT</span>\n" +
     "                        </button>\n" +
     "                    </div>\n" +
     "                    <div class=\"select-response-wrapper\">\n" +

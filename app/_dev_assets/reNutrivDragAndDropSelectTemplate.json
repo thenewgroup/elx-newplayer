@@ -78,6 +78,7 @@
                                     "positiveFeedback": "<p>That's it!</p><p>this is the content1!this is the content1! this is the content1!this is the content1! this is the content1! this is the content1! this is the content1!this is the content1! this is the content1!</p><p>this is the content1!this is the content1! this is the content1!this is the content1! this is the content1! this is the content1! this is the content1!this is the content1! this is the content1!</p>",
                                     "negativeFeedback": "<p>ehh?!?!</p>",
                                     "image": "",
+                                    "submitLabel": "SUBMIT Label",
                                     "randomized": "",
                                     "draggableButtons": [
                                         {

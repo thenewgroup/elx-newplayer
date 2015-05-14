@@ -15,13 +15,6 @@
                         this.questionLabel = cmpData.questionLabel;
                         this.answerLabel = cmpData.answerLabel;
                         this.submitLabel = cmpData.submitLabel;
-                        console.log(
-                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                '\n::vm.content::', this.content,
-                                '\n::vm.question::', this.question,
-                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
-                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                );
                         this.questionImage = $sce.trustAsHtml(cmpData.questionImage);
                         this.type = cmpData.type;
                         this.feedback = '';
@@ -32,11 +25,19 @@
                         var negativeFeedbackIcon = '';
                         var positiveFeedbackIcon = '';
                         var contentAreaHeight = 0;
-                        //////////////////////////////////////////////////////////////////////////////////////
-                        //build that 
-                        //////////////////////////////////////////////////////////////////////////////////////
+                        console.log(
+                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                '\n::vm.content::', this.content,
+                                '\n::vm.question::', this.question,
+                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
+                                '\n::feedback.immediate::', feedback.immediate,
+                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                );
                         setTimeout(function () {
                             $scope.$apply(function () {
+                                //////////////////////////////////////////////////////////////////////////////////////
+                                //set that 
+                                //////////////////////////////////////////////////////////////////////////////////////
                                 TweenMax.set(feedbackWrapper, {
                                     autoAlpha: 0,
                                     force3D: true
@@ -46,6 +47,15 @@
                                     scale: 0.5,
                                     force3D: true
                                 });
+                                $log.debug('npQuestion::answer changed::update::feedback.immediate:', feedback.immediate);
+                                if (feedback.immediate) {
+                                    TweenMax.set($(".btn-submit"), {
+                                        autoAlpha: 0
+                                    });
+                                }
+                                //////////////////////////////////////////////////////////////////////////////////////
+                                //build that 
+                                //////////////////////////////////////////////////////////////////////////////////////
                                 TweenMax.staggerTo($(".response-item"), 2, {
                                     scale: 1,
                                     autoAlpha: 1,
@@ -58,20 +68,22 @@
                         this.update = function (event) {
                             $log.debug('npQuestion::answer changed');
                             if (feedback.immediate) {
-                                this.feedback = '';
-                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
-                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
-                                TweenMax.set(negativeFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-//                                    width: '2em',
-                                    force3D: true
-                                });
-                                TweenMax.set(positiveFeedbackIcon, {
-                                    autoAlpha: 0,
-                                    scale: 2.5,
-                                    force3D: true
-                                });
+                                $log.debug('npQuestion::answer changed::update::feedback.immediate:', feedback.immediate);
+//                                this.feedback = '';
+//                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
+//                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
+//                                TweenMax.set(negativeFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+////                                    width: '2em',
+//                                    force3D: true
+//                                });
+//                                TweenMax.set(positiveFeedbackIcon, {
+//                                    autoAlpha: 0,
+//                                    scale: 2.5,
+//                                    force3D: true
+//                                });
+                                this.evaluate();
                             }
                         };
                         this.evaluate = function () {

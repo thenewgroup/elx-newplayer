@@ -12,11 +12,10 @@
 //                                checkmark = $element.find('svg#Layer_1'),
 //                                cmpData = $scope.component.data || {}; // already defined above
                         vm.isCorrect = cmpData.correct;
-                      // updateCheck is currently not defined but needed. Should it be the code below?
-                      var updateCheck = angular.noop;
+                        // updateCheck is currently not defined but needed. Should it be the code below?
+                        var updateCheck = angular.noop;
 //                        var updateCheck = function () {
 //                            var tweenOptions = {ease: Power3.easeOut};
-
 //                            if (vm.checked) {
 //                                tweenOptions.autoAlpha = 1;
 //                            } else {
@@ -69,6 +68,11 @@
                             var checkboxX = $element.find('.checkbox-x');
                             TweenMax.set(checkboxX, {autoAlpha: 0, scale: 2.5, force3D: true});
                             $scope.update = function (event) {
+                                console.log(
+                                        '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::update:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                        '\n::this::', this,
+                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                        );
                                 var clickedCheckbox = event.currentTarget;
                                 var $checkbox = $(clickedCheckbox).find('.checkbox-x');
                                 $checkbox.attr('checked', !$checkbox.attr('checked'), ('true'));
@@ -76,20 +80,28 @@
                                 //update states on click
                                 //////////////////////////////////////////////////////////////////////////////////////
                                 if ($checkbox.attr('checked') === 'checked') {
-//                                    console.log(
-//                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
-//                                            '\n::this::', this,
-//                                            '\n::this.npAnswer::', this.npAnswer,
-//                                            '\n::this.label::', this.label,
-//                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
-//                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-//                                            );
+                                    console.log(
+                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                            '\n::this::', this,
+                                            '\n::this.npAnswer::', this.npAnswer,
+                                            '\n::this.label::', this.label,
+                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
+                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                            );
                                     TweenMax.to($(clickedCheckbox).find('.checkbox-x'), 0.75, {
                                         autoAlpha: 1,
                                         scale: 0.7,
                                         ease: Power3.easeOut
                                     });
                                 } else if ($checkbox.attr('checked') !== 'checked') {
+                                    console.log(
+                                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                            '\n::this::', this,
+                                            '\n::this.npAnswer::', this.npAnswer,
+                                            '\n::this.label::', this.label,
+                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
+                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                            );
                                     TweenMax.to($(clickedCheckbox).find('.checkbox-x'), 0.25, {
                                         autoAlpha: 0,
                                         scale: 2.5,

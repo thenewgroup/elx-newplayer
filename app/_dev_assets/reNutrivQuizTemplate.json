@@ -72,10 +72,92 @@
                                     "assessed": "1",
                                     "questions": "5",
                                     "forced": "true",
-                                    "randomized": "false", 
+                                    "randomized": "false",
                                     "required": "true"
                                 },
                                 "components": [
+                                    {
+                                        "type": "npPage",
+                                        "data": {
+                                        },
+                                        "components": [
+                                            {
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Which of the following instantly provides skin with natural radiance?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit label",
+                                                    "buttons": {
+                                                        "submit": "Submit",
+                                                        "next": "Next"
+                                                    },
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "That's it! South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance.",
+                                                        "incorrect": "That's not right. South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance."
+                                                    }
+                                                },
+                                                "components": [
+                                                    {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "South Sea Pearls and illuminating optics",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "That's it! South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Black Sea Optical Pearls",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "That's not right. South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "White South American Pearls",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "That's not right. South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Black Sea Pearl Drops",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "That's not right. South Sea Pearls and illuminating optics are featured in all Re-Nutriv collections, instantly providing skin with natural radiance."
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Next"
+                                                },
+                                                "components": [
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     {
                                         "type": "npPage",
                                         "data": {
@@ -244,6 +326,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "Which of the following includes an exclusive luxurious gold spatula?",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"
@@ -323,6 +408,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "The Dual Infusion and Transformative Energy Creme both feature beautiful herbaceous floral scents, including fresh green and citrus notes of lemon and grapefruit, along with which of the following?",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"
@@ -402,7 +490,6 @@
                                                     "difficulty": 1,
                                                     "content": " This is the 'What number am I thinking of?' trivia!",
                                                     "feedback": {
-                                                        "immediate": true,
                                                         "correct": "Hey, that's right!",
                                                         "incorrect": "No! ... What are you thinking!?"
                                                     }
@@ -417,7 +504,11 @@
                                                             "type": "checkbox",
                                                             "difficulty": 1,
                                                             "content": "What number am I thinking of? QUESTION 1",
+                                                            "questionLabel": "question:",
+                                                            "answerLabel": "answer:",
+                                                            "submitLabel": "submit",
                                                             "feedback": {
+                                                                "immediate": true,
                                                                 "correct": "Hey, that's right!",
                                                                 "incorrect": "No! ... What are you thinking!?"
                                                             }
