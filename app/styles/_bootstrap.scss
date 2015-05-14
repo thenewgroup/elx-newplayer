@@ -73,6 +73,9 @@
 #np_storyBethsBlog {
     @import "_storyBethsBlog.scss";
 }
+#np_diaryND {
+    @import "_diary_ND.scss";
+}
 
 // Components w/ JavaScript
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals";
