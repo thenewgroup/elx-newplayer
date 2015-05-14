@@ -82,9 +82,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "1",
                                                     "content": "How do you identify a Re-Nutriv customer?",
-                                                    "questionLabel": "question label",
-                                                    "answerLabel": "answer label",
-                                                    "submitLabel": "submit label",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"
@@ -100,7 +100,7 @@
                                                         "type": "npAnswer",
                                                         "data": {
                                                             "label": "Look at what she's wearing.",
-                                                            "correct": false,
+                                                            "correct": true,
                                                             "feedback": {
                                                                 "incorrect": "That's not it. Explain that we have two skincare lines, and share the benefits of each one."
                                                             }
@@ -171,6 +171,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": 2,
                                                     "content": "What number am I thinking of? QUESTION 2",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"
@@ -252,6 +255,9 @@
                                                     "type": "text",
                                                     "difficulty": 3,
                                                     "content": "What is the greatest thing ever!? QUESTION 3",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"
@@ -307,6 +313,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": 2,
                                                     "content": "What number am I thinking of? QUESTION 2",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"
@@ -388,6 +397,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": 2,
                                                     "content": "What number am I thinking of? QUESTION 2",
+                                                    "questionLabel": "question:",
+                                                    "answerLabel": "answer:",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"
