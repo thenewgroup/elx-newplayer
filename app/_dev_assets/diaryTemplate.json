@@ -80,7 +80,7 @@
                                 "data": {
                                     "id": "",
                                     "class": "body-copy center-padding input-field",
-                                    "content": "<input type='email' class='form-control' id='exampleInputEmail1' placeholder='Enter email'>"
+                                    "content": "<input type='' class='form-control' id='exampleInput' placeholder='enter content'>"
                                 },
                                 "components": [
                                 ]
