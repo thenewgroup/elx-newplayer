@@ -14,6 +14,7 @@
                                 this.id = cmpData.id;
                                 this.positiveFeedback = cmpData.positiveFeedback;
                                 this.negativeFeedback = cmpData.negativeFeedback;
+                                this.submitLabel = cmpData.submitLabel;
                                 this.baseURL = cmpData.baseURL;
                                 this.src = cmpData.image;
                                 $scope.positiveFeedback = this.positiveFeedback = cmpData.positiveFeedback;
