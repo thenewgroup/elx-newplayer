@@ -82,6 +82,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "1",
                                                     "content": "How do you identify a Re-Nutriv customer?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit label",
                                                     "buttons": {
                                                         "submit": "m.Submit",
                                                         "next": "m.next"

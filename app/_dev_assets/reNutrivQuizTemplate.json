@@ -14,7 +14,7 @@
                     "id": "content_en",
                     "language": "en",
                     "title": "Learning-Content-Re-nutriv-3.7-Ultimate-Diamond-Quiz",
-                    "description": "This manifest creates a Story or Learning Object content object . "
+                    "description": "This manifest creates a Story or Learning Object content object."
                 },
                 "components": [
                     {
@@ -162,6 +162,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "Which of the following instantly provides skin with natural radiance?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit label",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"

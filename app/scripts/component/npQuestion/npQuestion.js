@@ -12,6 +12,16 @@
                         $log.debug('npQuestion::data', cmpData);
                         this.id = cmpData.id;
                         this.content = $sce.trustAsHtml(cmpData.content);
+                        this.questionLabel = cmpData.questionLabel;
+                        this.answerLabel = cmpData.answerLabel;
+                        this.submitLabel = cmpData.submitLabel;
+                        console.log(
+                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                '\n::vm.content::', this.content,
+                                '\n::vm.question::', this.question,
+                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
+                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                );
                         this.questionImage = $sce.trustAsHtml(cmpData.questionImage);
                         this.type = cmpData.type;
                         this.feedback = '';
