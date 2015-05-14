@@ -1690,12 +1690,12 @@
                 return function ($scope, $element, $sce) {
                     var cmpData = $scope.component.data || {};
 //                    this.label = $sce.trustAsHtml(cmpData.label);
-                    console.log(
-                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
-                            '\n::this::', this,
-                            '\n::cmpData::', cmpData,
-                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                            );
+//                    console.log(
+//                            '\n::::::::::::::::::::::::::::::::::::::npAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                            '\n::this::', this,
+//                            '\n::cmpData::', cmpData,
+//                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                            );
                     setTimeout(function () {
                         $scope.$apply(function () {
                             //////////////////////////////////////////////////////////////////////////////////////
@@ -3736,6 +3736,16 @@
                         $log.debug('npQuestion::data', cmpData);
                         this.id = cmpData.id;
                         this.content = $sce.trustAsHtml(cmpData.content);
+                        this.questionLabel = cmpData.questionLabel;
+                        this.answerLabel = cmpData.answerLabel;
+                        this.submitLabel = cmpData.submitLabel;
+                        console.log(
+                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                '\n::vm.content::', this.content,
+                                '\n::vm.question::', this.question,
+                                '\n::cmpData.answerLabel::', cmpData.answerLabel,
+                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                );
                         this.questionImage = $sce.trustAsHtml(cmpData.questionImage);
                         this.type = cmpData.type;
                         this.feedback = '';
@@ -5151,6 +5161,15 @@
                         $log.debug('npAsQuestion::data', cmpData);
                         vm.id = cmpData.id;
                         vm.content = $sce.trustAsHtml(cmpData.content);
+                        vm.questionLabel = cmpData.questionLabel;
+                        vm.answerLabel = cmpData.answerLabel;
+                        vm.submitLabel = cmpData.submitLabel;
+//                        console.log(
+//                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                '\n::vm.questionLabel::', vm.questionLabel,
+//                                '\n::vm.answerLabel::', vm.answerLabel,
+//                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                );
                         vm.type = cmpData.type;
                         vm.feedback = '';
                         vm.canContinue = false;
@@ -6501,17 +6520,17 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "    <div class=\"debug\">\n" +
     "        <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>\n" +
     "    </div>\n" +
-    "    <p class=\"h5 quiz-label\">question:</p>\n" +
+    "    <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.questionLabel\">x</p>\n" +
     "    <div class=\"npQuestion-content question-text h4\" ng-bind-html=\"npQuestion.content\"></div>\n" +
-    "    <p class=\"h5 quiz-label\">answers:</p>\n" +
+    "    <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.answerLabel\">x</p>\n" +
     "    <div np-component class=\"response-item\" ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
     "    <div class=\"row\">\n" +
-    "        <div class=\"col-sm-6 question-submit-wrapper\">\n" +
+    "        <div class=\"col-sm-3 question-submit-wrapper\">\n" +
     "            <button type=\"submit\" class=\"btn-submit btn\" ng-click=\"npQuestion.evaluate()\">\n" +
-    "                <span>Submit</span>\n" +
+    "                <span ng-bind-html=\"npQuestion.submitLabel\">Submit</span>\n" +
     "            </button>\n" +
     "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
+    "        <div class=\"col-sm-9\">\n" +
     "            <div question-feedback-build >\n" +
     "                <div  class=\"question-feedback\">\n" +
     "                    <div class=\"question-feedback-wrapper vertical-centered\">\n" +
@@ -6557,10 +6576,6 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                    </div\n" +
     "                </div\n" +
     "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-6\">\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</div>\n"
@@ -7405,9 +7420,9 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "    </div>\n" +
     "    <div class=\"row\">\n" +
     "        <div class=\"col-sm-8\">\n" +
-    "            <p class=\"h5 quiz-label\">question:</p>\n" +
+    "            <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.questionLabel\">x</p>\n" +
     "            <div class=\"npQuestion-content question-text h4\" ng-bind-html=\"npQuestion.content\"></div>\n" +
-    "            <p class=\"h5 quiz-label\">answers:</p>\n" +
+    "            <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.answerLabel\">x</p>\n" +
     "            <div np-component class=\"response-item\" ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
     "        </div>\n" +
     "        <div class=\"col-sm-4\">\n" +
@@ -7419,7 +7434,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "    <div class=\"row\">\n" +
     "        <div class=\"col-sm-3 question-submit-wrapper\">\n" +
     "            <button type=\"submit\" class=\"btn-submit btn\" ng-click=\"npQuestion.evaluate()\">\n" +
-    "                <span>Submit</span>\n" +
+    "                <span ng-bind-html=\"npQuestion.submitLabel\">x</span>\n" +
     "            </button>\n" +
     "        </div>\n" +
     "        <div class=\"col-sm-9\">\n" +
@@ -7469,10 +7484,6 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                </div\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <!--        <div class=\"col-sm-6\">\n" +
-    "                </div>\n" +
-    "                <div class=\"col-sm-6\">\n" +
-    "                </div>-->\n" +
     "    </div>\n" +
     "</div>"
   );

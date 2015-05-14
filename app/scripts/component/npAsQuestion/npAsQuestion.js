@@ -13,6 +13,15 @@
                         $log.debug('npAsQuestion::data', cmpData);
                         vm.id = cmpData.id;
                         vm.content = $sce.trustAsHtml(cmpData.content);
+                        vm.questionLabel = cmpData.questionLabel;
+                        vm.answerLabel = cmpData.answerLabel;
+                        vm.submitLabel = cmpData.submitLabel;
+//                        console.log(
+//                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                '\n::vm.questionLabel::', vm.questionLabel,
+//                                '\n::vm.answerLabel::', vm.answerLabel,
+//                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                );
                         vm.type = cmpData.type;
                         vm.feedback = '';
                         vm.canContinue = false;

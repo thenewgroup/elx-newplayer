@@ -1269,7 +1269,6 @@ img {
   background-color: #FFF;
   border: 1px solid #ddd;
   border-radius: 0px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -2594,7 +2593,6 @@ output {
   border: 1px solid #ccc;
   border-radius: 0px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control:focus {
     border-color: #66afe9;
@@ -3179,7 +3177,6 @@ input[type="button"].btn-block {
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear; }
   .fade.in {
     opacity: 1; }
@@ -3201,11 +3198,8 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease; }
 
 .caret {
@@ -4360,7 +4354,6 @@ a.badge:hover, a.badge:focus {
   background-color: #FFF;
   border: 1px solid #ddd;
   border-radius: 0px;
-  -webkit-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out; }
   .thumbnail > img,
   .thumbnail a > img {
@@ -4468,12 +4461,10 @@ a.thumbnail.active {
   text-align: center;
   background-color: #040A2B;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease; }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px; }
 
@@ -4485,25 +4476,21 @@ a.thumbnail.active {
 .progress-bar-success {
   background-color: #9A7D46; }
   .progress-striped .progress-bar-success {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-info {
   background-color: #F05C72; }
   .progress-striped .progress-bar-info {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-warning {
   background-color: #FF0000; }
   .progress-striped .progress-bar-warning {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-danger {
   background-color: #DC3522; }
   .progress-striped .progress-bar-danger {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .media {
@@ -5830,11 +5817,9 @@ button.close {
     overflow: hidden; }
   #ANR .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -6065,16 +6050,12 @@ button.close {
     margin: auto; }
   #ANR .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -6419,7 +6400,6 @@ button.close {
     position: fixed;
     background: #040a2b;
     background: -webkit-gradient(left top, right top, color-stop(0%, #040a2b), color-stop(100%, #3b4b77));
-    background: -webkit-linear-gradient(left, #040a2b 0%, #3b4b77 100%);
     background: linear-gradient(to right, #040a2b 0%, #3b4b77 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#040a2b', endColorstr='#3b4b77', GradientType=1 );
     background-size: cover;
@@ -7003,11 +6983,9 @@ button.close {
     overflow: hidden; }
   #ANR2 .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -7238,16 +7216,12 @@ button.close {
     margin: auto; }
   #ANR2 .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -8177,11 +8151,9 @@ button.close {
     overflow: hidden; }
   #BSFL .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -8412,16 +8384,12 @@ button.close {
     margin: auto; }
   #BSFL .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -9333,11 +9301,9 @@ button.close {
     overflow: hidden; }
   #GMTC .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -9567,16 +9533,12 @@ button.close {
     margin: auto; }
   #GMTC .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -10524,11 +10486,9 @@ button.close {
     overflow: hidden; }
   #ND .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -10759,16 +10719,12 @@ button.close {
     margin: auto; }
   #ND .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -11101,7 +11057,6 @@ button.close {
         content: "\e613";
         float: right;
         color: #040A2B;
-        -webkit-transition: opacity 1s ease-in-out;
         transition: opacity 1s ease-in-out; }
     #np_products .topImage {
       margin-left: 0; }
@@ -11137,7 +11092,6 @@ button.close {
         content: "\e613";
         float: right;
         color: #040A2B;
-        -webkit-transition: opacity 1s ease-in-out;
         transition: opacity 1s ease-in-out; } }
 
 #np_reNutriv {
@@ -11919,11 +11873,9 @@ button.close {
     overflow: hidden; }
   #np_reNutriv .reveal-button-container {
     position: relative;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -12140,16 +12092,12 @@ button.close {
     min-height: 100%; }
   #np_reNutriv .centered-content {
     padding-top: 3em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -12555,6 +12503,194 @@ button.close {
       padding-left: 0px;
       padding-right: 0px; } }
 
+#np_diaryND {
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player page type wrapper classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*When setting this ID for New Player use: 'newplayer-background'*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player background color wrapper classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*When setting this class for New Player use: 'background-brand-primary-light'*/
+  /*When setting this class for New Player use: 'background-brand-offwhite' */
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*font stuff*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player button classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player button wrapper classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/ }
+  #np_diaryND #np_newplayer-background {
+    position: fixed;
+    background-color: #4ea1bf;
+    background-size: cover;
+    content: "";
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0; }
+  #np_diaryND #background-image {
+    position: fixed;
+    background-image: url("../assets/images/ESTL-006-ND-bg.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%; }
+  #np_diaryND .renutriv-logo-image {
+    position: relative;
+    background-image: url("../assets/images/NDLogo.png");
+    background-repeat: no-repeat;
+    width: 312px;
+    height: 19px;
+    padding-bottom: 11px; }
+  #np_diaryND .np_background-brand-primary-light {
+    background-color: #e2eff4; }
+  #np_diaryND .np_background-brand-offwhite {
+    background-color: #E6E9EE; }
+  #np_diaryND .hero {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%; }
+  #np_diaryND .header {
+    clear: both;
+    font-family: "optimadisplaylightlight";
+    font-weight: 100;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 640px;
+    margin: 0 auto; }
+  #np_diaryND .sans-head {
+    font-family: "akzidenz-grotesk_bqbold";
+    color: #040A2B;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    padding-bottom: 3px;
+    display: inline-block;
+    margin: 0 auto; }
+  #np_diaryND .sans-head-link {
+    font-family: "akzidenz-grotesk_bqbold";
+    color: #040A2B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    margin: 0 auto; }
+  #np_diaryND .np_body-copy {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #040A2B;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    max-width: 510px; }
+  #np_diaryND .serif-body-link {
+    font-family: "optimadisplaylightlight";
+    color: #040A2B;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin: 0 auto; }
+  #np_diaryND .serif-date-link {
+    font-family: "optimadisplaylightlight";
+    font-style: italic;
+    color: #040A2B;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 10px; }
+  #np_diaryND .beths-signature {
+    display: none; }
+  #np_diaryND .btn span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.25em; }
+  #np_diaryND .btn {
+    position: relative;
+    border-color: #FFFFFF;
+    background-color: #4ea1bf;
+    /*width: auto !important;*/
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin-top: 5px;
+    padding-left: 6em;
+    padding-right: 6em;
+    border-width: 1px;
+    padding-top: 15px;
+    padding-bottom: 13px; }
+  #np_diaryND .btn span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #np_diaryND .btn-next {
+    position: absolute;
+    right: 80px;
+    bottom: 0px;
+    margin-right: 30px;
+    margin-bottom: 50px; }
+  #np_diaryND .btn-next span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0; }
+  #np_diaryND .btn-submit {
+    display: block;
+    margin: 0 auto;
+    max-width: 222px; }
+  @media (max-width: 768px) {
+    #np_diaryND .btn-next {
+      position: absolute;
+      right: 110px;
+      bottom: 0px;
+      margin-right: 0px;
+      margin-bottom: 50px; } }
+  #np_diaryND .center-padding {
+    /*width: 100%;*/ }
+  @media (max-width: 480px) {
+    #np_diaryND .np_outside-padding {
+      padding: 0 0 100px 0; } }
+  @media (max-width: 992px) {
+    #np_diaryND .outside-padding {
+      padding-left: 50px;
+      padding-right: 50px; }
+    #np_diaryND .header {
+      padding-top: 10px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px; }
+    #np_diaryND .np_center-padding {
+      padding-left: 15px;
+      padding-right: 15px; }
+    #np_diaryND .sans-head {
+      padding-left: 50px;
+      padding-right: 50px; }
+    #np_diaryND .h1 {
+      font-size: 2.188em; }
+    #np_diaryND .np_body-copy {
+      padding-left: 15px;
+      padding-right: 15px; } }
+  @media (max-width: 768px) {
+    #np_diaryND .center-padding {
+      padding-left: 10px;
+      padding-right: 10px; }
+    #np_diaryND .outside-padding {
+      padding-left: 0px;
+      padding-right: 0px; } }
+
 .modal-open {
   overflow: hidden; }
 
@@ -12573,7 +12709,7 @@ button.close {
     -webkit-transform: translate(0, -25%);
     -ms-transform: translate(0, -25%);
     transform: translate(0, -25%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
@@ -12875,7 +13011,6 @@ button.close {
   .carousel-inner > .item {
     display: none;
     position: relative;
-    -webkit-transition: 0.6s ease-in-out left;
     transition: 0.6s ease-in-out left; }
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
@@ -12885,7 +13020,7 @@ button.close {
       line-height: 1; }
     @media all and (transform-3d), (-webkit-transform-3d) {
       .carousel-inner > .item {
-        -webkit-transition: -webkit-transform 0.6s ease-in-out;
+        transition: -webkit-transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
@@ -12939,14 +13074,12 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
   .carousel-control.left {
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1); }
   .carousel-control.right {
     left: auto;
     right: 0;
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1); }
@@ -13308,12 +13441,10 @@ img.blur {
   In this case the parent of '.vertical-center' is the <body> element */
   min-height: 100vh;
   /* Make it a flex container */
-  display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   /* Align the bootstrap's container vertically */
-  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -13323,17 +13454,14 @@ img.blur {
      hence the bootstrap's container won't be aligned to the center anymore.
   
      Therefore, we should use the following declarations to get it centered again */
-  -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center; }
 
 .vertical-alignment {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
@@ -13374,27 +13502,21 @@ img.blur {
           transform: translateY(-50%); }
 
 .vertical-align {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row; }
 
 .vertical-align > [class^="col-"],
 .vertical-align > [class*=" col-"] {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;

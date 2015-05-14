@@ -3,17 +3,17 @@
     <div class="debug">
         <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>
     </div>
-    <p class="h5 quiz-label">question:</p>
+    <p class="h5 quiz-label" ng-bind-html="npQuestion.questionLabel">x</p>
     <div class="npQuestion-content question-text h4" ng-bind-html="npQuestion.content"></div>
-    <p class="h5 quiz-label">answers:</p>
+    <p class="h5 quiz-label" ng-bind-html="npQuestion.answerLabel">x</p>
     <div np-component class="response-item" ng-if="subCmp" ng-repeat="component in components" idx="{{component.idx}}"></div>
     <div class="row">
-        <div class="col-sm-6 question-submit-wrapper">
+        <div class="col-sm-3 question-submit-wrapper">
             <button type="submit" class="btn-submit btn" ng-click="npQuestion.evaluate()">
-                <span>Submit</span>
+                <span ng-bind-html="npQuestion.submitLabel">x</span>
             </button>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-9">
             <div question-feedback-build >
                 <div  class="question-feedback">
                     <div class="question-feedback-wrapper vertical-centered">
@@ -59,10 +59,6 @@
                     </div
                 </div
             </div>
-        </div>
-        <div class="col-sm-6">
-        </div>
-        <div class="col-sm-6">
         </div>
     </div>
 </div>
