@@ -1,0 +1,772 @@
+[{
+        "type": "npFeature",
+        "data": {
+            "id": "GMTC",
+            "class": "",
+            "version": "0.0.1",
+            "timestamp": "2015-May-Thu_10:05:37"
+        },
+        "components": [{
+                "type": "npContent",
+                "data": {
+                    "id": "content_frca-CA",
+                    "language": "frca-CA",
+                    "title": "Learning-Content-GMTC-8.0-Greet-Meet-Treat-Complete-Final-Exam-frca",
+                    "description": "This manifest creates a Story or Learning Object content object . "
+                },
+                "components": [{
+                        "type": "npHTML",
+                        "data": {
+                            "id": "newplayer-background"
+                        },
+                        "components": [{
+                                "type": "npHTML",
+                                "data": {
+                                    "id": "background-image"
+                                },
+                                "components": []
+                            }]
+                    }, {
+                        "type": "npHTML",
+                        "data": {
+                            "class": "outside-padding"
+                        },
+                        "components": [{
+                                "type": "npHTML",
+                                "data": {
+                                    "class": "renutriv-logo-image"
+                                },
+                                "components": []
+                            }, {
+                                "type": "npHTML",
+                                "data": {
+                                    "class": "h3 headline",
+                                    "content": "Accueillir Découvrir Servir Conclure: Scenarios"
+                                },
+                                "components": []
+                            }, {
+                                "type": "npHTML",
+                                "data": {
+                                    "class": "h6 instructional",
+                                    "content": "<p>Accueillir&nbsp; Découvrir Servir Conclure vous permet de construire des relations privilégiées avec vos clientes. Visionnez chaque conversation et observez de quelle manière la Conseillère Beauté se comporte avec la cliente.</p>"
+                                },
+                                "components": []
+                            }, {
+                                "type": "npQuiz",
+                                "data": {
+                                    "id": "",
+                                    "type": "assessment",
+                                    "assessed": "1",
+                                    "questions": "8",
+                                    "percentage": "80",
+                                    "forced": "true",
+                                    "randomized": "false"
+                                },
+                                "components": [{
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7544",
+                                            "instructional": "<p><strong>Scénario Accueillir</strong></p><p>Que pensez-vous de cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npList",
+                                                "data": {
+                                                    "class": "h6 instructional",
+                                                    "data-ng:wrap": "true",
+                                                    "content": "<p>&nbsp;</p><p>&nbsp;</p>"
+                                                },
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "../assets/videos/GMTC-Scenelet-Greet-FR",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7546",
+                                            "instructional": "<p>Accueillir&nbsp; Découvrir&nbsp;Servir&nbsp;Conclure vous permet de construire des relations privilégiées avec vos clientes. Visionnez chaque conversation et observez de quelle manière la Conseillère Beauté se comporte avec la cliente.</p><p><strong>Scénario Accueillir</strong><br />Que pensez-vous de cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Qu'aurait pu faire le Conseiller Beauté différemment? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "C'est exact! Questionner immédiatement votre cliente après l'avoir accueillie peut être déstabilisant et instaurer trop de pression.",
+                                                        "incorrect": "Désolé. Si vous questionnez votre cliente immédiatement après l'avoir accueillie, vous risquez de la déstabiliser et d'instaurer trop de pression."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Rien, c'était très bien.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Désolé. Si vous questionnez votre cliente immédiatement après l'avoir accueillie, vous risquez de la déstabiliser et d'instaurer trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il n'aurait pas dû poser une question aussi rapidement.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est exact! Questionner immédiatement votre cliente après l'avoir accueillie peut être déstabilisant et instaurer trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il aurait plutôt dû offrir un 3 Minute Beauty.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Désolé. Si vous questionnez votre cliente immédiatement après l'avoir accueillie, vous risquez de la déstabiliser et d'instaurer trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il aurait dû demander à la cliente quel genre de service elle aurait souhaité.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Désolé. Si vous questionnez votre cliente immédiatement après l'avoir accueillie, vous risquez de la déstabiliser et d'instaurer trop de pression."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7548"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Votre cliente regarde le testeur de la Revitalizing Supreme. Qu'allez-vous faire? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "C'est  exact! C'est un excellent moyen d'engager la conversation avec votre cliente sans mettre trop de pression.",
+                                                        "incorrect": "Pas exactement. Il y a un meilleur moyen pour engager la conversation avec votre cliente sans mettre trop de pression."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Etablir un contact visuel, vous rendre auprès d'elle et lui dire , \"Puis-je vous être utile?",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas exactement. Il y a un meilleur moyen pour engager la conversation avec votre cliente sans mettre trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "La laisser tranquille, car elle flâne visiblement.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas exactement. Il y a un meilleur moyen pour engager la conversation avec votre cliente sans mettre trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Lui sourire et lui dire ,\"Bonjour, comment allez-vous? Vous cherchez quelque chose de particulier?",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas exactement. Il y a un meilleur moyen pour engager la conversation avec votre cliente sans mettre trop de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Lui sourire chaleureusement, établir un contact visuel, lui dire ,\"Bienvenue!\" et lui faire comprendre que vous êtes à sa disposition si elle a besoin de votre aide.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est exact! C'est un excellent moyen d'engager la conversation avec votre cliente sans mettre trop de pression."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7550",
+                                            "instructional": "<p><strong>Scénario Découvrir</strong></p><p>Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npList",
+                                                "data": {
+                                                    "class": "h6 instructional",
+                                                    "data-ng:wrap": "true",
+                                                    "content": "<p>&nbsp;</p><p>&nbsp;</p>"
+                                                },
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "../assets/videos/GMTC-Scenelet-Meet-FR",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7552",
+                                            "instructional": "<p><strong>Scénario Découvrir</strong><br />Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Qu'aurait pu faire la Conseillère Beauté différemment? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "Oui! L'écoute active est une part essentielle de l'étape Découvrir.",
+                                                        "incorrect": "Ce n'est pas exact. L'écoute active est une part essentielle de l'étape Découvrir."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Rien, c'était très bien.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. L'écoute active est une part essentielle de l'étape Découvrir."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle aurait dû présenter le testeur de la crème à la cliente.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. L'écoute active est une part essentielle de l'étape Découvrir."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle n'aurait pas dû parler des différentes tailles de produit.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. L'écoute active est une part essentielle de l'étape Découvrir."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle aurait dû offrir à la cliente une dose d'essai d'Advanced Night Repair.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "Oui! L'écoute active est une part essentielle de l'étape Découvrir."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7554"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Votre cliente vient renouveler son Advanced Night Repair. Quelles questions pourriez-vous poser pour obtenir davantage d'informations afin de répondre au mieux à ses besoins? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "C'est exact! Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression.",
+                                                        "incorrect": "Pas tout à fait.Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Utilisez-vous une crème de soin? En souhaitez-vous une qui s'associe avec votre sérum réparateur?",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas tout à fait.Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Qu'aimez-vous particulièrement dans ce produit? Quels autres produits avez-vous l'habitude d'utiliser?",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est exact! Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Souhaitez-vous le produit dans la grande contenance? Nous venons de recevoir une nouvelle crème. Elle est formidable... Je vous la montre?",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas tout à fait.Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Puis-je vous montrer le sérum contour des yeux qui va avec votre sérum? Qu'avez-vous l'habitude d'utiliser?",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas tout à fait.Demander à votre cliente ce qu'elle aime dans le produit et quels autres soins elle a l'habitude d'utiliser sont des question ouvertes, qui vous aideront à cerner ses besoins sans lui mettre de pression."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "8153",
+                                            "instructional": "<p><strong>Scénario Servir</strong></p><p>&nbsp;Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npList",
+                                                "data": {
+                                                    "class": "h6 instructional",
+                                                    "data-ng:wrap": "true",
+                                                    "content": "<p>&nbsp;</p><p>&nbsp;</p>"
+                                                },
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "../assets/videos/GMTC-Scenelet-Treat-FR_0",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "8440",
+                                            "instructional": "<p><strong>Scénario Servir</strong><br />Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "1",
+                                                    "content": "Qu'aurait pu faire le Conseiller Beauté différemment? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "Tout à fait! C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité.",
+                                                        "incorrect": "Ce n'est pas exact. C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Rien, c'était très bien.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il aurait dû lui offrir une technique 3 Minute Beauty.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il aurait dû personnaliser les échantillons et expliquer leur utilité à la cliente.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "Tout à fait! C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Il aurait dû lui demander quels échantillons elle souhaitait.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. C'est toujours une excellente idée de s'intéresser à la cliente en lui offrant des doses d'essai, mais vous irez encore au-delà de ses attentes si les doses d'essai sont personnalisées et si vous expliquez leur utilité."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "8441",
+                                            "instructional": "<p>&nbsp;</p><p>&nbsp;</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "1",
+                                                    "content": "Une cliente vient renouveler son Double Wear Light. Que pouvez-vous faire pour aller au-delà de ses attentes? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "C'est ça! Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes",
+                                                        "incorrect": "Ce n'est pas exact. Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes"
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Offrez-lui une dose d'essai d'un autre fond de teint qui serait susceptible de lui plaire.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est ça! Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes"
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Demandez-lui quel mode de paiement elle choisit et dites-lui que vous serez à sa disposition dans un instant.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes"
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Demandez-lui si elle a besoin d'autre chose.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes"
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Offrez-lui une technique 3 Minute Beauty.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est ça! Offrir à votre cliente une dose d'essai et faire le lien avec une technique 3 Minute Beauty sont des excellents moyens pour aller au-delà de ses attentes"
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7557",
+                                            "instructional": "<p><strong>Scénario Conclure</strong></p><p>Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npList",
+                                                "data": {
+                                                    "class": "h6 instructional",
+                                                    "data-ng:wrap": "true",
+                                                    "content": "<p>&nbsp;</p><p>&nbsp;</p>"
+                                                },
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "../assets/videos/GMTC-Scenelet-Complete-FR",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7559",
+                                            "instructional": "<p><strong>Scénario Conclure</strong><br />Comment jugez-vous cette conversation?</p>"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Qu'aurait pu faire la Conseillère Beauté différemment? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "C'est juste! N'imaginez pas que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins.",
+                                                        "incorrect": "Ce n'est pas exact. N'imaginez jamais que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui plutôt la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Rien, c'était très bien.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. N'imaginez jamais que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui plutôt la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle aurait dû expliquer chaque produit choisi par la cliente.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Ce n'est pas exact. N'imaginez jamais que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui plutôt la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle aurait dû demander à la cliente quel produit lui faisait particulièrement envie.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est juste! N'imaginez pas que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Elle n'aurait pas dû penser que la cliente voulait acheter tous les produits.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "C'est juste! N'imaginez pas que votre cliente est prête à acheter tous les produits que vous lui présentez. Donnez -lui la liberté de décider et, si cela est nécessaire, aidez-la à choisir ce qui correspond le mieux à ses besoins."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {
+                                            "id": "7561"
+                                        },
+                                        "components": [{
+                                                "type": "npAsQuestion",
+                                                "data": {
+                                                    "required": true,
+                                                    "forced": false,
+                                                    "type": "checkbox",
+                                                    "difficulty": "",
+                                                    "content": "Une cliente vient acheter Advanced Night Repair et Revitalizing Supreme. Que pouvez-vous faire pour entrer en connexion avec elle? Sélectionnez la / les réponses appropriées.",
+                                                    "questionLabel": "Question:",
+                                                    "answerLabel": "Réponses:",
+                                                    "submitLabel": "Soumettre",
+                                                    "feedback": {
+                                                        "immediate": false,
+                                                        "correct": "Tout à fait! Voici trois excellents moyens pour conclure l'expérience avec votre cliente.",
+                                                        "incorrect": "Pas exactement. Voici trois excellents moyens pour conclure l'expérience avec votre cliente."
+                                                    }
+                                                },
+                                                "components": [{
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Prenez Advanced Night Repair dans sa grande contenance et un pot de Revitalizing Supreme, puis demandez-lui comment elle souhaite régler ses achats.",
+                                                            "correct": false,
+                                                            "feedback": {
+                                                                "incorrect": "Pas exactement. Voici trois excellents moyens pour conclure l'expérience avec votre cliente."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Offrez-lui une technique 3 Minute Beauty.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "Tout à fait! Voici trois excellents moyens pour conclure l'expérience avec votre cliente."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Donnez-lui des astuces d'utilisation d'Advanced Night Repair et Revitalizing Supreme.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "Tout à fait! Voici trois excellents moyens pour conclure l'expérience avec votre cliente."
+                                                            }
+                                                        }
+                                                    }, {
+                                                        "type": "npAsAnswer",
+                                                        "data": {
+                                                            "label": "Dites-lui que vous souhaiteriez rester en contact avec elle, afin de savoir si les produits que vous lui avez conseillés lui apportent entière satisfaction.",
+                                                            "correct": true,
+                                                            "feedback": {
+                                                                "correct": "Tout à fait! Voici trois excellents moyens pour conclure l'expérience avec votre cliente."
+                                                            }
+                                                        }
+                                                    }]
+                                            }, {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Prochaine"
+                                                },
+                                                "components": []
+                                            }]
+                                    }, {
+                                        "type": "npPage",
+                                        "data": {},
+                                        "components": [{
+                                                "type": "npAsResult",
+                                                "id": "summary",
+                                                "data": {
+                                                    "feedback": {
+                                                        "pass": "Vous avez terminé ce thème! Votre score est de :USERSCORE:%.",
+                                                        "fail": "Votre score est de :USERSCORE:%. Recommencez dès le départ et révisez le thème. "
+                                                    },
+                                                    "achievements": [{
+                                                            "score": 0.8,
+                                                            "compare": "gte",
+                                                            "content": " "
+                                                        }, {
+                                                            "score": 1,
+                                                            "compare": "eq",
+                                                            "content": " "
+                                                        }]
+                                                }
+                                            }]
+                                    }]
+                            }]
+                    }]
+            }]
+    }]
