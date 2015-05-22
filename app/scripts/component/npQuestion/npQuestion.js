@@ -95,7 +95,6 @@
                             TweenMax.to(negativeFeedbackIcon, 0.25, {
                                 autoAlpha: 0,
                                 scale: 2.5,
-//                                width: '2em',
                                 force3D: true
                             });
                             TweenMax.to(positiveFeedbackIcon, 0.25, {
@@ -196,7 +195,6 @@
                                                 TweenMax.to(positiveFeedbackIcon, 0.75, {
                                                     autoAlpha: 1,
                                                     scale: 1,
-//                                                    width: '100%',
                                                     force3D: true
                                                 });
                                             }
@@ -238,8 +236,6 @@
                                                 TweenMax.to(negativeFeedbackIcon, 0.75, {
                                                     autoAlpha: 1,
                                                     scale: 1,
-//                                                    width: '100%',
-//                                                    width: '1em',
                                                     force3D: true
                                                 });
                                             }

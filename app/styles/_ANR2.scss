@@ -100,6 +100,14 @@
     line-height: 1.35;
     margin-bottom: $line-height-computed;
 }
+ol, ul{
+    font-family: $font-family-sans-serif;
+    color: $brand-primary-light;
+    font-size: $font-size-h6;
+    letter-spacing: 2px;
+    line-height: 1.35;
+    margin-bottom: $line-height-computed;
+}
 @media (max-width: $screen-md) {
     .body-copy{
         font-size: $font-size-base;

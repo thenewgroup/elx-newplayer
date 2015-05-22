@@ -6475,6 +6475,13 @@ button.close {
     letter-spacing: 2px;
     line-height: 1.35;
     margin-bottom: 20px; }
+  #ANR2 ol, #ANR2 ul {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 1.35;
+    margin-bottom: 20px; }
   @media (max-width: 992px) {
     #ANR2 .body-copy {
       font-size: 14px;
@@ -10104,7 +10111,7 @@ button.close {
     right: 0; }
   #ND #flash-cards {
     position: relative;
-    padding-top: 45px !important;
+    padding-top: 55px !important;
     margin-left: 0px; }
   #ND .flash-card-text-heading {
     color: #4ea1bf;
@@ -10181,7 +10188,7 @@ button.close {
     width: 150%;
     margin-left: -25%;
     height: 120%;
-    margin-top: -10%;
+    margin-top: -20%;
     left: 0;
     right: 0;
     top: 0;

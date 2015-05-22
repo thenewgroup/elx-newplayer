@@ -85,9 +85,9 @@
                                     ],
                                     "draggableButtons": [
                                         {
-                                            "content": "<p>this is the content1!this is the content1! this is the content1!this is the content1! this is the content1! this is the content1! this is the content1!this is the content1! this is the content1!</p>",
+                                            "content": "<p>Realices preguntas de inmediato tales como: “¿Puedo ayudarle?”</p>",
                                             "image": "/assets/images/hotspot.png",
-                                            "matchingContent": "<p>this is the content1!this is the content1! this is the content1!this is the content1! this is the content1! this is the content1! this is the content1!this is the content1! this is the content1!</p>",
+                                            "matchingContent": "<p>Saluda Conéctate: hazla sentirse bienvenida con las 5 E.</p>",
                                             "matchingImage": "/assets/images/hotspot.png"
                                         },
                                         {
