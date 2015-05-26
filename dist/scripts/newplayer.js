@@ -7446,16 +7446,16 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "        <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>\n" +
     "    </div>\n" +
     "    <div class=\"row\">\n" +
-    "        <div class=\"col-sm-8\">\n" +
+    "        <div class=\"col-sm-4 col-sm-push-8\">\n" +
+    "            <div class=\"npQuestion-content question-image\">\n" +
+    "                <img class=\"img-responsive\" ng-src=\"{{npQuestion.questionImage}}\">\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-sm-8 col-sm-pull-4\">\n" +
     "            <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.questionLabel\">x</p>\n" +
     "            <div class=\"npQuestion-content question-text h4\" ng-bind-html=\"npQuestion.content\"></div>\n" +
     "            <p class=\"h5 quiz-label\" ng-bind-html=\"npQuestion.answerLabel\">x</p>\n" +
     "            <div np-component class=\"response-item\" ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-sm-4\">\n" +
-    "            <div class=\"npQuestion-content question-image\">\n" +
-    "                <img class=\"img-responsive\" ng-src=\"{{npQuestion.questionImage}}\">\n" +
-    "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <div class=\"row\">\n" +
