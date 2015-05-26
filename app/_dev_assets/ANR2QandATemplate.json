@@ -149,6 +149,7 @@
                                             "type": "checkbox",
                                             "difficulty": 2,
                                             "content": "What number am I thinking of? QUESTION 2",
+                                            "questionImage": "",
                                             "feedback": {
                                                 "immediate": true,
                                                 "correct": "Hey, that's right!",

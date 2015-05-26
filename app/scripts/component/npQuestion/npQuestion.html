@@ -4,16 +4,16 @@
         <h3>{{component.type}} -- <small>{{component.idx}}</small></h3>
     </div>
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-4 col-sm-push-8">
+            <div class="npQuestion-content question-image">
+                <img class="img-responsive" ng-src="{{npQuestion.questionImage}}">
+            </div>
+        </div>
+        <div class="col-sm-8 col-sm-pull-4">
             <p class="h5 quiz-label" ng-bind-html="npQuestion.questionLabel">x</p>
             <div class="npQuestion-content question-text h4" ng-bind-html="npQuestion.content"></div>
             <p class="h5 quiz-label" ng-bind-html="npQuestion.answerLabel">x</p>
             <div np-component class="response-item" ng-if="subCmp" ng-repeat="component in components" idx="{{component.idx}}"></div>
-        </div>
-        <div class="col-sm-4">
-            <div class="npQuestion-content question-image">
-                <img class="img-responsive" ng-src="{{npQuestion.questionImage}}">
-            </div>
         </div>
     </div>
     <div class="row">
