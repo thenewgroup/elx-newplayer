@@ -35,7 +35,7 @@
                                         if (lastComponent.components[i].type === 'npAsResult') {
                                             nLastComponentIndex = $scope.component.components.length - 2;
                                             if (nLastComponentIndex >= 0) {
-                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
+//                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
                                             }
                                         }
                                     }
