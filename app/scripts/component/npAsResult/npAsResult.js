@@ -31,6 +31,7 @@
                                     var resultsSummaryTextHeight = $('.results-summary-text').outerHeight(true);
                                     console.log(
                                             '\n::::::::::::::::::::::::::::::::::::::npAsResultController::setHeightProperties:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                            '\n::$(.results-summary-text).outerHeight(true)::', $('.results-summary-text').outerHeight(true),
                                             '\n::outsidePaddingHeight::', outsidePaddingHeight,
                                             '\n::resultsSummaryPecentageHeight::', resultsSummaryPecentageHeight,
                                             '\n::resultsSummaryTextHeight::', resultsSummaryTextHeight,
@@ -38,7 +39,8 @@
                                             '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
                                             );
                                     TweenMax.set($('.np-result-container'), {
-                                        height: resultsSummaryPecentageHeight + resultsSummaryTextHeight +120
+//                                        height: resultsSummaryPecentageHeight + resultsSummaryTextHeight +120
+                                        height: $('.results-summary-text').outerHeight(true) + 85
                                     });
                                 };
                                 setHeightProperties();
