@@ -4040,17 +4040,17 @@
                                     minPassing = minPassing / 100;
                                 }
                             }
-                            var getResultsBtn = {
-                                "type": "npButton",
-                                "data": {
-                                    "link": "",
-                                    "type": "btn-next",
-                                    "class": "",
-                                    "content": "See Results"
-                                },
-                                "components": [
-                                ]
-                            };
+//                            var getResultsBtn = {
+//                                "type": "npButton",
+//                                "data": {
+//                                    "link": "",
+//                                    "type": "btn-next",
+//                                    "class": "",
+//                                    "content": "See Results"
+//                                },
+//                                "components": [
+//                                ]
+//                            };
                             // add the results button if the last page is a npAsResult
                             lastComponentIndex = $scope.component.components.length - 1;
                             if (lastComponentIndex >= 0) {
@@ -4061,7 +4061,7 @@
                                         if (lastComponent.components[i].type === 'npAsResult') {
                                             nLastComponentIndex = $scope.component.components.length - 2;
                                             if (nLastComponentIndex >= 0) {
-                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
+//                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
                                             }
                                         }
                                     }
@@ -4117,16 +4117,18 @@
                                     var outsidePaddingHeight = $('.np-result-summary').outerHeight(true);
                                     var resultsSummaryPecentageHeight = $('.results-summary-pecentage').outerHeight(true);
                                     var resultsSummaryTextHeight = $('.results-summary-text').outerHeight(true);
-                                    console.log(
-                                            '\n::::::::::::::::::::::::::::::::::::::npAsResultController::setHeightProperties:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                            '\n::outsidePaddingHeight::', outsidePaddingHeight,
-                                            '\n::resultsSummaryPecentageHeight::', resultsSummaryPecentageHeight,
-                                            '\n::resultsSummaryTextHeight::', resultsSummaryTextHeight,
-                                            '\n::resultsSummaryPecentageHeight+resultsSummaryTextHeight::', resultsSummaryPecentageHeight+resultsSummaryTextHeight,
-                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                            );
+//                                    console.log(
+//                                            '\n::::::::::::::::::::::::::::::::::::::npAsResultController::setHeightProperties:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                            '\n::$(.results-summary-text).outerHeight(true)::', $('.results-summary-text').outerHeight(true),
+//                                            '\n::outsidePaddingHeight::', outsidePaddingHeight,
+//                                            '\n::resultsSummaryPecentageHeight::', resultsSummaryPecentageHeight,
+//                                            '\n::resultsSummaryTextHeight::', resultsSummaryTextHeight,
+//                                            '\n::resultsSummaryPecentageHeight+resultsSummaryTextHeight::', resultsSummaryPecentageHeight+resultsSummaryTextHeight,
+//                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                            );
                                     TweenMax.set($('.np-result-container'), {
-                                        height: resultsSummaryPecentageHeight + resultsSummaryTextHeight +120
+//                                        height: resultsSummaryPecentageHeight + resultsSummaryTextHeight +120
+                                        height: $('.results-summary-text').outerHeight(true) + 85
                                     });
                                 };
                                 setHeightProperties();

@@ -14,17 +14,17 @@
                                     minPassing = minPassing / 100;
                                 }
                             }
-                            var getResultsBtn = {
-                                "type": "npButton",
-                                "data": {
-                                    "link": "",
-                                    "type": "btn-next",
-                                    "class": "",
-                                    "content": "See Results"
-                                },
-                                "components": [
-                                ]
-                            };
+//                            var getResultsBtn = {
+//                                "type": "npButton",
+//                                "data": {
+//                                    "link": "",
+//                                    "type": "btn-next",
+//                                    "class": "",
+//                                    "content": "See Results"
+//                                },
+//                                "components": [
+//                                ]
+//                            };
                             // add the results button if the last page is a npAsResult
                             lastComponentIndex = $scope.component.components.length - 1;
                             if (lastComponentIndex >= 0) {
@@ -35,7 +35,7 @@
                                         if (lastComponent.components[i].type === 'npAsResult') {
                                             nLastComponentIndex = $scope.component.components.length - 2;
                                             if (nLastComponentIndex >= 0) {
-                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
+//                                                $scope.component.components[nLastComponentIndex].components.push(getResultsBtn);
                                             }
                                         }
                                     }
