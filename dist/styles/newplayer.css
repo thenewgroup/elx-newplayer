@@ -7139,6 +7139,11 @@ button.close {
   #ANR2 .right-column-select {
     text-align: left;
     margin-top: 3px; }
+  #ANR2 .npDragAndDropSelect .hit-area svg rect {
+    fill: #080F30;
+    opacity: 0.75;
+    stroke: #FFFFFF;
+    stroke-width: 3; }
   #ANR2 .response-icon-wrapper {
     position: absolute;
     right: 0;
