@@ -24,6 +24,11 @@
                                 $scope.ID = cmpData.id;
                                 $scope.select = cmpData.select;
                                 $scope.randomized = cmpData.randomized;
+                                console.log(
+                                        '\n::::::::::::::::::::::::::::::::::::::$scope.image:::::::::::::::::::::::::::::::::::::::::::::::::::::::',
+                                        '\n::$scope.image::', $scope.image,
+                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                        );
                                 setTimeout(function () {
                                     $scope.$apply(function () {
                                         //////////////////////////////////////////////////////////////////////////////////////
@@ -315,6 +320,10 @@
                                                     autoAlpha: 0,
                                                     ease: Power4.easeOut
                                                 });
+                                                TweenMax.to($(hitArea).find('svg rect'), 0.5, {
+                                                    autoAlpha: 0,
+                                                    ease: Power4.easeOut
+                                                });
                                                 TweenMax.to($('#draggableContainer'), 0.75, {
                                                     autoAlpha: 1,
                                                     ease: Power4.easeOut
@@ -430,6 +439,10 @@
                                                                 });
                                                                 TweenMax.to($(hitArea[i]).find('.feedback-draggable-button-content'), 0.5, {
                                                                     autoAlpha: 1,
+                                                                    ease: Power4.easeOut
+                                                                });
+                                                                TweenMax.to($(hitArea[i]).find('svg rect'), 0.5, {
+                                                                    autoAlpha: 0.75,
                                                                     ease: Power4.easeOut
                                                                 });
                                                                 return;

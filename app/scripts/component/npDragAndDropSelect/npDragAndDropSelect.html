@@ -33,7 +33,9 @@
             <!--<div class="col-two">-->
             <div class="col-xs-6">
                 <div id="hit-area-wrapper">        
-                    <div id="select-hit-area-background"></div>            
+                    <div id="select-hit-area-background">
+                        <img class="background-image img-responsive" ng-src="{{image}}"/>
+                    </div>            
                     <div ng-repeat="draggableButton in npDragAndDropSelect.draggableButtons" data-match="{{draggableButton.select}}" class="{{hitArea.class}} hit-area boxElements">
                         <svg class="complete-background" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" preserveAspectRatio="none">
                             <g class="complete-background-Layer_1">

@@ -1083,6 +1083,12 @@ input{
     text-align: left;
     margin-top: 3px;
 }
+.npDragAndDropSelect .hit-area svg rect{
+    fill: $ANR2-color;
+    opacity: 0.75;
+    stroke: #FFFFFF;
+    stroke-width: 3;
+}
 .response-icon-wrapper{
     position: absolute;
     right: 0;
