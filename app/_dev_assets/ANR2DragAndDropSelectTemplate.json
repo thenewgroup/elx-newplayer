@@ -77,7 +77,7 @@
                                     "id": "container",
                                     "positiveFeedback": "<p>That's it!</p>",
                                     "negativeFeedback": "<p>ehh?!?!</p>",
-                                    "image": "",
+                                    "image": "../_dev_assets/assets/images/Cenote_Tulum_vert.jpg",
                                     "req": [
                                         "mediaelement/GreenSock/TweenMax.min.js",
                                         "mediaelement/GreenSock/utils/Draggable.min.js",
