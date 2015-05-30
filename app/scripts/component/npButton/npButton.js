@@ -8,7 +8,7 @@
                         var cmpData = $scope.component.data || {};
                         $log.debug('npButton::data', cmpData);
                         this.content = '';
-                        var btnContent = i18nService.get(cmpData.content) || cmpData.content;
+                        var btnContent = i18nService.get(cmpData.content);
                         if (angular.isString(btnContent)) {
                             this.content = $sce.trustAsHtml(btnContent);
                         }
