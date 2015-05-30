@@ -4,11 +4,11 @@
             .module('newplayer.component')
             /** @ngInject */
             .controller('npButtonController',
-                    function ($log, $scope, $sce, $location, $element, ConfigService, ManifestService, APIService, TrackingService) {
+                    function ($log, $scope, $sce, $location, $element, ConfigService, ManifestService, APIService, TrackingService, i18nService) {
                         var cmpData = $scope.component.data || {};
                         $log.debug('npButton::data', cmpData);
                         this.content = '';
-                        var btnContent = cmpData.content;
+                        var btnContent = i18nService.get(cmpData.content) || cmpData.content;
                         if (angular.isString(btnContent)) {
                             this.content = $sce.trustAsHtml(btnContent);
                         }
@@ -127,7 +127,7 @@
 //                                $('.play', this).addClass('pausing');
 //                                $('.play', this).removeClass('playing');
 //                            });
-//                            
+//
                             if ($element.find('.btn-open-favorites')) {
                                 $element.find('.elx-heart').toggleClass("elx-heart-filled");
                             }
