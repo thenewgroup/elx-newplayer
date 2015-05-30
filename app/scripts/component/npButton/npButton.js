@@ -18,7 +18,7 @@
                         this.linkInternal = true;
                         this.apiLink = false;
                         var btnLink = cmpData.link;
-                        var buttonType = cmpData.type;
+                        var buttonType = cmpData.type; // would this break if moved up? It's used above but declared here
                         var $buttonTypeFavorite = '';
                         //////////////////////////////////////////////////////////////////////////////////////
                         //check type and add class if next button type
