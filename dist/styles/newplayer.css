@@ -12353,8 +12353,6 @@ button.close {
     max-width: 510px;
     margin-left: auto;
     margin-right: auto; }
-  #np_storyDefault .btn-open-favorites {
-    /*width: 7em;*/ }
   #np_storyDefault .center-padding {
     width: 100%; }
   @media (max-width: 480px) {
@@ -12502,8 +12500,6 @@ button.close {
     max-width: 510px;
     margin-left: auto;
     margin-right: auto; }
-  #np_storyBethsBlog .btn-open-favorites {
-    /*width: 7em;*/ }
   #np_storyBethsBlog .center-padding {
     width: 100%; }
   @media (max-width: 480px) {
@@ -13579,12 +13575,12 @@ img.blur {
   min-width: 20%;
   width: 100%; }
 
-.btn.btn-favorite, #np_products .btn.btn-open-favorites {
+.btn.btn-favorite, #np_products .btn.btn-open-favorites, #np_storyDefault .btn.btn-open-favorites, #np_storyBethsBlog .btn.btn-open-favorites {
   margin-top: 5px;
   margin-bottom: 10px;
   background-color: #040A2B;
   color: #FFFFFF; }
-  .btn.btn-favorite:hover, #np_products .btn.btn-open-favorites:hover, .btn.btn-favorite:focus, #np_products .btn.btn-open-favorites:focus {
+  .btn.btn-favorite:hover, #np_products .btn.btn-open-favorites:hover, #np_storyDefault .btn.btn-open-favorites:hover, #np_storyBethsBlog .btn.btn-open-favorites:hover, .btn.btn-favorite:focus, #np_products .btn.btn-open-favorites:focus, #np_storyDefault .btn.btn-open-favorites:focus, #np_storyBethsBlog .btn.btn-open-favorites:focus {
     background-color: #020514;
     color: #f2f2f2; }
 
