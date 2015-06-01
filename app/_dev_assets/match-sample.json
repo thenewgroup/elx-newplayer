@@ -1,295 +1,263 @@
 [{
         "type": "npFeature",
         "data": {
-            "id": "reNutriv",
-            "req": [],
+            "id": "ND",
+            "class": "",
             "version": "0.0.1",
-            "timestamp": "1970-01-01_00:00:00"
+            "timestamp": "2015-Jun-Mon_01:06:30",
+            "created": 1432335667
         },
-        "components": [
-            {
-                "type": "npPage",
+        "components": [{
+                "type": "npContent",
                 "data": {
-                    "id": "Page1",
-                    "parentId": "",
-                    "title": "Welcome",
-                    "inMenu": true,
-                    "required": false
+                    "id": "content_en",
+                    "language": "en",
+                    "title": "Learning-Content-New-Dimension-3.0-Our-1st-Transformative-Beauty-Collection",
+                    "description": "This manifest creates a Story or Learning Object content object . "
                 },
-                "components": [
-                    {
-                        "type": "npMatch",
+                "components": [{
+                        "type": "npHTML",
                         "data": {
-                            "class": "row",
-                            "id": "",
-                            "required": true,
-                            "forced": true,
-                            "type": "radio",
-                            "difficulty": 1,
-                            "content": "Please pick the matches? QUESTION 1",
-                            "feedback": {
-                                "immediate": true,
-                                "correct": "Hey, that's right!",
-                                "incorrect": "No! ... What are you thinking!?"
-                            }
+                            "id": "newplayer-background"
                         },
-                        "components": [
-                            {
-                                "type": "npMatchRow",
+                        "components": [{
+                                "type": "npHTML",
                                 "data": {
-                                    "position": "top"
+                                    "id": "background-image"
                                 },
-                                "components": [
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "1111 <img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row1A1\" class=\"rsImg\"/>",
-                                            "correct": 1
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "2222 <img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row1A2\" class=\"rsImg\"/>",
-                                            "correct": 2
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "3333 <img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row1A3\" class=\"rsImg\"/>",
-                                            "correct": 3
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "4444 <img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row1A4\" class=\"rsImg\"/>",
-                                            "correct": 4
-                                        },
-                                        "components": [
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "npMatchRow",
+                                "components": []
+                            }]
+                    }, {
+                        "type": "npHTML",
+                        "data": {
+                            "class": "outside-padding"
+                        },
+                        "components": [{
+                                "type": "npHTML",
                                 "data": {
-                                    "position": "middle"
+                                    "class": "renutriv-logo-image"
                                 },
-                                "components": [
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "1 Seitan brunch ugh irony roof party organic, fingerstache four loko semiotics retro freegan before they sold out DIY skateboard. Lumbersexual pop-up chillwave PBR, tote bag hashtag biodiesel viral brunch. Ennui hashtag lomo, meh forage hella plaid squid Neutra American Apparel ethical fingerstache messenger bag. Fixie +1 8-bit, cliche pickled hoodie Kickstarter narwhal. Chia messenger bag vegan literally Echo Park brunch cronut artisan ethical, photo booth pickled. Deep v tilde try-hard, readymade pork belly chia artisan Shoreditch fanny pack heirloom aesthetic. Pork belly freegan occupy paleo, umami vinyl messenger bag PBR&B Portland drinking vinegar.",
-                                            "correct": 1
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "2 You probably haven't heard of them forage kale chips, squid skateboard pork belly drinking vinegar. Lo-fi cornhole semiotics, readymade swag vinyl small batch banjo letterpress bitters gluten-free normcore. Marfa flannel shabby chic, narwhal twee stumptown lo-fi fanny pack. Ethical hella shabby chic selvage. Normcore shabby chic meditation cold-pressed crucifix. Try-hard deep v sartorial, farm-to-table cold-pressed Helvetica before they sold out Bushwick photo booth biodiesel Etsy semiotics. Pour-over listicle freegan photo booth, whatever four dollar toast narwhal letterpress Austin sartorial cold-pressed.",
-                                            "correct": 2
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "3 Blue Bottle Marfa squid, deep v bitters blog gentrify literally vegan. Twee brunch kale chips, listicle butcher readymade gastropub occupy cold-pressed fingerstache fashion axe. Cornhole pop-up gastropub small batch, Echo Park sustainable wayfarers synth twee iPhone semiotics messenger bag art party tilde. Put a bird on it Pinterest Etsy aesthetic Helvetica McSweeney's. Four dollar toast four loko pop-up, Wes Anderson 3 wolf moon mlkshk slow-carb craft beer chia selfies tattooed 8-bit. Pitchfork gastropub cray cold-pressed, banh mi Austin raw denim. Hella farm-to-table synth, single-origin coffee ethical Thundercats twee forage quinoa cliche crucifix health goth flannel freegan swag.",
-                                            "correct": 3
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "4 Swag retro hashtag 3 wolf moon, flannel taxidermy organic stumptown fap. Street art narwhal YOLO tofu lo-fi Pinterest flannel quinoa tousled salvia Austin. Viral YOLO listicle, artisan beard Banksy master cleanse fixie bespoke +1. Direct trade retro Kickstarter scenester trust fund. Occupy blog gentrify PBR&B VHS scenester, four loko hoodie typewriter vinyl High Life DIY Intelligentsia Banksy retro. Small batch mustache post-ironic, Neutra pickled Austin paleo. Cornhole Blue Bottle semiotics hashtag, mlkshk crucifix Schlitz lomo Brooklyn mumblecore.",
-                                            "correct": 4
-                                        },
-                                        "components": [
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "npMatchRow",
+                                "components": []
+                            }, {
+                                "type": "npHTML",
                                 "data": {
-                                    "position": "bottom"
+                                    "class": "h3 headline",
+                                    "content": "Our 1st Transformative Beauty Collection"
                                 },
-                                "components": [
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "<img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row3A1\" class=\"rsImg\"/>",
-                                            "correct": 1
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "<img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row3A2\" class=\"rsImg\"/>",
-                                            "correct": 2
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "<img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row3A3\" class=\"rsImg\"/>",
-                                            "correct": 3
-                                        },
-                                        "components": [
-                                        ]
-                                    },
-                                    {
-                                        "type": "npAnswer",
-                                        "data": {
-                                            "label": "<img src=\"http://www.placehold.it/400x300/EFEFEF/AAAAAA&text=row3A4\" class=\"rsImg\" />",
-                                            "correct": 4
-                                        },
-                                        "components": [
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "npPage",
-                "data": {
-                    "id": "Page2",
-                    "parentId": "question1",
-                    "title": "Question 1",
-                    "inMenu": true,
-                    "required": false
-                },
-                "components":
-                    [
-                        {
-                            "type": "npQuestion",
-                            "data": {
-                                "class": "row",
-                                "required": true,
-                                "forced": true,
-                                "type": "checkbox",
-                                "difficulty": 2,
-                                "content": "What number am I thinking of? QUESTION 2",
-                                "feedback": {
-                                    "immediate": true,
-                                    "correct": "Hey, that's right!",
-                                    "incorrect": "No! ... What are you thinking!?"
-                                }
-                            },
-                            "components": [
-                                {
-                                    "type": "npAnswer",
-                                    "data": {
-                                        "label": "800000000",
-                                        "correct": false
-                                    },
-                                    "feedback": {
-                                        "correct": "correct",
-                                        "incorrect": "No! ... incorrect!?"
-                                    },
-                                    "components": [
-                                    ]
+                                "components": []
+                            }, {
+                                "type": "npHTML",
+                                "data": {
+                                    "class": "h6 instructional",
+                                    "content": "<p>While New Dimension Shape + Fill Expert Serum works to transform skin both immediately and over time, we have 3 other Custom Shaping Experts for even more instant results!</p>"
                                 },
-                                {
-                                    "type": "npAnswer",
-                                    "data": {
-                                        "label": "7,433.6",
-                                        "correct": false,
-                                        "correct": "Hey, that's right!",
-                                        "incorrect": "No! ... What are you thinking!?"
-                                    },
-                                    "components": [
-                                    ]
+                                "components": []
+                            }, {
+                                "type": "npPage",
+                                "data": {
+                                    "id": "8483"
                                 },
-                                {
-                                    "type": "npAnswer",
-                                    "data": {
-                                        "label": "<img src=\"http://i.istockimg.com/file_thumbview_approve/33898764/2/stock-photo-33898764-isolated-chicken-with-egg.jpg\" height=\"50\" />",
-                                        "correct": true,
-                                        "correct": "Hey, that's right!",
-                                        "incorrect": "No! ... What are you thinking!?"
-                                    },
-                                    "components": [
-                                    ]
+                                "components": [{
+                                        "type": "npReveal",
+                                        "data": {
+                                            "id": "reveal-test-id",
+                                            "class": "reveal-test-class"
+                                        },
+                                        "revealItems": [{
+                                                "id": "reveal-0",
+                                                "content": "<p><strong>New Dimension Expert Liquid Tape</strong></p><p>Like a true &ldquo;liquid tape,&rdquo; this precision-accurate treatment tightens and tones the key areas of the face you want to transform. It&rsquo;s an instant tightening sensation.</p><p>It&rsquo;s perfect for the New Dimension customer who wants to intensify results in specific areas, or for a customer who&rsquo;s not ready for the serum, but wants a targeted treatment for certain spots.</p>",
+                                                "buttonImage": "../_dev_assets/assets/images/comet-lrg.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "../_dev_assets/assets/images/comet-lrg.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-1",
+                                                "content": "<p><strong>Step 1</strong></p><p>Twist applicator to &ldquo;On&rdquo; position, then apply directly onto clean, dry skin. Starting from the outer brow bone, move out and up toward temples and hold. Along upper cheeks, move from upper cheekbones up toward temples and hold.</p>",
+                                                "buttonImage": "../_dev_assets/assets/images/ELX_Welcome_70x70.png",
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "poster": "../_dev_assets/assets/images/ELX_Welcome_640x360_ENG.png",
+                                                            "baseURL": "../_dev_assets/assets/video/ELX_Welcome_640x360_ENG",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-2",
+                                                "content": "<p><strong>Step 2</strong></p><p>Also apply anywhere else you need a tightening sensation. Allow Liquid Tape to dry and set completely before applying Expert Serum. Always twist applicator to &ldquo;Off&rdquo; position when finished.</p>",
+                                                "buttonImage": "../_dev_assets/assets/images/earth.jpg",
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "../_dev_assets/assets/images/thesun.jpg",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-3",
+                                                "content": "<p><strong>Step 3</strong></p><p>Apply 2 pumps of Expert Serum to your fingertips and gently press together. When applying Serum over Liquid Tape, be sure to gently press or pat into skin, don&rsquo;t glide or sweep it on.</p><p>Starting at sides of nose, gently press Serum into skin, tracing a heart shape, following down sides of face to close the heart under your chin. Then trace a larger heart, starting in middle of forehead, pressing or patting out toward temples and down sides of face, closing the heart under your chin.</p>",
+                                                "buttonImage": "../_dev_assets/assets/images/thesun.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "../_dev_assets/assets/images/thesun.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }]
+                                    }, {
+                                        "type": "npButton",
+                                        "data": {
+                                            "link": "",
+                                            "type": "btn-next",
+                                            "class": "",
+                                            "content": "Next"
+                                        },
+                                        "components": []
+                                    }]
+                            }, {
+                                "type": "npPage",
+                                "data": {
+                                    "id": "8484"
                                 },
-                                {
-                                    "type": "npAnswer",
-                                    "data": {
-                                        "label": "<strong>Bologna!</strong>",
-                                        "correct": true
-                                    },
-                                    "components": [
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-            },
-            {
-                "type": "npPage",
-                "data": {
-                    "id": "Page3",
-                    "parentId": "QuizIntro",
-                    "title": "Question 1",
-                    "inMenu": true,
-                    "required": false
-                },
-                "components":
-                    [
-                        {
-                            "type": "npQuestion",
-                            "data": {
-                                "class": "row",
-                                "required": true,
-                                "forced": true,
-                                "type": "text",
-                                "difficulty": 3,
-                                "content": "What is the greatest thing ever!? QUESTION 3",
-                                "feedback": {
-                                    "immediate": true,
-                                    "correct": "Of course it is!",
-                                    "incorrect": "Hmmm... yeeeaaa... no!"
-                                }
-                            },
-                            "components": [
-                                {
-                                    "type": "npAnswer",
-                                    "data": {
-                                        "label": "Answer:",
-                                        "correct": "/ice\\s?cream/i"
-                                    },
-                                    "components": []
-                                }
-                            ]
-                        }
-                    ]
-            },
-            {
-                "type": "npHTML",
-                "data": {
-                    "id": "",
-                    "content": "&nbsp;<br><br>"
-                }
-            }
-        ]
+                                "components": [{
+                                        "type": "npReveal",
+                                        "data": {
+                                            "id": "reveal-test-id",
+                                            "class": "reveal-test-class"
+                                        },
+                                        "revealItems": [{
+                                                "id": "reveal-0",
+                                                "content": "<p><strong>New Dimension Shape + Sculpt Face Kit</strong></p><p>This mistake-proof sculpting kit takes the fear out of contouring! With two universal shades that work for every skintone, it couldn&rsquo;t be easier to create instant transformation, exactly where you want it.</p><p>The light shade accents cheekbones, brows and the nose by bringing light to the center of the face.</p><p>The dark shade slims and sculpts to emphasize the hollows of cheeks and create shadows where desired.</p><p>Pro Tip -&nbsp;Apply Face Kit before foundation to create a more natural look. For a more dramatic look, use after foundation and blend. Works best with a liquid or creme foundation.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-FaceKit1-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-FaceKit1-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-1",
+                                                "content": "<p><strong>Step 1</strong></p><p>Contour: Use the angled side of the included applicator or a concealer brush. From the right-hand pan of compact, apply Contour just above jaw, earlobe to chin.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-FaceKit2-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-FaceKit2-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-2",
+                                                "content": "<p><strong>Step 2</strong></p><p>Add more Contour from midpoint of ear to midway under cheekbones. Blend a touch on each side of face, at hairline.&nbsp;</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-FaceKit3-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "assets/videos/Assets-LP3-Reveal-FaceKit3-v1r1",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-3",
+                                                "content": "<p><strong>Step 3</strong></p><p>Highlight: Use the flat side of the included applicator. From left-hand pan, apply Highlighter down the center of forehead, nose, Cupid&#39;s bow and chin. Add more on cheekbones. Use fingertip to blend, blend, blend both Contour and Highlight.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-FaceKit4-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-FaceKit4-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }]
+                                    }, {
+                                        "type": "npButton",
+                                        "data": {
+                                            "link": "",
+                                            "type": "btn-next",
+                                            "class": "",
+                                            "content": "Next"
+                                        },
+                                        "components": []
+                                    }]
+                            }, {
+                                "type": "npPage",
+                                "data": {
+                                    "id": "8485"
+                                },
+                                "components": [{
+                                        "type": "npReveal",
+                                        "data": {
+                                            "id": "reveal-test-id",
+                                            "class": "reveal-test-class"
+                                        },
+                                        "revealItems": [{
+                                                "id": "reveal-0",
+                                                "content": "<p><strong>New Dimension Shape + Sculpt Eye Kit</strong></p><p>This expertly coordinated trio of shades plays with color and finish to create the perfect naturally sculpted eye.</p><p>This universal palette features a Smoothing Base, a Contour Shade, and a Highlighter Cream.</p><p>The <strong>Smoothing Base</strong> preps the lid for the day while the <strong>Contour Shade </strong>defines the eye depending on desired shape and the <strong>Highlighter Cream </strong>accentuates and accents the look.</p><p>Pro Tip -&nbsp;Keep your kit fit by using one applicator tip for the creamy formulas (Smoothing Base and Highlight), and the other tip for the powder Contour formula.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-EyeKit1-TH-v1r1_0.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-EyeKit1-v1r1_0.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-1",
+                                                "content": "<p><strong>Step 1</strong></p><p>Smooth -&nbsp;From left-hand pan of compact, apply Smoothing Base on eyelid and to inner and outer corners of eye. Use fingertips or included brush applicator.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-EyeKit2-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-EyeKit2-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-2",
+                                                "content": "<p><strong>Step 2</strong></p><p>Highlight -&nbsp;From center pan, sweep Highlighter along browbone and to inner corner of eye. Use fingertips or same side of applicator.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-EyeKit3-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-EyeKit3-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-3",
+                                                "content": "<p><strong>Step 3</strong></p><p>Contour -&nbsp;Flip the applicator and using the fresh brush, apply Contour from right-hand pan along outer third of top lashline. Then sweep in natural crease of eye.&nbsp;</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-EyeKit4-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npVideo",
+                                                        "data": {
+                                                            "baseURL": "assets/videos/Assets-LP3-Reveal-EyeKit4-v1r1",
+                                                            "types": ["mp4"]
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }, {
+                                                "id": "reveal-4",
+                                                "content": "<p><strong>Step 4&nbsp;&nbsp;</strong>&nbsp;</p><p>In an instant, you&#39;ll see the transformation. New Dimension Eye Kit enhances your eye shape and definition, creating a beautifully natural-looking eye.</p>",
+                                                "buttonImage": "assets/styles/reveal_thumbnail/public/Assets-LP3-Reveal-EyeKit5-TH-v1r1.jpg",
+                                                "components": [{
+                                                        "type": "npImage",
+                                                        "data": {
+                                                            "src": "assets/styles/reveal_hero/public/Assets-LP3-Reveal-EyeKit5-v1r1.jpg"
+                                                        },
+                                                        "components": []
+                                                    }]
+                                            }]
+                                    }]
+                            }]
+                    }]
+            }]
     }]

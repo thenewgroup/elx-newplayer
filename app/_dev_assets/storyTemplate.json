@@ -85,7 +85,7 @@
                                 "data": {
                                     "link": "/api/favorites/product/Product-Manifest-Advanced-Night-Repair-Synchronized-Recovery-Complex-II",
                                     "type": "",
-                                    "class": "col-sm-4 btn btn-favorite btn-open-favorites center-padding",
+                                    "class": "btn btn-favorite btn-open-favorites center-padding",
                                     "content": "<span class='glyphicon glyphicon-heart-empty' aria-hidden='true'></span>  Favorite this"
                                 },
                                 "components": [
