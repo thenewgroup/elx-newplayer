@@ -17,8 +17,8 @@
                         var cmpData = $scope.component.data,
                                 revealItems = $scope.component.revealItems,
                                 revealItemsIndex = $scope.component.idx,
-                                revealItemsButtonImage = $scope.component.revealItems.buttonImage;
-                        var buttonData = $scope.feedback || {};
+                                revealItemsButtonImage = $scope.component.revealItems.buttonImage,
+                                buttonData = $scope.feedback || {};
                         this.revealItems = $scope.component.revealItems;
                         this.revealItemComponent = $scope.component.revealItems[0];
                         this.revealItemComponents = $scope.component.revealItems;
@@ -61,13 +61,30 @@
                                 //get actuall height
                                 //////////////////////////////////////////////////////////////////////////////////////
                                 imagesLoaded(document.querySelector('.reveal-objects-wrapper'), function (instance) {
+                                    var contentMaxHeight = Math.max.apply(null, $('.reveal-background').map(function () {
+                                        return $(this).outerHeight(true);
+                                    }).get());
                                     var maxHeight = Math.max.apply(null, $('.reveal-object').map(function () {
                                         return $(this).outerHeight(true);
                                     }).get());
+                                    var logoHeight = $('.np_renutriv-logo-image').outerHeight(true);
+                                    var headlineHeight = $('.np_headline').outerHeight(true);
+                                    var instructionalHeight = $('.np_instructional').outerHeight(true);
                                     var npCmpWrapperHeight = $('.np-cmp-wrapper').outerHeight(true);
+                                    var revealNavigationHeight = $('.reveal-navigation').outerHeight(true);
                                     var outsidePaddingHeight = $('.np_outside-padding').outerHeight(true);
+                                    var outsideTopHeight = logoHeight + headlineHeight + instructionalHeight;
+//                                    console.log(
+//                                            '\n::::::::::::::::::::::::::::::::::::::npRevealController===get actuall height:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                            '\n::maxHeight::', maxHeight,
+//                                            '\n::npCmpWrapperHeight::', npCmpWrapperHeight,
+//                                            '\n::outsidePaddingHeight::', outsidePaddingHeight,
+//                                            '\n::outsideTopHeight::', outsideTopHeight,
+//                                            '\n::maxHeight + npCmpWrapperHeight + 100::', maxHeight + npCmpWrapperHeight + 50,
+//                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                            );
                                     TweenMax.set($('.np_outside-padding'), {
-                                        height: maxHeight + npCmpWrapperHeight + 100
+                                        height: maxHeight + (outsideTopHeight * 2) + revealNavigationHeight + 50
                                     });
 //                                    var videoHeight = $element.find('video');
                                     //////////////////////////////////////////////////////////////////////////////////////
