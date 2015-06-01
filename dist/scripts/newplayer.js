@@ -231,12 +231,14 @@
       $log.debug('i18n | initWithDict internal dict updated', dict);
     }
 
+    /**
+     * Returns the i18n key for the supplied key if present,
+     * otherwise returns the key unchanged
+     * @param forKey
+     * @return {*}
+     */
     function get(forKey) {
-      if( dict.hasOwnProperty(forKey)) {
-        return dict[forKey];
-      }
-
-      return '';
+      return dict.hasOwnProperty(forKey) ? dict[forKey] : forKey;
     }
 
     var service = {
@@ -1875,11 +1877,11 @@
             .module('newplayer.component')
             /** @ngInject */
             .controller('npButtonController',
-                    function ($log, $scope, $sce, $location, $element, ConfigService, ManifestService, APIService, TrackingService) {
+                    function ($log, $scope, $sce, $location, $element, ConfigService, ManifestService, APIService, TrackingService, i18nService) {
                         var cmpData = $scope.component.data || {};
                         $log.debug('npButton::data', cmpData);
                         this.content = '';
-                        var btnContent = cmpData.content;
+                        var btnContent = i18nService.get(cmpData.content);
                         if (angular.isString(btnContent)) {
                             this.content = $sce.trustAsHtml(btnContent);
                         }
@@ -1889,7 +1891,7 @@
                         this.linkInternal = true;
                         this.apiLink = false;
                         var btnLink = cmpData.link;
-                        var buttonType = cmpData.type;
+                        var buttonType = cmpData.type; // would this break if moved up? It's used above but declared here
                         var $buttonTypeFavorite = '';
                         //////////////////////////////////////////////////////////////////////////////////////
                         //check type and add class if next button type
@@ -1998,7 +2000,7 @@
 //                                $('.play', this).addClass('pausing');
 //                                $('.play', this).removeClass('playing');
 //                            });
-//                            
+//
                             if ($element.find('.btn-open-favorites')) {
                                 $element.find('.elx-heart').toggleClass("elx-heart-filled");
                             }
@@ -2030,6 +2032,7 @@
                     }
             );
 })();
+
 (function () {
 
   'use strict';
