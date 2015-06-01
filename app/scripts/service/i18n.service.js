@@ -30,12 +30,14 @@
       $log.debug('i18n | initWithDict internal dict updated', dict);
     }
 
+    /**
+     * Returns the i18n key for the supplied key if present,
+     * otherwise returns the key unchanged
+     * @param forKey
+     * @return {*}
+     */
     function get(forKey) {
-      if( dict.hasOwnProperty(forKey)) {
-        return dict[forKey];
-      }
-
-      return '';
+      return dict.hasOwnProperty(forKey) ? dict[forKey] : forKey;
     }
 
     var service = {
