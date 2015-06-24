@@ -66,6 +66,17 @@
                                 ]
                             },
                             {
+                                "type": "npStopWatch",
+                                "data": {
+                                    "autoStart": true,
+                                    "hideNavigation": true,
+                                    "class": "h5",
+                                    "content": ""
+                                },
+                                "components": [
+                                ]
+                            },
+                            {
                                 "type": "npQuiz",
                                 "data": {
                                     "type": "assessment",
@@ -88,6 +99,9 @@
                                                     "negativeFeedback": "<p>ehh?!?!</p>",
                                                     "image": "",
                                                     "required": true,
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit",
                                                     "req": [
                                                         "mediaelement/GreenSock/TweenMax.min.js",
                                                         "mediaelement/GreenSock/utils/Draggable.min.js",
@@ -159,6 +173,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "Which of the following instantly provides skin with natural radiance?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"
@@ -238,6 +255,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "Which of the following includes an exclusive luxurious gold spatula?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"
@@ -317,6 +337,9 @@
                                                     "type": "checkbox",
                                                     "difficulty": "",
                                                     "content": "The Dual Infusion and Transformative Energy Creme both feature beautiful herbaceous floral scents, including fresh green and citrus notes of lemon and grapefruit, along with which of the following?",
+                                                    "questionLabel": "question label",
+                                                    "answerLabel": "answer label",
+                                                    "submitLabel": "submit",
                                                     "buttons": {
                                                         "submit": "Submit",
                                                         "next": "Next"
@@ -411,6 +434,9 @@
                                                             "type": "checkbox",
                                                             "difficulty": 1,
                                                             "content": "What number am I thinking of? QUESTION 1",
+                                                            "questionLabel": "question label",
+                                                            "answerLabel": "answer label",
+                                                            "submitLabel": "submit",
                                                             "feedback": {
                                                                 "correct": "Hey, that's right!",
                                                                 "incorrect": "No! ... What are you thinking!?"

@@ -1,0 +1,53 @@
+<npStopWatch class="{{component.type}} np-cmp-wrapper np-stopwatch" ng-controller="npStopWatchController as npStopWatch">
+    <div class="debug">
+        <h3>{{component.type}} --
+            <small>{{component.idx}}</small>
+        </h3>
+    </div>
+    <div ng-bind-html="npStopWatch.content" class="np-cmp-main"></div>
+    <nav class="controls stopwatch-navigation " ng-hide="npStopWatch.showNavigation">
+        <a href="#" class="btn btn-primary" ng-click="npStopWatch.start()">Start</a>
+        <a href="#" class="btn btn-primary" ng-click="npStopWatch.capture();">Capture</a>
+        <a href="#" class="btn btn-primary" ng-click="npStopWatch.stop();">Stop</a>
+        <a href="#" class="btn btn-primary" ng-click="npStopWatch.restart();">Restart</a>
+    </nav>
+    <div class="stopwatch-icon">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-248 375.4 31.6 34" style="enable-background:new -248 375.4 31.6 34;" xml:space="preserve">
+            <g id="XMLID_11_">
+                <g id="XMLID_14_">
+                    <g id="XMLID_67_">
+                        <path id="XMLID_68_" class="st0" d="M-218.8,385.4l1.1-0.8c0.6-0.4,0.7-1.2,0.3-1.7l-0.8-1.2c-0.4-0.6-1.2-0.7-1.7-0.3l-1.4,0.9 c-2-2-4.6-3.4-7.5-4.1v-1.6c0-0.7-0.6-1.2-1.2-1.2h-4.5c-0.7,0-1.2,0.6-1.2,1.2v1.6c-7,1.6-12.3,7.9-12.3,15.4 c0,8.7,7.1,15.8,15.8,15.8s15.8-7.1,15.8-15.8C-216.5,390.6-217.4,387.8-218.8,385.4z M-232.3,406.5c-7.1,0-12.9-5.8-12.9-12.9  c0-7.1,5.8-12.9,12.9-12.9c7.1,0,12.9,5.8,12.9,12.9C-219.4,400.7-225.2,406.5-232.3,406.5z"/>
+                    </g>
+                </g>
+                <g id="XMLID_15_">
+                    <g id="XMLID_42_">
+                        <circle id="XMLID_43_" class="st0" cx="-232.3" cy="383.8" r="1.3"/>
+                    </g>
+                </g>
+                <g id="XMLID_25_">
+                    <g id="XMLID_39_">
+                        <circle id="XMLID_40_" class="st0" cx="-232.3" cy="403.3" r="1.3"/>
+                    </g>
+                </g>
+                <g id="XMLID_26_">
+                    <g id="XMLID_36_">
+                        <circle id="XMLID_37_" class="st0" cx="-242.2" cy="393.6" r="1.3"/>
+                    </g>
+                </g>
+                <g id="XMLID_27_">
+                    <g id="XMLID_33_">
+                        <circle id="XMLID_34_" class="st0" cx="-222.4" cy="393.6" r="1.3"/>
+                    </g>
+                </g>
+                <g id="XMLID_28_">
+                    <g id="XMLID_30_">
+                        <path id="stopwatch-second-hand"  class="st0" d="M-230.2,393.6c0-0.1,0-0.3,0-0.4l0,0l-1.2-10.2c0-0.4-0.4-0.8-0.9-0.8  c-0.4,0-0.8,0.4-0.8,0.9l-1.2,10.2l0,0c0,0.1,0,0.3,0,0.4c0,1.3,0.8,2.3,2.1,2.3C-231,395.9-230.2,394.8-230.2,393.6z"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="np-stopwatch-counter subhead-copy"></div>
+    <table class="np-stopwatch-results subhead-copy"></table>
+    <div np-component ng-if="subCmp" ng-repeat="component in components" idx="{{component.idx}}"></div>
+</npStopWatch>

@@ -65,12 +65,12 @@
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANRTriviaTemplate.json" np-override-url=""></np-layer>-->
                     
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2DragAndDropMatchTemplate.json" np-override-url="" np-analytics-service="vm.doTrack"></np-layer>-->
-                    <np-layer np-id="sample" np-url="../_dev_assets/ANR2DragAndDropSelectTemplate.json" np-override-url=""></np-layer>
+                    <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2DragAndDropSelectTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2DragAndPrioritizeTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2FlashCardsTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2HotspotTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2QandATemplate.json" np-override-url=""></np-layer>-->
-                    <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2QuizTemplate.json" np-override-url="" np-min-passing="0.8" assessment-io="vm.assessmentIO" i18n="vm.i18n"></np-layer>-->
+                    <np-layer np-id="sample" np-url="../_dev_assets/ANR2QuizTemplate.json" np-override-url="" np-min-passing="0.8" assessment-io="vm.assessmentIO" i18n="vm.i18n"></np-layer>
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2ListTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2RevealTemplate.json" np-override-url=""></np-layer>-->
                     <!--<np-layer np-id="sample" np-url="../_dev_assets/ANR2TriviaTemplate.json" np-override-url=""></np-layer>-->
@@ -125,6 +125,8 @@
         </div>
         <!-- build:js({app,.}) scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -176,6 +178,7 @@
         <script src="scripts/component/npAsResult/npAsResult.js"></script>
         <script src="scripts/component/npVideo/npVideo.js"></script>
         <script src="scripts/component/npReveal/npReveal.js"></script>
+        <script src="scripts/component/npStopWatch/npStopWatch.js"></script>
         <script src="scripts/component/npFlashCards/npFlashCards.js"></script>
         <script src="scripts/component/npMatch/npMatch.js"></script>
         <script src="scripts/component/npMatchRow/npMatchRow.js"></script>
