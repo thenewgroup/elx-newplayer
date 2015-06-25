@@ -8,6 +8,9 @@
   function AssessmentIO($log) {
     var vm = this;
       vm.type = 'AssessmentIO (default)';
+    vm.updateTime = function(questionTime, assessment) {
+      $log.debug('AssessmentIO::updateTime function stub', questionTime, assessment);
+    };
     vm.updateQuestion = function(questionID, assessment) {
       $log.debug('AssessmentIO::updateQuestion function stub', questionID, assessment);
     };

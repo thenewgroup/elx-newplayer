@@ -4,8 +4,15 @@
             .module('newplayer.component')
             /** @ngInject */
             .controller('npQuizController',
-                    function ($log, $scope, AssessmentService) {
-                        var minPassing, i, j, lastComponent, lastComponentIndex, nLastComponent, nLastComponentIndex, cmpData = $scope.component.data;
+                    function ($log, $scope, $rootScope, AssessmentService) {
+                        var minPassing,
+                                i,
+                                j,
+                                lastComponent,
+                                lastComponentIndex,
+                                nLastComponent,
+                                nLastComponentIndex,
+                                cmpData = $scope.component.data;
                         $log.debug('npQuiz::data', cmpData);
                         if (cmpData.hasOwnProperty('assessed') && parseInt(cmpData.assessed) === 1) {
                             if (cmpData.hasOwnProperty('percentage')) {
@@ -14,18 +21,6 @@
                                     minPassing = minPassing / 100;
                                 }
                             }
-//                            var getResultsBtn = {
-//                                "type": "npButton",
-//                                "data": {
-//                                    "link": "",
-//                                    "type": "btn-next",
-//                                    "class": "",
-//                                    "content": "See Results"
-//                                },
-//                                "components": [
-//                                ]
-//                            };
-                            // add the results button if the last page is a npAsResult
                             lastComponentIndex = $scope.component.components.length - 1;
                             if (lastComponentIndex >= 0) {
                                 lastComponent = $scope.component.components[lastComponentIndex];
@@ -57,5 +52,4 @@
                         $log.debug('npQuiz::component loaded!');
                     }
             );
-
 })();

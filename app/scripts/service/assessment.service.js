@@ -4,13 +4,13 @@
     angular
             .module('newplayer.service')
             .service('AssessmentService', AssessmentService);
-
     /** @ngInject */
     function AssessmentService($log, $rootScope, ConfigService, AssessmentIOService) {
         var assessmentID, pages, questions,
                 vm = this,
                 isAssessing,
                 minPassing = 0,
+                assessmentTime = 0,
                 io = AssessmentIOService, // This is the I/O module for saving/restoring assessment stuff
                 config = ConfigService.getConfig();
         if (config.hasOwnProperty('assessmentIO') && typeof config.assessmentIO === 'object' && config.assessmentIO.hasOwnProperty('updateFinal')) {
@@ -20,7 +20,6 @@
             $log.debug('[Assessment] using default assessmentIO');
         }
         // NOTE: this function is run below to initialize this service
-
         /**
          * Initializes the assessment service back to its 'blank' state.
          */
@@ -28,6 +27,7 @@
             assessmentID = false;
             isAssessing = false;
             minPassing = -1;
+            assessmentTime = 0;
             questions = {
                 required: 0, total: 0, inventory: {},
                 answered: {requiredCorrect: 0, inventory: {}}
@@ -39,7 +39,6 @@
         }
         // NOTE: reset when the IIFE executes after the script is loaded.
         reset();
-
         /**
          * Begins an assessment session for a given ID and optionally a minimum passing score
          *
@@ -53,7 +52,6 @@
             setMinPassing(newMinPassing);
             isAssessing = true;
         }
-
         /**
          * Mark assessment as complete, whatever that will mean to the end system
          */
@@ -75,10 +73,10 @@
                 minPassing: minPassing,
                 pages: pages,
                 questions: questions,
-                score: getScore()
+                score: getScore(),
+                assessmentTime: assessmentTime
             };
         }
-
         /**
          * This sets the mechanism for how the assessment service communicates data
          * to an external data store. See the example in the assessmentio.service.js
@@ -89,7 +87,6 @@
             // at some point this may change to validating the plugin
             io = newAssessmentIO;
         }
-
         // ---------------------------| Scoring
         /**
          * Get the minimum passing score
@@ -98,7 +95,6 @@
         function getMinPassing() {
             return minPassing;
         }
-
         /**
          * Sets the minimum passing score for this assessment.
          *
@@ -119,7 +115,6 @@
                 minPassing = 0;
             }
         }
-
         /**
          * Get the user's current score according to page and answer counts
          *
@@ -140,7 +135,6 @@
             }
             return Math.min((pages.viewed.required + questions.answered.requiredCorrect) / totalRequired, 1);
         }
-
         /**
          * Determine if the user is passing based on the minPassing score
          *
@@ -155,7 +149,6 @@
             }
             return getScore() >= minPassing;
         }
-
         // ---------------------------| Pages
         function setRequiredPages(newRequiredPages) {
             var requiredPagesInt = parseInt(newRequiredPages);
@@ -165,7 +158,6 @@
             }
             pages.required = requiredPagesInt;
         }
-
         /**
          * Add a potential page to view and whether it is required for score
          *
@@ -187,7 +179,6 @@
                 //}
             }
         }
-
         /**
          * Record that a page was viewed
          *
@@ -207,7 +198,6 @@
                 $log.warning('Assessment:pageViewed | page already viewed, ', pageId);
             }
         }
-
         /**
          * Gets all pageview data
          *
@@ -216,7 +206,6 @@
         function getPageStats() {
             return pages;
         }
-
         /**
          * Gets the count of number of unique pageviews
          * @returns {pages.viewed.total|*}
@@ -234,7 +223,6 @@
             questions.required = requiredQuestionsInt;
             dumpState();
         }
-
         /**
          * Record that a question was correctly answered and whether it was required
          *
@@ -260,7 +248,6 @@
                 //}
             }
         }
-
         /**
          * Record that a question was correctly answered and whether it was required
          *
@@ -268,6 +255,11 @@
          * @param isCorrect bool Whether the answer provided is correct
          */
         function questionAnswered(questionId, isCorrect) {
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::::AssessmentService::questionAnswered:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::assessmentTime::', assessmentTime,
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
             $log.info('[Assessment::questionAnswered] ', questionId, isCorrect);
             // double-check this has an entry
             if (!questions.inventory.hasOwnProperty(questionId)) {
@@ -287,7 +279,6 @@
                 $log.warn('[Assessment::questionAnswered] question already answered, ', questionId);
             }
         }
-
         /**
          * Gets all questions stats
          *
@@ -296,7 +287,21 @@
         function getQuestionStats() {
             return questions;
         }
-
+        /**
+         * Set the current time
+         *
+         * @currentAssessmentTime current stopwatch time in minutes:seconds:milliseconds
+         */
+        function setAssessmentTime(currentAssessmentTime) {
+            assessmentTime = currentAssessmentTime;
+            io.updateTime(assessmentTime, getAssessment());
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::::AssessmentService::setAssessmentTime:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::assessmentTime::', assessmentTime,
+                    '\n::getAssessment()::', getAssessment(),
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
+        }
         /**
          * DEBUG ONLY
          */
@@ -325,6 +330,7 @@
             getQuestionStats: getQuestionStats,
             questionAnswered: questionAnswered,
             setRequiredQuestions: setRequiredQuestions,
+            setAssessmentTime: setAssessmentTime,
             // DEBUG
             dumpState: dumpState
         };
