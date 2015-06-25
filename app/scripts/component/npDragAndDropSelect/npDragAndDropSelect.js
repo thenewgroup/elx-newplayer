@@ -5,7 +5,7 @@
             .module('newplayer.component')
             .controller('npDragAndDropSelectController',
                     /** @ngInject */
-                            function ($log, $scope, $sce, $element, AssessmentService) {
+                            function ($log, $scope, $rootScope, $sce, $element, AssessmentService) {
                                 var cmpData = $scope.component.data;
                                 var buttonData = $scope.feedback || {};
                                 $log.debug('npDragAndDropSelect::data', cmpData, buttonData);
@@ -24,11 +24,6 @@
                                 $scope.ID = cmpData.id;
                                 $scope.select = cmpData.select;
                                 $scope.randomized = cmpData.randomized;
-                                console.log(
-                                        '\n::::::::::::::::::::::::::::::::::::::$scope.image:::::::::::::::::::::::::::::::::::::::::::::::::::::::',
-                                        '\n::$scope.image::', $scope.image,
-                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                        );
                                 setTimeout(function () {
                                     $scope.$apply(function () {
                                         //////////////////////////////////////////////////////////////////////////////////////
@@ -91,10 +86,10 @@
                             //set evaluate button logic
                             //////////////////////////////////////////////////////////////////////////////////////
                             /** @ngInject */
-                            .directive('npDragAndDropSelectEvaluate', function ($log, AssessmentService) {
+                            .directive('npDragAndDropSelectEvaluate', function ($log, AssessmentService, $rootScope) {
                                 return {
                                     restrict: 'A',
-                                    link: function ($scope, $element, $attrs) {
+                                    link: function ($scope, $element, $attrs ) {
                                         //////////////////////////////////////////////////////////////////////////////////////
                                         //get ready
                                         //////////////////////////////////////////////////////////////////////////////////////
@@ -122,11 +117,6 @@
                                                 var hitAreaSelectedLength = '';
                                                 var hitAreaSelectedIncorrect = '';
                                                 hitAreaLength = $("[data-match=true]").length;
-                                                console.log(
-                                                        '\n::::::::::::::::::::::::::::::::::::::getOffsetRect::$( #npHTML\\:0_0_1 ):::::::::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                        '\n::$( #npHTML\\:0_0_1 )::', $("#npHTML\\:0_0_1").height(),
-                                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                        );
                                                 //////////////////////////////////////////////////////////////////////////////////////
                                                 //offset method
                                                 //////////////////////////////////////////////////////////////////////////////////////
@@ -162,50 +152,16 @@
                                                     submitButton = document.getElementsByClassName('btn-submit');
                                                     submitButtonPosition = getOffsetRect(submitButton[0]);
                                                     offsetHeight = $("#npHTML\\:0_0_1").height();
-//                                                    offsetHeight = submitButtonPosition.top;
                                                     nextButtonPosition = $('.btn-next').offset().top;
                                                     TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                        height: 1900,
-//                                                      height: $('.btn-next').outerHeight(true) + offsetHeight,
                                                         height: $('.btn-next').outerHeight(true) + offsetHeight,
-//                                                      height: $('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true) + offsetHeight,
                                                         ease: Power4.easeOut
                                                     });
                                                     maxHeight = Math.max.apply(null, $('.select-response-feedback').map(function () {
                                                         return $(this).outerHeight(true);
                                                     }).get());
                                                     $('.btn-next').css("margin-top", maxHeight + 20);
-//                                                    var buttonTop = $('.select-response-wrapper').top() + maxHeight;
-//                                                    var parentPos = $('.select-correct-feedback')[0].parent().offset();
-//                                                    $('.btn-next').css('top', buttonTop);
-//                                                    TweenMax.to($('.btn-next'), 0.5, {
-//                                                        top: $('.select-response-wrapper').position().top + maxHeight,
-//                                                        ease: Power4.easeOut
-//                                                    });
-                                                    console.log(
-                                                            '\n::::::::::::::::::::::::::::::::::::::npDragAndDropSelect::maxHeight:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                            '\n::maxHeight:', maxHeight,
-                                                            '\n::outsideHeight:', outsideHeight,
-                                                            '\n::offsetHeight:', offsetHeight,
-                                                            '\n::nextButtonPosition:', nextButtonPosition,
-                                                            '\n::submitButtonPositionTop:', submitButtonPosition.top,
-                                                            '\n::$(.btn-submit).offset().top:', $('.btn-submit').offset().top,
-                                                            '\n::$(.btn-submit).position().top:', $('.btn-submit').position().top,
-                                                            '\n::$(.btn-submit).scrollTop():', $('.btn-submit').scrollTop(),
-                                                            '\n::$(.btn-next).outerHeight(true):', $('.btn-next').outerHeight(true),
-                                                            '\n::$(.draggableContainer).outerHeight(true):', $('#draggableContainer').outerHeight(true),
-                                                            '\n::$(.np_outside-padding).outerHeight(true):', $('.np_outside-padding').outerHeight(true),
-                                                            '\n::$(.select-correct-feedback).outerHeight(true):', $('.select-correct-feedback').outerHeight(true),
-                                                            '\n::$(.select-incorrect-feedback).outerHeight(true):', $('.select-incorrect-feedback').outerHeight(true),
-                                                            '\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                            );
                                                     if (($('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true)) <= outsideHeight) {
-                                                        console.log(
-                                                                '\n::::::::::::::::::::::::::::::::::::::npDragAndDropSelect::<:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                                '\n::outsideHeight:', outsideHeight,
-                                                                '\n::offsetHeight:', offsetHeight,
-                                                                '\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                                );
                                                         outsideHeight = $('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true);
                                                     }
                                                 };
@@ -216,17 +172,11 @@
                                                 $scope.evaluate = function () {
                                                     hitAreaSelectedLength = $("[data-match=selected]").length;
                                                     hitAreaSelectedIncorrect = $("[data-match=skeletor]").length;
-//                                                    outsideHeight = 0;
-//                                                    outsideHeight = $('.np_outside-padding').outerHeight(true);
                                                     var isPassing = false;
                                                     if (Number(hitAreaLength) === Number(hitAreaSelectedLength) && (hitAreaSelectedIncorrect === 0)) {
                                                         if (outsideHeight === 0) {
                                                             outsideHeight = $('.btn-next').outerHeight(true) + offsetHeight;
                                                         }
-//                                                        TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                            height: outsideHeight + $('.select-correct-feedback').outerHeight(true) + $('.btn-next').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         TweenMax.to($('.select-response-correct'), 0.5, {
                                                             autoAlpha: 1,
                                                             height: $('.select-correct-feedback').outerHeight(true),
@@ -236,19 +186,11 @@
                                                             autoAlpha: 0,
                                                             ease: Power4.easeOut
                                                         });
-//                                                        TweenMax.to($('.btn-next'), 0.5, {
-//                                                            top: nextButtonPosition + $('.select-correct-feedback').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         isPassing = true;
                                                     } else {
                                                         if (outsideHeight === 0) {
                                                             outsideHeight = $('.btn-next').outerHeight(true) + offsetHeight;
                                                         }
-//                                                        TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                            height: outsideHeight + $('.select-incorrect-feedback').outerHeight(true) + $('.btn-next').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         TweenMax.to($('.select-response-correct'), 0.5, {
                                                             autoAlpha: 0,
                                                             ease: Power4.easeOut
@@ -258,12 +200,9 @@
                                                             height: $('.select-incorrect-feedback').outerHeight(true),
                                                             ease: Power4.easeOut
                                                         });
-//                                                        TweenMax.to($('.btn-next'), 0.5, {
-//                                                            top: nextButtonPosition + $('.select-incorrect-feedback').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         isPassing = false;
                                                     }
+                                                    $rootScope.$broadcast('stopWatchReportEvent');
                                                     AssessmentService.questionAnswered(cmpData.id, isPassing);
                                                 };
                                             });

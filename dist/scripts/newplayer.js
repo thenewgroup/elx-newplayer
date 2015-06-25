@@ -1114,6 +1114,7 @@
         var assessmentID, pages, questions,
                 vm = this,
                 isAssessing,
+                assessmentTime,
                 minPassing = 0,
                 io = AssessmentIOService, // This is the I/O module for saving/restoring assessment stuff
                 config = ConfigService.getConfig();
@@ -1390,6 +1391,20 @@
             } else {
                 $log.warn('[Assessment::questionAnswered] question already answered, ', questionId);
             }
+        }
+        
+        /**
+         * Set the current time
+         *
+         * @currentAssessmentTime current stopwatch time in minutes:seconds:milla seconds
+         */
+        function setAssessmentTime(currentAssessmentTime) {
+            assessmentTime = currentAssessmentTime;
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::::newplayer.js::setAssessmentTime:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::assessmentTime::', assessmentTime,
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
         }
 
         /**

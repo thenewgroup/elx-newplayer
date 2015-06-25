@@ -66,17 +66,6 @@
                                 ]
                             },
                             {
-                                "type": "npStopWatch",
-                                "data": {
-                                    "autoStart": true,
-                                    "hideNavigation": true,
-                                    "class": "h5",
-                                    "content": ""
-                                },
-                                "components": [
-                                ]
-                            },
-                            {
                                 "type": "npQuiz",
                                 "data": {
                                     "type": "assessment",
@@ -87,6 +76,18 @@
                                     "required": "true"
                                 },
                                 "components": [
+                                    {
+                                        "type": "npStopWatch",
+                                        "data": {
+                                            "autoStart": true,
+                                            "hideNavigation": true,
+                                            "report": true,
+                                            "class": "",
+                                            "content": ""
+                                        },
+                                        "components": [
+                                        ]
+                                    },
                                     {
                                         "type": "npPage",
                                         "data": {
@@ -485,6 +486,17 @@
                                                             }
                                                         ]
                                                     }
+                                                ]
+                                            },
+                                            {
+                                                "type": "npButton",
+                                                "data": {
+                                                    "link": "",
+                                                    "type": "btn-next",
+                                                    "class": "",
+                                                    "content": "Next"
+                                                },
+                                                "components": [
                                                 ]
                                             }
                                         ]

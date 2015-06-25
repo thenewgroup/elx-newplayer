@@ -363,12 +363,12 @@
             self.pageComponentIdx = componentIdx;
             self.pageId = pageId;
             $rootScope.$broadcast('npPageIdChanged', pageId);
-                    console.log(
-                            '\n::::::::::::::::::::::::::::::::::::::setPageId::setPageId:::::::::::::::::::::::::::::::::::::::::::::::',
-                            '\n::self.pageComponentIdx::', self.pageComponentIdx,
-                            '\n::componentIdx::', componentIdx,
-                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                            );
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::setPageId::setPageId:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::self.pageComponentIdx::', self.pageComponentIdx,
+                    '\n::componentIdx::', componentIdx,
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
         };
         self.getNextPageId = function () {
             var nextPage,
@@ -377,7 +377,6 @@
                     pageParentComponent,
                     pageParentComponentIdx,
                     thisPageId = self.getPageId();
-
             $log.debug('ManifestService::getNextPageId', self);
             if (!thisPageId) {
                 $log.warn('ManifestService::getNextPageId | thisPage is not valid');
@@ -463,12 +462,9 @@
             //$log.debug('ManifestService::goToFirstPage | begin');
             var firstPage = self.getFirst('npPage');
             //$log.debug('ManifestService::goToFirstPage | found page', firstPage);
-
             self.setPageId(firstPage.data.id, firstPage.idx);
         }
-
         self.goToFirstPage = goToFirstPage;
-
         self.goToNextPage = function () {
             var thisPageId = self.getPageId();
             var nextPage,
@@ -476,14 +472,22 @@
                     i,
                     pageParentComponent,
                     pageParentComponentIdx = self.pageComponentIdx.slice(0); // copy the array stack here so we can mangle it
+//            console.log(
+//                    '\n::::::::::::::::::::::::::::::::::::::ManifestService::goToNextPage$broadcast:::::::::::::::::::::::::::::::::::::::::::::::::',
+////                                    '\n::stopWatchReportEvent ::', stopWatchReportEvent,
+//                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                    );
+//            $rootScope.$broadcast('stopWatchReportEvent');
             if (!thisPageId) {
                 $log.warn('ManifestService::goToNextPage | thisPage is not valid');
                 return;
             }
             // We need to start looking for the component after current page component
-            i = parseInt(pageParentComponentIdx.pop(), 10); // pop this child off the array so we can have the parent
-            i++; // let's always start with the index after ours
-            //$log.debug('ManifestService::goToNextPage | for pageId, componentIdx', thisPageId, componentIdx);
+            // pop this child off the array so we can have the parent
+            i = parseInt(pageParentComponentIdx.pop(), 10);
+            i++;
+            // let's always start with the index after ours
+            // $log.debug('ManifestService::goToNextPage | for pageId, componentIdx', thisPageId, componentIdx);
             pageParentComponent = self.getComponent(pageParentComponentIdx);
             for (/* initialized above*/; i < pageParentComponent.components.length; i++) {
                 var component = pageParentComponent.components[i];
@@ -496,31 +500,21 @@
                     }
                     nextPage = component.data.id;
                     nextPageComponentIdx = component.idx;
-                    //console.log(
-                    //        '\n::::::::::::::::::::::::::::::::::::::component.type======:::::::::::::::::::::::::::::::::::::::::::::::::',
-                    //        '\n::component::', component,
-                    //        '\n::component.data::', component['data'],
-                    //        '\n::component.data.id::', component.data.id,
-                    //        '\n::component.data.last::', component.data.last,
-                    //        '\n::nextPage::', nextPage,
-                    //        '\n::nextPageComponentIdx::', nextPageComponentIdx,
-                    //        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                    //        );
                     $log.debug('ManifestService::goToNextPage | --> found nextPage, nextPageComponentIdx', nextPage, nextPageComponentIdx);
                     break;
                 }
             }
             if (!!nextPageComponentIdx) {
                 //$log.debug('ManifestService::goToNextPage | sending client to nextPage', nextPage);
-                console.log(
-                        '\n::::::::::::::::::::::::::::::::::::::goToNextPage===goToNextPage:::::::::::::::::::::::::::::::::::::::::::::::::',
-                        '\n::i::', i,
-                        '\n::nextPage::', nextPage,
-                        '\n::thisPageId::', thisPageId,
-                        '\n::nextPageComponentIdx::', nextPageComponentIdx,
-                        '\n::pageParentComponentIdx::', pageParentComponentIdx,
-                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                        );
+//                console.log(
+//                        '\n::::::::::::::::::::::::::::::::::::::goToNextPage===goToNextPage:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                        '\n::i::', i,
+//                        '\n::nextPage::', nextPage,
+//                        '\n::thisPageId::', thisPageId,
+//                        '\n::nextPageComponentIdx::', nextPageComponentIdx,
+//                        '\n::pageParentComponentIdx::', pageParentComponentIdx,
+//                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                        );
                 self.setPageId(nextPage, nextPageComponentIdx);
                 return true;
             }
@@ -534,7 +528,6 @@
             //lang = null;
             //pageId = null;
             //link = null;
-
             if (!!data) {
                 setData(data);
             } else {
@@ -545,16 +538,13 @@
             } else {
                 setOverrides(null);
             }
-
             var cmp = self.getComponent();
             //$log.debug('ManifestService::initialize:initialParse', cmp);
             while (!!cmp) {
                 cmp = self.getComponent();
             }
-
             //$log.debug('ManifestService::initialize:manifest data:', getData());
             manifestInitialized = true;
-
             //goToFirstPage();
             setComponentIdx(null);
         };

@@ -19,7 +19,6 @@
 //                        console.log(
 //                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
 //                                '\n::vm.questionLabel::', vm.questionLabel,
-//                                '\n::vm.answerLabel::', vm.answerLabel,
 //                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
 //                                );
                         vm.type = cmpData.type;
@@ -69,32 +68,12 @@
                             $log.debug('npAsQuestion::answer changed');
                             if (feedback.immediate) {
                                 vm.feedback = '';
-//                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
-//                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
-//                                TweenMax.set(negativeFeedbackIcon, {
-//                                    autoAlpha: 0,
-//                                    scale: 2.5,
-//                                    force3D: true
-//                                });
-//                                TweenMax.to($element.find('.negative-feedback-icon svg'), 0.25, {
-//                                    height: '100%',
-//                                    force3D: true
-//                                });
-//                                TweenMax.set(positiveFeedbackIcon, {
-//                                    autoAlpha: 0,
-//                                    scale: 2.5,
-//                                    force3D: true
-//                                });
-//                                TweenMax.set($element.find('.negative-feedback-icon svg'), {height: '100%'});
-//                                TweenMax.set(positiveFeedbackIcon, {height: '100%'});
                                 this.evaluate();
                             }
                         };
                         vm.evaluate = function () {
                             var answerIdx, chkAnswers,
                                     isCorrectAnswer = true,
-                                    $checkbox = false,
-                                    $checked = false;
                             negativeFeedbackIcon = $element.find('.negative-feedback-icon');
                             positiveFeedbackIcon = $element.find('.positive-feedback-icon');
                             TweenMax.to(negativeFeedbackIcon, 0.25, {
@@ -111,7 +90,6 @@
                                 scale: 2.5,
                                 force3D: true
                             });
-//                            TweenMax.set($element.find('.negative-feedback-icon svg'), {height: '100%'});
                             TweenMax.set(positiveFeedbackIcon, {height: '100%'});
                             $log.debug('npAsQuestion::evaluating type to check', cmpData);
                             switch (cmpData.type) {
@@ -153,6 +131,12 @@
                                     }
                                     break;
                             }
+//                            console.log(
+//                                    '\n::::::::::::::::::::::::::::::::::::::npAsQuestionController::$broadcast:::::::::::::::::::::::::::::::::::::::::::::::::',
+////                                    '\n::stopWatchReportEvent ::', stopWatchReportEvent,
+//                                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                    );
+                            $rootScope.$broadcast('stopWatchReportEvent');
                             AssessmentService.questionAnswered(vm.id, isCorrectAnswer);
                             $log.debug('npAsQuestion::evaluate:isCorrect', isCorrectAnswer);
                             feedbackLabel.remove();

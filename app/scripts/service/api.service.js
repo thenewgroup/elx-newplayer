@@ -61,7 +61,5 @@
        */
     };
     return new Service();
-
   }
-
 })();
