@@ -67,11 +67,8 @@
        */
     };
     return new Service();
-
   }
-
 })();
-
 /* jshint -W003, -W117, -W004 */
 (function() {
   'use strict';
@@ -617,12 +614,12 @@
             self.pageComponentIdx = componentIdx;
             self.pageId = pageId;
             $rootScope.$broadcast('npPageIdChanged', pageId);
-                    console.log(
-                            '\n::::::::::::::::::::::::::::::::::::::setPageId::setPageId:::::::::::::::::::::::::::::::::::::::::::::::',
-                            '\n::self.pageComponentIdx::', self.pageComponentIdx,
-                            '\n::componentIdx::', componentIdx,
-                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                            );
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::setPageId::setPageId:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::self.pageComponentIdx::', self.pageComponentIdx,
+                    '\n::componentIdx::', componentIdx,
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
         };
         self.getNextPageId = function () {
             var nextPage,
@@ -631,7 +628,6 @@
                     pageParentComponent,
                     pageParentComponentIdx,
                     thisPageId = self.getPageId();
-
             $log.debug('ManifestService::getNextPageId', self);
             if (!thisPageId) {
                 $log.warn('ManifestService::getNextPageId | thisPage is not valid');
@@ -717,12 +713,9 @@
             //$log.debug('ManifestService::goToFirstPage | begin');
             var firstPage = self.getFirst('npPage');
             //$log.debug('ManifestService::goToFirstPage | found page', firstPage);
-
             self.setPageId(firstPage.data.id, firstPage.idx);
         }
-
         self.goToFirstPage = goToFirstPage;
-
         self.goToNextPage = function () {
             var thisPageId = self.getPageId();
             var nextPage,
@@ -730,14 +723,22 @@
                     i,
                     pageParentComponent,
                     pageParentComponentIdx = self.pageComponentIdx.slice(0); // copy the array stack here so we can mangle it
+//            console.log(
+//                    '\n::::::::::::::::::::::::::::::::::::::ManifestService::goToNextPage$broadcast:::::::::::::::::::::::::::::::::::::::::::::::::',
+////                                    '\n::stopWatchReportEvent ::', stopWatchReportEvent,
+//                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                    );
+//            $rootScope.$broadcast('stopWatchReportEvent');
             if (!thisPageId) {
                 $log.warn('ManifestService::goToNextPage | thisPage is not valid');
                 return;
             }
             // We need to start looking for the component after current page component
-            i = parseInt(pageParentComponentIdx.pop(), 10); // pop this child off the array so we can have the parent
-            i++; // let's always start with the index after ours
-            //$log.debug('ManifestService::goToNextPage | for pageId, componentIdx', thisPageId, componentIdx);
+            // pop this child off the array so we can have the parent
+            i = parseInt(pageParentComponentIdx.pop(), 10);
+            i++;
+            // let's always start with the index after ours
+            // $log.debug('ManifestService::goToNextPage | for pageId, componentIdx', thisPageId, componentIdx);
             pageParentComponent = self.getComponent(pageParentComponentIdx);
             for (/* initialized above*/; i < pageParentComponent.components.length; i++) {
                 var component = pageParentComponent.components[i];
@@ -750,31 +751,21 @@
                     }
                     nextPage = component.data.id;
                     nextPageComponentIdx = component.idx;
-                    //console.log(
-                    //        '\n::::::::::::::::::::::::::::::::::::::component.type======:::::::::::::::::::::::::::::::::::::::::::::::::',
-                    //        '\n::component::', component,
-                    //        '\n::component.data::', component['data'],
-                    //        '\n::component.data.id::', component.data.id,
-                    //        '\n::component.data.last::', component.data.last,
-                    //        '\n::nextPage::', nextPage,
-                    //        '\n::nextPageComponentIdx::', nextPageComponentIdx,
-                    //        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                    //        );
                     $log.debug('ManifestService::goToNextPage | --> found nextPage, nextPageComponentIdx', nextPage, nextPageComponentIdx);
                     break;
                 }
             }
             if (!!nextPageComponentIdx) {
                 //$log.debug('ManifestService::goToNextPage | sending client to nextPage', nextPage);
-                console.log(
-                        '\n::::::::::::::::::::::::::::::::::::::goToNextPage===goToNextPage:::::::::::::::::::::::::::::::::::::::::::::::::',
-                        '\n::i::', i,
-                        '\n::nextPage::', nextPage,
-                        '\n::thisPageId::', thisPageId,
-                        '\n::nextPageComponentIdx::', nextPageComponentIdx,
-                        '\n::pageParentComponentIdx::', pageParentComponentIdx,
-                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                        );
+//                console.log(
+//                        '\n::::::::::::::::::::::::::::::::::::::goToNextPage===goToNextPage:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                        '\n::i::', i,
+//                        '\n::nextPage::', nextPage,
+//                        '\n::thisPageId::', thisPageId,
+//                        '\n::nextPageComponentIdx::', nextPageComponentIdx,
+//                        '\n::pageParentComponentIdx::', pageParentComponentIdx,
+//                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                        );
                 self.setPageId(nextPage, nextPageComponentIdx);
                 return true;
             }
@@ -788,7 +779,6 @@
             //lang = null;
             //pageId = null;
             //link = null;
-
             if (!!data) {
                 setData(data);
             } else {
@@ -799,22 +789,18 @@
             } else {
                 setOverrides(null);
             }
-
             var cmp = self.getComponent();
             //$log.debug('ManifestService::initialize:initialParse', cmp);
             while (!!cmp) {
                 cmp = self.getComponent();
             }
-
             //$log.debug('ManifestService::initialize:manifest data:', getData());
             manifestInitialized = true;
-
             //goToFirstPage();
             setComponentIdx(null);
         };
     };
 })();
-
 /* jshint -W003, -W117, -W004 */
 (function() {
   'use strict';
@@ -1108,14 +1094,13 @@
     angular
             .module('newplayer.service')
             .service('AssessmentService', AssessmentService);
-
     /** @ngInject */
     function AssessmentService($log, $rootScope, ConfigService, AssessmentIOService) {
         var assessmentID, pages, questions,
                 vm = this,
                 isAssessing,
-                assessmentTime,
                 minPassing = 0,
+                assessmentTime = 0,
                 io = AssessmentIOService, // This is the I/O module for saving/restoring assessment stuff
                 config = ConfigService.getConfig();
         if (config.hasOwnProperty('assessmentIO') && typeof config.assessmentIO === 'object' && config.assessmentIO.hasOwnProperty('updateFinal')) {
@@ -1125,7 +1110,6 @@
             $log.debug('[Assessment] using default assessmentIO');
         }
         // NOTE: this function is run below to initialize this service
-
         /**
          * Initializes the assessment service back to its 'blank' state.
          */
@@ -1133,6 +1117,7 @@
             assessmentID = false;
             isAssessing = false;
             minPassing = -1;
+            assessmentTime = 0;
             questions = {
                 required: 0, total: 0, inventory: {},
                 answered: {requiredCorrect: 0, inventory: {}}
@@ -1144,7 +1129,6 @@
         }
         // NOTE: reset when the IIFE executes after the script is loaded.
         reset();
-
         /**
          * Begins an assessment session for a given ID and optionally a minimum passing score
          *
@@ -1158,7 +1142,6 @@
             setMinPassing(newMinPassing);
             isAssessing = true;
         }
-
         /**
          * Mark assessment as complete, whatever that will mean to the end system
          */
@@ -1180,10 +1163,10 @@
                 minPassing: minPassing,
                 pages: pages,
                 questions: questions,
-                score: getScore()
+                score: getScore(),
+                assessmentTime: assessmentTime
             };
         }
-
         /**
          * This sets the mechanism for how the assessment service communicates data
          * to an external data store. See the example in the assessmentio.service.js
@@ -1194,7 +1177,6 @@
             // at some point this may change to validating the plugin
             io = newAssessmentIO;
         }
-
         // ---------------------------| Scoring
         /**
          * Get the minimum passing score
@@ -1203,7 +1185,6 @@
         function getMinPassing() {
             return minPassing;
         }
-
         /**
          * Sets the minimum passing score for this assessment.
          *
@@ -1224,7 +1205,6 @@
                 minPassing = 0;
             }
         }
-
         /**
          * Get the user's current score according to page and answer counts
          *
@@ -1245,7 +1225,6 @@
             }
             return Math.min((pages.viewed.required + questions.answered.requiredCorrect) / totalRequired, 1);
         }
-
         /**
          * Determine if the user is passing based on the minPassing score
          *
@@ -1260,7 +1239,6 @@
             }
             return getScore() >= minPassing;
         }
-
         // ---------------------------| Pages
         function setRequiredPages(newRequiredPages) {
             var requiredPagesInt = parseInt(newRequiredPages);
@@ -1270,7 +1248,6 @@
             }
             pages.required = requiredPagesInt;
         }
-
         /**
          * Add a potential page to view and whether it is required for score
          *
@@ -1292,7 +1269,6 @@
                 //}
             }
         }
-
         /**
          * Record that a page was viewed
          *
@@ -1312,7 +1288,6 @@
                 $log.warning('Assessment:pageViewed | page already viewed, ', pageId);
             }
         }
-
         /**
          * Gets all pageview data
          *
@@ -1321,7 +1296,6 @@
         function getPageStats() {
             return pages;
         }
-
         /**
          * Gets the count of number of unique pageviews
          * @returns {pages.viewed.total|*}
@@ -1339,7 +1313,6 @@
             questions.required = requiredQuestionsInt;
             dumpState();
         }
-
         /**
          * Record that a question was correctly answered and whether it was required
          *
@@ -1365,7 +1338,6 @@
                 //}
             }
         }
-
         /**
          * Record that a question was correctly answered and whether it was required
          *
@@ -1373,6 +1345,11 @@
          * @param isCorrect bool Whether the answer provided is correct
          */
         function questionAnswered(questionId, isCorrect) {
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::::AssessmentService::questionAnswered:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::assessmentTime::', assessmentTime,
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
             $log.info('[Assessment::questionAnswered] ', questionId, isCorrect);
             // double-check this has an entry
             if (!questions.inventory.hasOwnProperty(questionId)) {
@@ -1392,21 +1369,6 @@
                 $log.warn('[Assessment::questionAnswered] question already answered, ', questionId);
             }
         }
-        
-        /**
-         * Set the current time
-         *
-         * @currentAssessmentTime current stopwatch time in minutes:seconds:milla seconds
-         */
-        function setAssessmentTime(currentAssessmentTime) {
-            assessmentTime = currentAssessmentTime;
-            console.log(
-                    '\n::::::::::::::::::::::::::::::::::::::::newplayer.js::setAssessmentTime:::::::::::::::::::::::::::::::::::::::::::::::',
-                    '\n::assessmentTime::', assessmentTime,
-                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                    );
-        }
-
         /**
          * Gets all questions stats
          *
@@ -1415,7 +1377,21 @@
         function getQuestionStats() {
             return questions;
         }
-
+        /**
+         * Set the current time
+         *
+         * @currentAssessmentTime current stopwatch time in minutes:seconds:milliseconds
+         */
+        function setAssessmentTime(currentAssessmentTime) {
+            assessmentTime = currentAssessmentTime;
+            io.updateTime(assessmentTime, getAssessment());
+            console.log(
+                    '\n::::::::::::::::::::::::::::::::::::::::AssessmentService::setAssessmentTime:::::::::::::::::::::::::::::::::::::::::::::::',
+                    '\n::assessmentTime::', assessmentTime,
+                    '\n::getAssessment()::', getAssessment(),
+                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                    );
+        }
         /**
          * DEBUG ONLY
          */
@@ -1444,6 +1420,7 @@
             getQuestionStats: getQuestionStats,
             questionAnswered: questionAnswered,
             setRequiredQuestions: setRequiredQuestions,
+            setAssessmentTime: setAssessmentTime,
             // DEBUG
             dumpState: dumpState
         };
@@ -1451,7 +1428,6 @@
         return service;
     }
 })();
-
 /* jshint -W003, -W117, -W004 */
 (function() {
   'use strict';
@@ -1462,6 +1438,9 @@
   function AssessmentIO($log) {
     var vm = this;
       vm.type = 'AssessmentIO (default)';
+    vm.updateTime = function(questionTime, assessment) {
+      $log.debug('AssessmentIO::updateTime function stub', questionTime, assessment);
+    };
     vm.updateQuestion = function(questionID, assessment) {
       $log.debug('AssessmentIO::updateQuestion function stub', questionID, assessment);
     };
@@ -1476,7 +1455,6 @@
     };
   }
 })();
-
 (function () {
   'use strict';
   angular.module('newplayer.component', ['newplayer.service']);
@@ -2595,7 +2573,7 @@
             .module('newplayer.component')
             .controller('npDragAndDropSelectController',
                     /** @ngInject */
-                            function ($log, $scope, $sce, $element, AssessmentService) {
+                            function ($log, $scope, $rootScope, $sce, $element, AssessmentService) {
                                 var cmpData = $scope.component.data;
                                 var buttonData = $scope.feedback || {};
                                 $log.debug('npDragAndDropSelect::data', cmpData, buttonData);
@@ -2614,11 +2592,6 @@
                                 $scope.ID = cmpData.id;
                                 $scope.select = cmpData.select;
                                 $scope.randomized = cmpData.randomized;
-                                console.log(
-                                        '\n::::::::::::::::::::::::::::::::::::::$scope.image:::::::::::::::::::::::::::::::::::::::::::::::::::::::',
-                                        '\n::$scope.image::', $scope.image,
-                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                        );
                                 setTimeout(function () {
                                     $scope.$apply(function () {
                                         //////////////////////////////////////////////////////////////////////////////////////
@@ -2681,10 +2654,10 @@
                             //set evaluate button logic
                             //////////////////////////////////////////////////////////////////////////////////////
                             /** @ngInject */
-                            .directive('npDragAndDropSelectEvaluate', function ($log, AssessmentService) {
+                            .directive('npDragAndDropSelectEvaluate', function ($log, AssessmentService, $rootScope) {
                                 return {
                                     restrict: 'A',
-                                    link: function ($scope, $element, $attrs) {
+                                    link: function ($scope, $element, $attrs ) {
                                         //////////////////////////////////////////////////////////////////////////////////////
                                         //get ready
                                         //////////////////////////////////////////////////////////////////////////////////////
@@ -2712,11 +2685,6 @@
                                                 var hitAreaSelectedLength = '';
                                                 var hitAreaSelectedIncorrect = '';
                                                 hitAreaLength = $("[data-match=true]").length;
-                                                console.log(
-                                                        '\n::::::::::::::::::::::::::::::::::::::getOffsetRect::$( #npHTML\\:0_0_1 ):::::::::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                        '\n::$( #npHTML\\:0_0_1 )::', $("#npHTML\\:0_0_1").height(),
-                                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                        );
                                                 //////////////////////////////////////////////////////////////////////////////////////
                                                 //offset method
                                                 //////////////////////////////////////////////////////////////////////////////////////
@@ -2752,50 +2720,16 @@
                                                     submitButton = document.getElementsByClassName('btn-submit');
                                                     submitButtonPosition = getOffsetRect(submitButton[0]);
                                                     offsetHeight = $("#npHTML\\:0_0_1").height();
-//                                                    offsetHeight = submitButtonPosition.top;
                                                     nextButtonPosition = $('.btn-next').offset().top;
                                                     TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                        height: 1900,
-//                                                      height: $('.btn-next').outerHeight(true) + offsetHeight,
                                                         height: $('.btn-next').outerHeight(true) + offsetHeight,
-//                                                      height: $('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true) + offsetHeight,
                                                         ease: Power4.easeOut
                                                     });
                                                     maxHeight = Math.max.apply(null, $('.select-response-feedback').map(function () {
                                                         return $(this).outerHeight(true);
                                                     }).get());
                                                     $('.btn-next').css("margin-top", maxHeight + 20);
-//                                                    var buttonTop = $('.select-response-wrapper').top() + maxHeight;
-//                                                    var parentPos = $('.select-correct-feedback')[0].parent().offset();
-//                                                    $('.btn-next').css('top', buttonTop);
-//                                                    TweenMax.to($('.btn-next'), 0.5, {
-//                                                        top: $('.select-response-wrapper').position().top + maxHeight,
-//                                                        ease: Power4.easeOut
-//                                                    });
-                                                    console.log(
-                                                            '\n::::::::::::::::::::::::::::::::::::::npDragAndDropSelect::maxHeight:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                            '\n::maxHeight:', maxHeight,
-                                                            '\n::outsideHeight:', outsideHeight,
-                                                            '\n::offsetHeight:', offsetHeight,
-                                                            '\n::nextButtonPosition:', nextButtonPosition,
-                                                            '\n::submitButtonPositionTop:', submitButtonPosition.top,
-                                                            '\n::$(.btn-submit).offset().top:', $('.btn-submit').offset().top,
-                                                            '\n::$(.btn-submit).position().top:', $('.btn-submit').position().top,
-                                                            '\n::$(.btn-submit).scrollTop():', $('.btn-submit').scrollTop(),
-                                                            '\n::$(.btn-next).outerHeight(true):', $('.btn-next').outerHeight(true),
-                                                            '\n::$(.draggableContainer).outerHeight(true):', $('#draggableContainer').outerHeight(true),
-                                                            '\n::$(.np_outside-padding).outerHeight(true):', $('.np_outside-padding').outerHeight(true),
-                                                            '\n::$(.select-correct-feedback).outerHeight(true):', $('.select-correct-feedback').outerHeight(true),
-                                                            '\n::$(.select-incorrect-feedback).outerHeight(true):', $('.select-incorrect-feedback').outerHeight(true),
-                                                            '\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                            );
                                                     if (($('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true)) <= outsideHeight) {
-                                                        console.log(
-                                                                '\n::::::::::::::::::::::::::::::::::::::npDragAndDropSelect::<:::::::::::::::::::::::::::::::::::::::::::::::::',
-                                                                '\n::outsideHeight:', outsideHeight,
-                                                                '\n::offsetHeight:', offsetHeight,
-                                                                '\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
-                                                                );
                                                         outsideHeight = $('.npDragAndDropSelect').outerHeight(true) + $('.btn-next').outerHeight(true);
                                                     }
                                                 };
@@ -2806,17 +2740,11 @@
                                                 $scope.evaluate = function () {
                                                     hitAreaSelectedLength = $("[data-match=selected]").length;
                                                     hitAreaSelectedIncorrect = $("[data-match=skeletor]").length;
-//                                                    outsideHeight = 0;
-//                                                    outsideHeight = $('.np_outside-padding').outerHeight(true);
                                                     var isPassing = false;
                                                     if (Number(hitAreaLength) === Number(hitAreaSelectedLength) && (hitAreaSelectedIncorrect === 0)) {
                                                         if (outsideHeight === 0) {
                                                             outsideHeight = $('.btn-next').outerHeight(true) + offsetHeight;
                                                         }
-//                                                        TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                            height: outsideHeight + $('.select-correct-feedback').outerHeight(true) + $('.btn-next').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         TweenMax.to($('.select-response-correct'), 0.5, {
                                                             autoAlpha: 1,
                                                             height: $('.select-correct-feedback').outerHeight(true),
@@ -2826,19 +2754,11 @@
                                                             autoAlpha: 0,
                                                             ease: Power4.easeOut
                                                         });
-//                                                        TweenMax.to($('.btn-next'), 0.5, {
-//                                                            top: nextButtonPosition + $('.select-correct-feedback').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         isPassing = true;
                                                     } else {
                                                         if (outsideHeight === 0) {
                                                             outsideHeight = $('.btn-next').outerHeight(true) + offsetHeight;
                                                         }
-//                                                        TweenMax.to($('.np_outside-padding'), 0.5, {
-//                                                            height: outsideHeight + $('.select-incorrect-feedback').outerHeight(true) + $('.btn-next').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         TweenMax.to($('.select-response-correct'), 0.5, {
                                                             autoAlpha: 0,
                                                             ease: Power4.easeOut
@@ -2848,12 +2768,9 @@
                                                             height: $('.select-incorrect-feedback').outerHeight(true),
                                                             ease: Power4.easeOut
                                                         });
-//                                                        TweenMax.to($('.btn-next'), 0.5, {
-//                                                            top: nextButtonPosition + $('.select-incorrect-feedback').outerHeight(true),
-//                                                            ease: Power4.easeOut
-//                                                        });
                                                         isPassing = false;
                                                     }
+                                                    $rootScope.$broadcast('stopWatchReportEvent');
                                                     AssessmentService.questionAnswered(cmpData.id, isPassing);
                                                 };
                                             });
@@ -3964,8 +3881,15 @@
             .module('newplayer.component')
             /** @ngInject */
             .controller('npQuizController',
-                    function ($log, $scope, AssessmentService) {
-                        var minPassing, i, j, lastComponent, lastComponentIndex, nLastComponent, nLastComponentIndex, cmpData = $scope.component.data;
+                    function ($log, $scope, $rootScope, AssessmentService) {
+                        var minPassing,
+                                i,
+                                j,
+                                lastComponent,
+                                lastComponentIndex,
+                                nLastComponent,
+                                nLastComponentIndex,
+                                cmpData = $scope.component.data;
                         $log.debug('npQuiz::data', cmpData);
                         if (cmpData.hasOwnProperty('assessed') && parseInt(cmpData.assessed) === 1) {
                             if (cmpData.hasOwnProperty('percentage')) {
@@ -3974,18 +3898,6 @@
                                     minPassing = minPassing / 100;
                                 }
                             }
-//                            var getResultsBtn = {
-//                                "type": "npButton",
-//                                "data": {
-//                                    "link": "",
-//                                    "type": "btn-next",
-//                                    "class": "",
-//                                    "content": "See Results"
-//                                },
-//                                "components": [
-//                                ]
-//                            };
-                            // add the results button if the last page is a npAsResult
                             lastComponentIndex = $scope.component.components.length - 1;
                             if (lastComponentIndex >= 0) {
                                 lastComponent = $scope.component.components[lastComponentIndex];
@@ -4017,9 +3929,7 @@
                         $log.debug('npQuiz::component loaded!');
                     }
             );
-
 })();
-
 (function () {
     'use strict';
     angular
@@ -4349,6 +4259,201 @@
             );
 })();
 
+/* jshint -W003, -W117 */
+(function () {
+    'use strict';
+    angular
+            .module('newplayer.component')
+            /** @ngInject */
+            .controller('npStopWatchController',
+                    function ($log, $scope, $rootScope, $element, AssessmentService) {
+                        var ROOT = this,
+                                cmpData = $scope.component.data,
+                                autoStart = cmpData.autoStart,
+                                hideNavigation = cmpData.hideNavigation,
+                                report = cmpData.report,
+                                reportTime = 'undefined',
+                                Stopwatch = 'undefined',
+                                npStopWatchNavigation = 'undefined',
+                                npStopWatch = 'undefined',
+                                content = null;
+                        ROOT.content = cmpData.content;
+                        ROOT.showNavigation = hideNavigation;
+                        var reportTime = ROOT.reportTime = reportTime;
+                        autoStart = cmpData.autoStart;
+                        npStopWatchNavigation = $element.find('.stopwatch-navigation');
+//                        npStopWatch = $element.find('.np-stopwatch');
+                        npStopWatch = $element.context;
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        // Stopwatch method
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        console.log(
+                                '\n::::::::::::::::::::::::::::::::::::::npStopWatchController::cmpData:::::::::::::::::::::::::::::::::::::::::::::::::',
+                                '\n::$scope::', $scope,
+                                '\n::$element::', $element,
+                                '\n::$element.context::', $element.context,
+                                '\n::npStopWatch::', npStopWatch,
+                                '\n::cmpData::', cmpData,
+                                '\n::autoStart::', autoStart,
+                                '\n::hideNavigation::', hideNavigation,
+                                '\n::ROOT.hideNavigation::', ROOT.hideNavigation,
+                                '\n::cmpData.autoStart::', cmpData.autoStart,
+                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                );
+                        Stopwatch = (function () {
+                            var stopWatchSettings;
+                            return {
+                                settings: {
+                                    stop: 0,
+                                    sw: document.querySelectorAll(".np-stopwatch-counter")[0],
+                                    results: document.querySelectorAll(".np-stopwatch-results")[0],
+                                    mills: 0,
+                                    secs: 0,
+                                    mins: 0,
+                                    i: 1,
+                                    times: ["00:00:00"],
+                                    clearButton: ""
+//                                    clearButton: "<a href=\"#\" class=\"btn btn-primary\" ng-click=\"npStopWatch.clear();\">Clear</a>"
+                                },
+                                init: function () {
+                                    stopWatchSettings = this.settings;
+                                    setInterval(this.timer, 1);
+                                },
+                                clear: function () {
+                                    stopWatchSettings.i = 1,
+                                            stopWatchSettings.times = ["00:00:01"],
+                                            stopWatchSettings.results.innerHTML = stopWatchSettings.clearButton;
+                                },
+                                capture: function () {
+                                    if (stopWatchSettings.i === 1) {
+                                        stopWatchSettings.results.innerHTML = stopWatchSettings.clearButton;
+                                    }
+                                    stopWatchSettings.times.push(("0" + stopWatchSettings.mins).slice(-2) + ":"
+                                            + ("0" + stopWatchSettings.secs).slice(-2) + ":"
+                                            + ("0" + stopWatchSettings.mills).slice(-2));
+                                    var diffTime = ("0" + Math.floor(stopWatchSettings.times[stopWatchSettings.i].split(":")[0]
+                                            - stopWatchSettings.times[stopWatchSettings.i - 1].split(":")[0])).slice(-2)
+                                            + ":"
+                                            + ("0" + Math.floor(stopWatchSettings.times[stopWatchSettings.i].split(":")[1]
+                                                    - stopWatchSettings.times[stopWatchSettings.i - 1].split(":")[1])).slice(-2)
+                                            + ":"
+                                            + ("0" + (stopWatchSettings.times[stopWatchSettings.i].split(":")[2]
+                                                    - stopWatchSettings.times[stopWatchSettings.i - 1].split(":")[2])).slice(-2);
+                                    stopWatchSettings.results.innerHTML = stopWatchSettings.results.innerHTML + "<tr><td>"
+                                            + stopWatchSettings.times[stopWatchSettings.i] + "</td><td>"
+                                            + diffTime + "</td></tr>";
+                                    stopWatchSettings.i++;
+                                    if (!!report) {
+                                        reportTime = stopWatchSettings.times[1];
+                                    }
+                                },
+                                report: function () {
+                                    stopWatchSettings.times.push(("0" + stopWatchSettings.mins).slice(-2) + ":"
+                                            + ("0" + stopWatchSettings.secs).slice(-2) + ":"
+                                            + ("0" + stopWatchSettings.mills).slice(-2));
+                                    reportTime = stopWatchSettings.times[stopWatchSettings.i];
+                                    stopWatchSettings.i++;
+//                                    console.log(
+//                                            '\n::::::::::::::::::::::::::::::::::::::npStopWatchController::report:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                            '\n::reportTime::', reportTime,
+//                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                            );
+                                    AssessmentService.setAssessmentTime(reportTime);
+                                },
+                                restart: function () {
+                                    stopWatchSettings.mills = 0,
+                                            stopWatchSettings.secs = 0,
+                                            stopWatchSettings.mins = 0;
+                                    ROOT.start();
+                                },
+                                start: function () {
+                                    stopWatchSettings.stop = 0;
+                                },
+                                stop: function () {
+                                    stopWatchSettings.stop = 1;
+                                },
+                                timer: function () {
+                                    if (stopWatchSettings.stop === 0) {
+                                        if (stopWatchSettings.mills === 100) {
+                                            stopWatchSettings.secs++;
+                                            stopWatchSettings.mills = 0;
+                                        }
+                                        if (stopWatchSettings.secs === 60) {
+                                            stopWatchSettings.mins++;
+                                            stopWatchSettings.secs = 0;
+                                        }
+                                        stopWatchSettings.sw.innerHTML = ("0" + stopWatchSettings.mins).slice(-2) + ":"
+                                                + ("0" + stopWatchSettings.secs).slice(-2) + ":"
+                                                + ("0" + stopWatchSettings.mills).slice(-2);
+                                        stopWatchSettings.mills++;
+                                    }
+                                    var elem = $element.find('#stopwatch-second-hand');
+                                    TweenMax.set(elem, {
+                                        rotation: (stopWatchSettings.secs * 6),
+                                        transformOrigin: "50% 80%"
+                                    });
+                                }
+                            };
+                        })();
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        // internal stopwatch method calls
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        ROOT.start = function () {
+                            Stopwatch.init();
+                            Stopwatch.start();
+                        };
+                        ROOT.capture = function () {
+                            Stopwatch.capture();
+                        };
+                        ROOT.stop = function () {
+                            Stopwatch.stop();
+                        };
+                        ROOT.restart = function () {
+                            Stopwatch.init();
+                            Stopwatch.restart();
+                        };
+                        ROOT.clear = function () {
+                            Stopwatch.clear();
+                        };
+//                        $scope.$on('goToNextPageEvent', function () {
+//                            console.log(
+//                                    '\n::::::::::::::::::::::::::::::::::::::npStopWatchController::goToNextPageEvent:::::::::::::::::::::::::::::::::::::::::::::::::',
+//                                    '\n::npStopWatch ::', npStopWatch,
+//                                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                    );
+//                        });
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        // Stopwatch
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        if (!!autoStart) {
+                            Stopwatch.init();
+                        }
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        // if Stopwatch is set to report do reporting before unload
+                        //////////////////////////////////////////////////////////////////////////////////////
+                        if (!!report) {
+                            window.onbeforeunload = function () {
+                                Stopwatch.report();
+                                return undefined;
+                            };
+                        }
+                        $rootScope.$on('stopWatchReportEvent', function () {
+//                            console.log(
+//                                    '\n::::::::::::::::::::::::::::::::::::::npStopWatchController::stopWatchReportEvent:::::::::::::::::::::::::::::::::::::::::::::::::',
+////                                    '\n::stopWatchReportEvent ::', stopWatchReportEvent,
+//                                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                    );
+                            Stopwatch.report();
+                        });
+                    }
+            )
+            /** @ngInject */
+            .run(
+                    function ($log, $rootScope) {
+                        $log.debug('npStopWatch::component loaded!');
+                    }
+            );
+})();
 /* jshint -W003, -W117, -W004 */
 (function () {
     'use strict';
@@ -5141,7 +5246,6 @@
 //                        console.log(
 //                                '\n::::::::::::::::::::::::::::::::::::::npAsResultController::npAsQuestionController:::::::::::::::::::::::::::::::::::::::::::::::::',
 //                                '\n::vm.questionLabel::', vm.questionLabel,
-//                                '\n::vm.answerLabel::', vm.answerLabel,
 //                                '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
 //                                );
                         vm.type = cmpData.type;
@@ -5191,32 +5295,12 @@
                             $log.debug('npAsQuestion::answer changed');
                             if (feedback.immediate) {
                                 vm.feedback = '';
-//                                negativeFeedbackIcon = $element.find('.negative-feedback-icon');
-//                                positiveFeedbackIcon = $element.find('.positive-feedback-icon');
-//                                TweenMax.set(negativeFeedbackIcon, {
-//                                    autoAlpha: 0,
-//                                    scale: 2.5,
-//                                    force3D: true
-//                                });
-//                                TweenMax.to($element.find('.negative-feedback-icon svg'), 0.25, {
-//                                    height: '100%',
-//                                    force3D: true
-//                                });
-//                                TweenMax.set(positiveFeedbackIcon, {
-//                                    autoAlpha: 0,
-//                                    scale: 2.5,
-//                                    force3D: true
-//                                });
-//                                TweenMax.set($element.find('.negative-feedback-icon svg'), {height: '100%'});
-//                                TweenMax.set(positiveFeedbackIcon, {height: '100%'});
                                 this.evaluate();
                             }
                         };
                         vm.evaluate = function () {
                             var answerIdx, chkAnswers,
                                     isCorrectAnswer = true,
-                                    $checkbox = false,
-                                    $checked = false;
                             negativeFeedbackIcon = $element.find('.negative-feedback-icon');
                             positiveFeedbackIcon = $element.find('.positive-feedback-icon');
                             TweenMax.to(negativeFeedbackIcon, 0.25, {
@@ -5233,7 +5317,6 @@
                                 scale: 2.5,
                                 force3D: true
                             });
-//                            TweenMax.set($element.find('.negative-feedback-icon svg'), {height: '100%'});
                             TweenMax.set(positiveFeedbackIcon, {height: '100%'});
                             $log.debug('npAsQuestion::evaluating type to check', cmpData);
                             switch (cmpData.type) {
@@ -5275,6 +5358,12 @@
                                     }
                                     break;
                             }
+//                            console.log(
+//                                    '\n::::::::::::::::::::::::::::::::::::::npAsQuestionController::$broadcast:::::::::::::::::::::::::::::::::::::::::::::::::',
+////                                    '\n::stopWatchReportEvent ::', stopWatchReportEvent,
+//                                    '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+//                                    );
+                            $rootScope.$broadcast('stopWatchReportEvent');
                             AssessmentService.questionAnswered(vm.id, isCorrectAnswer);
                             $log.debug('npAsQuestion::evaluate:isCorrect', isCorrectAnswer);
                             feedbackLabel.remove();
@@ -5400,7 +5489,6 @@
                     }
             );
 })();
-
 (function () {
     'use strict';
     angular
@@ -5412,59 +5500,22 @@
                         var cmpData = $scope.component.data || {};
                         this.id = cmpData.id;
                         this.label = $sce.trustAsHtml(cmpData.label);
-
-//                                checkmark = $element.find('svg#Layer_1'),
-//                                cmpData = $scope.component.data || {}; // already defined above
                         vm.isCorrect = cmpData.correct;
-                      // updateCheck is currently not defined but needed. Should it be the code below?
-                      var updateCheck = angular.noop;
-//                        var updateCheck = function () {
-//                            var tweenOptions = {ease: Power3.easeOut};
-
-//                            if (vm.checked) {
-//                                tweenOptions.autoAlpha = 1;
-//                            } else {
-//                                tweenOptions.autoAlpha = 0;
-//                            }
-                        //$log.debug('updateCheck', checkmark, tweenOptions);
-//                            TweenMax.to(checkmark, 0.25, tweenOptions);
-//                        };
-                        //$log.debug('npAsAnswer::data', cmpData);
                         vm.id = cmpData.id;
                         vm.label = $sce.trustAsHtml(cmpData.label);
                         vm.question = null;
                         vm.checked = false;
                         vm.answer = vm;
-
                         vm.setQuestion = function (idx, question) {
                           $log.debug('setQuestion', idx, question);
                             //$scope.question = question;
                             question.registerAnswer(idx, this);
                         };
-
-
-//                        vm.clicked = function ($event) {
-//                            //$log.debug('npAsAnswer clicked', $event, cmpData);
-//                            if (vm.question.type === 'checkbox') {
-//                                vm.checked = !vm.checked;
-//                                vm.question.answerChanged(vm);
-//                            } else if (vm.question.type === 'radio') {
-//                                vm.checked = true;
-//                                vm.question.answerChanged(vm);
-//                            }
-////                            updateCheck();
-//                        };
-//                        vm.clear = function () {
-//                            vm.checked = false;
-////                            updateCheck();
-//                        };
                     }
             )
             .directive('npAsAnswerCheckbox', function () {
                 return function ($scope, $element, $sce, $log) {
                     var cmpData = $scope.component.data || {};
-//                    this.label = $sce.trustAsHtml(cmpData.label);
-
                     setTimeout(function () {
                         $scope.$apply(function () {
                             //////////////////////////////////////////////////////////////////////////////////////
@@ -5473,7 +5524,6 @@
                             var checkboxX = $element.find('.checkbox-x');
                             TweenMax.set(checkboxX, {autoAlpha: 0, scale: 2.5, force3D: true});
                             $scope.update = function (event) {
-
                                 var clickedCheckbox = event.currentTarget;
                                 var $checkbox = $(clickedCheckbox).find('.checkbox-x');
                                 $checkbox.attr('checked', !$checkbox.attr('checked'), ('true'));
@@ -5484,12 +5534,8 @@
 //                                    console.log(
 //                                            '\n::::::::::::::::::::::::::::::::::::::npAsAnswerCheckbox::inside:::::::::::::::::::::::::::::::::::::::::::::::::',
 //                                            '\n::this::', this,
-//                                            '\n::this.npAsAnswer::', this.npAsAnswer,
-//                                            '\n::this.label::', this.label,
-//                                            '\n::$checkbox.attr(checked)::', $checkbox.attr('checked'),
 //                                            '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
 //                                            );
-
                                     $scope.npAnswer.checked = true;
                                     TweenMax.to($(clickedCheckbox).find('.checkbox-x'), 0.75, {
                                         autoAlpha: 1,
@@ -5502,12 +5548,8 @@
                                         scale: 2.5,
                                         ease: Power3.easeOut
                                     });
-
                                   $scope.npAnswer.checked = false;
                                 }
-
-                              //console.debug('npAsAnswer directive answer changed', $scope.npQuestion, $scope.npAnswer);
-                              //$scope.npQuestion.answerChanged($scope.answer);
                             };
                         });
                     });
@@ -5520,9 +5562,6 @@
                     }
             );
 })();
-
-
-
 
 (function() {
   'use strict';
@@ -7535,6 +7574,63 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('scripts/component/npStopWatch/npStopWatch.html',
+    "<npStopWatch class=\"{{component.type}} np-cmp-wrapper np-stopwatch\" ng-controller=\"npStopWatchController as npStopWatch\">\n" +
+    "    <div class=\"debug\">\n" +
+    "        <h3>{{component.type}} --\n" +
+    "            <small>{{component.idx}}</small>\n" +
+    "        </h3>\n" +
+    "    </div>\n" +
+    "    <div ng-bind-html=\"npStopWatch.content\" class=\"np-cmp-main\"></div>\n" +
+    "    <nav class=\"controls stopwatch-navigation \" ng-hide=\"npStopWatch.showNavigation\">\n" +
+    "        <a href=\"#\" class=\"btn btn-primary\" ng-click=\"npStopWatch.start()\">Start</a>\n" +
+    "        <a href=\"#\" class=\"btn btn-primary\" ng-click=\"npStopWatch.capture();\">Capture</a>\n" +
+    "        <a href=\"#\" class=\"btn btn-primary\" ng-click=\"npStopWatch.stop();\">Stop</a>\n" +
+    "        <a href=\"#\" class=\"btn btn-primary\" ng-click=\"npStopWatch.restart();\">Restart</a>\n" +
+    "    </nav>\n" +
+    "    <div class=\"stopwatch-icon\">\n" +
+    "        <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"-248 375.4 31.6 34\" style=\"enable-background:new -248 375.4 31.6 34;\" xml:space=\"preserve\">\n" +
+    "            <g id=\"XMLID_11_\">\n" +
+    "                <g id=\"XMLID_14_\">\n" +
+    "                    <g id=\"XMLID_67_\">\n" +
+    "                        <path id=\"XMLID_68_\" class=\"st0\" d=\"M-218.8,385.4l1.1-0.8c0.6-0.4,0.7-1.2,0.3-1.7l-0.8-1.2c-0.4-0.6-1.2-0.7-1.7-0.3l-1.4,0.9 c-2-2-4.6-3.4-7.5-4.1v-1.6c0-0.7-0.6-1.2-1.2-1.2h-4.5c-0.7,0-1.2,0.6-1.2,1.2v1.6c-7,1.6-12.3,7.9-12.3,15.4 c0,8.7,7.1,15.8,15.8,15.8s15.8-7.1,15.8-15.8C-216.5,390.6-217.4,387.8-218.8,385.4z M-232.3,406.5c-7.1,0-12.9-5.8-12.9-12.9  c0-7.1,5.8-12.9,12.9-12.9c7.1,0,12.9,5.8,12.9,12.9C-219.4,400.7-225.2,406.5-232.3,406.5z\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "                <g id=\"XMLID_15_\">\n" +
+    "                    <g id=\"XMLID_42_\">\n" +
+    "                        <circle id=\"XMLID_43_\" class=\"st0\" cx=\"-232.3\" cy=\"383.8\" r=\"1.3\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "                <g id=\"XMLID_25_\">\n" +
+    "                    <g id=\"XMLID_39_\">\n" +
+    "                        <circle id=\"XMLID_40_\" class=\"st0\" cx=\"-232.3\" cy=\"403.3\" r=\"1.3\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "                <g id=\"XMLID_26_\">\n" +
+    "                    <g id=\"XMLID_36_\">\n" +
+    "                        <circle id=\"XMLID_37_\" class=\"st0\" cx=\"-242.2\" cy=\"393.6\" r=\"1.3\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "                <g id=\"XMLID_27_\">\n" +
+    "                    <g id=\"XMLID_33_\">\n" +
+    "                        <circle id=\"XMLID_34_\" class=\"st0\" cx=\"-222.4\" cy=\"393.6\" r=\"1.3\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "                <g id=\"XMLID_28_\">\n" +
+    "                    <g id=\"XMLID_30_\">\n" +
+    "                        <path id=\"stopwatch-second-hand\"  class=\"st0\" d=\"M-230.2,393.6c0-0.1,0-0.3,0-0.4l0,0l-1.2-10.2c0-0.4-0.4-0.8-0.9-0.8  c-0.4,0-0.8,0.4-0.8,0.9l-1.2,10.2l0,0c0,0.1,0,0.3,0,0.4c0,1.3,0.8,2.3,2.1,2.3C-231,395.9-230.2,394.8-230.2,393.6z\"/>\n" +
+    "                    </g>\n" +
+    "                </g>\n" +
+    "            </g>\n" +
+    "        </svg>\n" +
+    "    </div>\n" +
+    "    <div class=\"np-stopwatch-counter subhead-copy\"></div>\n" +
+    "    <table class=\"np-stopwatch-results subhead-copy\"></table>\n" +
+    "    <div np-component ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
+    "</npStopWatch>"
+  );
+
+
   $templateCache.put('scripts/component/npTrivia/npTrivia.html',
     "<form class=\"np-cmp-wrapper {{component.type}}\" ng-controller=\"npTriviaController as npTrivia\" ng-submit=\"npTrivia.evaluate()\">\n" +
     "    <div class=\"debug\">\n" +
@@ -7613,23 +7709,20 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('scripts/component/npVideo/npVideo.html',
-    "<np-video component=\"component\" id=\"{{component.data.id}}\" class=\"{{component.type}}\">\n" +
-    "    <div class=\"debug\">\n" +
-    "        <h3>{{component.type}} --\n" +
-    "            <small>{{component.idx}}</small>\n" +
-    "        </h3>\n" +
-    "    </div>\n" +
-    "    <!--<video class=\"videoWidth\" height=\"{{component.data.height}}\" width=\"{{component.data.width}}\" poster=\"{{component.data.poster}}\" preload=\"{{component.data.preload}}\" ng-src=\"{{component.data.src}}\" controls=\"controls\" mediaelelement>-->\n" +
-    "    <video ng-src=\"{{component.data.src}}\" class=\"videoWidth\" controls=\"controls\" >\n" +
-    "        <source ng-repeat=\"source in npVideo.sources\" type=\"video/{{source.type}}\" ng-src=\"{{source.src}}\" />\n" +
-    "<!--        <object width=\"{{component.data.width}}\" height=\"{{component.data.height}}\" type=\"application/x-shockwave-flash\" data=\"scripts/component/npVideo/mediaelement/flashmediaelement.swf\">\n" +
-    "            <param name=\"movie\" value=\"scripts/component/npVideo/mediaelement/flashmediaelement.swf\"/>\n" +
-    "            <param name=\"flashvars\" value=\"controls=true&file={{component.data.baseURL}}.mp4\"/>\n" +
-    "            <param name=\"allowfullscreen\" value=\"false\"/>\n" +
-    "        </object>-->\n" +
-    "    </video>\n" +
-    "    <div np-component ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
-    "</np-video>\n"
+    "<div class=\"npVideo\">\n" +
+    "    <np-video component=\"component\" id=\"{{component.data.id}}\" class=\"{{component.type}}\">\n" +
+    "        <div class=\"debug\">\n" +
+    "            <h3>{{component.type}} --\n" +
+    "                <small>{{component.idx}}</small>\n" +
+    "            </h3>\n" +
+    "        </div>\n" +
+    "        <!--<video class=\"videoWidth\" height=\"{{component.data.height}}\" width=\"{{component.data.width}}\" poster=\"{{component.data.poster}}\" preload=\"{{component.data.preload}}\" ng-src=\"{{component.data.src}}\" controls=\"controls\" mediaelelement>-->\n" +
+    "        <video ng-src=\"{{component.data.src}}\" class=\"videoWidth video-tag\" controls=\"controls\" >\n" +
+    "            <source ng-repeat=\"source in npVideo.sources\" type=\"video/{{source.type}}\" ng-src=\"{{source.src}}\" />\n" +
+    "        </video>\n" +
+    "        <div np-component ng-if=\"subCmp\" ng-repeat=\"component in components\" idx=\"{{component.idx}}\"></div>\n" +
+    "    </np-video>\n" +
+    "</div>"
   );
 
 
