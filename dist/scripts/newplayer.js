@@ -2385,6 +2385,11 @@
                             //////////////////////////////////////////////////////////////////////////////////////
                             $.each($('.boxElements'), function () {
                                 var currentHeight = $(this).find('.button-content').outerHeight();
+                                console.log(
+                                        '\n::::::::::::::::::::::::::::::::::::::set::the::currentHeight:::::::::::::::::::::::::::::::::::::::::::::::::::::',
+                                        '\n::currentHeight::', currentHeight,
+                                        '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+                                        );
                                 $(this).height(currentHeight);
                             });
                             //////////////////////////////////////////////////////////////////////////////////////
@@ -6826,7 +6831,7 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "            </div>\n" +
     "            <div id=\"draggableButtons\" class=\"col-xs-6\">\n" +
     "                <div drag-button ng-repeat=\"draggableButton in npDragAndDropMatch.draggableButtons\" data-reference=\"{{$index}}\"  id=\"id{{$index}}\" ng-click=\"npDragAndDropMatch.update(draggableButton)\" class=\"draggableButton box boxElements\">\n" +
-    "                    <svg class=\"completeCheck\" version=\"1.2\" baseProfile=\"tiny\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
+    "                    <svg class=\"completeCheck\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 100px 100px\"  xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
     "                        <style type=\"text/css\">\n" +
     "                            <![CDATA[\n" +
     "                            .st0{fill:url(#SVGID_1_);}\n" +
@@ -6850,12 +6855,14 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                    </svg>\n" +
     "                </div>\n" +
     "            </div>\n" +
+    "            \n" +
     "            <!--<div class=\"col-two\">-->\n" +
     "            <div class=\"col-xs-6\">\n" +
     "                <div id=\"hitAreaWrapper\">                    \n" +
     "                    <div ng-repeat=\"draggableButton in npDragAndDropMatch.draggableButtons\" class=\"{{hitArea.class}} hit-area boxElements\">\n" +
     "                        <div class=\"hit-area-background\"></div>\n" +
-    "                        <svg class=\"complete-background\" version=\"1.2\" baseProfile=\"tiny\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
+    "                        <!--<svg class=\"complete-background\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 100% 100%\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" preserveAspectRatio=\"none\">-->\n" +
+    "                        <svg class=\"complete-background\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 100% 100%\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" preserveAspectRatio=\"none\">\n" +
     "                            <g class=\"complete-background-Layer_1\">\n" +
     "                                <linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"486.5701\" y1=\"836.5667\" x2=\"474.7614\" y2=\"851.428\" gradientTransform=\"matrix(0.9984 5.588965e-02 -5.588965e-02 0.9984 48.0441 -25.572)\">\n" +
     "                                    <stop  offset=\"0.1882\" style=\"stop-color:#CAA04E\"/>\n" +
@@ -6871,63 +6878,37 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
     "                            <g id=\"complete-background-Layer_4\">\n" +
     "                                <foreignObject  x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" >\n" +
     "\n" +
-    "<!--                                    <div question-feedback-build class=\"row\">\n" +
-    "                                        <div  class=\"col-sm-7 question-feedback\">\n" +
-    "                                            <div class=\"question-feedback-wrapper vertical-centered\">\n" +
-    "                                                <div class=\"positive-feedback-icon\">\n" +
-    "                                                    <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n" +
-    "                                                         width=\"139.535px\" height=\"139.536px\" viewBox=\"665.896 1118.26 139.535 139.536\"\n" +
-    "                                                         enable-background=\"new 665.896 1118.26 139.535 139.536\" xml:space=\"preserve\">\n" +
-    "                                                        <linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"486.9971\" y1=\"-44.001\" x2=\"475.1884\" y2=\"-58.8622\" gradientTransform=\"matrix(6.1102 0.342 0.342 -6.1102 -2188.8755 702.1841)\">\n" +
-    "                                                            <stop  offset=\"0.1882\" style=\"stop-color:#CAA04E\"/>\n" +
-    "                                                            <stop  offset=\"0.3683\" style=\"stop-color:#FFEBC3\"/>\n" +
-    "                                                            <stop  offset=\"0.3952\" style=\"stop-color:#F7DFB1\"/>\n" +
-    "                                                            <stop  offset=\"0.5063\" style=\"stop-color:#D7B26A\"/>\n" +
-    "                                                            <stop  offset=\"0.5581\" style=\"stop-color:#CAA04E\"/>\n" +
-    "                                                            <stop  offset=\"1\" style=\"stop-color:#F3DB7F\"/>\n" +
-    "                                                        </linearGradient>\n" +
-    "                                                        <polygon fill=\"url(#SVGID_1_)\" points=\"784.624,1164.16 768.712,1150.084 722.812,1203.939 695.271,1180.684 681.195,1196.596  724.648,1233.316 \"/>\n" +
-    "                                                        <path fill=\"#9A7D46\" d=\"M735.664,1257.796c-38.556,0-69.768-31.212-69.768-69.769c0-38.556,31.212-69.768,69.768-69.768  s69.768,31.212,69.768,69.768C805.432,1226.584,774.22,1257.796,735.664,1257.796z M735.664,1124.38  c-34.884,0-63.648,28.765-63.648,63.648s28.765,63.647,63.648,63.647s63.648-28.764,63.648-63.647S770.548,1124.38,735.664,1124.38z  \"/>\n" +
-    "                                                    </svg>\n" +
-    "                                                </div>\n" +
-    "                                                <div class=\"npQuestion-feedback body-copy question-feedback-text\" ng-if=\"npQuestion.feedback\" ng-bind-html=\"npQuestion.feedback\"></div>\n" +
-    "                                                <div class=\"question-feedback-label\">Feedback area</div>\n" +
-    "                                            </div\n" +
-    "                                        </div>\n" +
-    "                                        <div  class=\"col-sm-5\">\n" +
-    "                                        </div>\n" +
-    "                                    </div>-->\n" +
     "                                    <div class=\"button-content\">\n" +
     "                                        <img class=\"hitAreaImage\" ng-src=\"{{draggableButton.matchingImage}}\" alt=\"{{hitArea.alt}}\" />\n" +
     "                                        <div class=\"hitAreaContent body-copy\" ng-bind-html=\"draggableButton.matchingContent\" ></div>\n" +
     "                                    </div>\n" +
-    "                                    <div class=\"button-completion-content vertical-centered\">\n" +
-    "                                        <div class=\"row \" >\n" +
-    "                                            <!--<div class=\" col-xs-2\" >-->\n" +
-    "                                                <div class=\"positive-feedback-image\">\n" +
-    "                                                <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n" +
-    "                                                     width=\"139.535px\" height=\"139.536px\" viewBox=\"665.896 1118.26 139.535 139.536\"\n" +
-    "                                                     enable-background=\"new 665.896 1118.26 139.535 139.536\" xml:space=\"preserve\">\n" +
-    "                                                    <linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"486.9971\" y1=\"-44.001\" x2=\"475.1884\" y2=\"-58.8622\" gradientTransform=\"matrix(6.1102 0.342 0.342 -6.1102 -2188.8755 702.1841)\">\n" +
-    "                                                        <stop  offset=\"0.1882\" style=\"stop-color:#CAA04E\"/>\n" +
-    "                                                        <stop  offset=\"0.3683\" style=\"stop-color:#FFEBC3\"/>\n" +
-    "                                                        <stop  offset=\"0.3952\" style=\"stop-color:#F7DFB1\"/>\n" +
-    "                                                        <stop  offset=\"0.5063\" style=\"stop-color:#D7B26A\"/>\n" +
-    "                                                        <stop  offset=\"0.5581\" style=\"stop-color:#CAA04E\"/>\n" +
-    "                                                        <stop  offset=\"1\" style=\"stop-color:#F3DB7F\"/>\n" +
-    "                                                    </linearGradient>\n" +
-    "                                                    <polygon fill=\"url(#SVGID_1_)\" points=\"784.624,1164.16 768.712,1150.084 722.812,1203.939 695.271,1180.684 681.195,1196.596  724.648,1233.316 \"/>\n" +
-    "                                                    <path fill=\"#9A7D46\" d=\"M735.664,1257.796c-38.556,0-69.768-31.212-69.768-69.769c0-38.556,31.212-69.768,69.768-69.768  s69.768,31.212,69.768,69.768C805.432,1226.584,774.22,1257.796,735.664,1257.796z M735.664,1124.38  c-34.884,0-63.648,28.765-63.648,63.648s28.765,63.647,63.648,63.647s63.648-28.764,63.648-63.647S770.548,1124.38,735.664,1124.38z  \"/>\n" +
-    "                                                </svg>\n" +
-    "                                            </div>\n" +
-    "                                            <!--<div class=\"\" >-->\n" +
-    "                                                <div class=\"positive-feedback-content body-copy \" ng-bind-html=\"positiveFeedback\"></div>\n" +
-    "                                            <!--</div>-->\n" +
-    "                                        </div>\n" +
-    "                                    </div>\n" +
     "                                </foreignObject>\n" +
     "                            </g>\n" +
     "                        </svg>\n" +
+    "                        <div class=\"button-completion-content vertical-centered\">\n" +
+    "                            <div class=\"row \" >\n" +
+    "                                <!--<div class=\" col-xs-2\" >-->\n" +
+    "                                <div class=\"positive-feedback-image\">\n" +
+    "                                    <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n" +
+    "                                         width=\"139.535px\" height=\"139.536px\" viewBox=\"665.896 1118.26 139.535 139.536\"\n" +
+    "                                         enable-background=\"new 665.896 1118.26 139.535 139.536\" xml:space=\"preserve\">\n" +
+    "                                        <linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"486.9971\" y1=\"-44.001\" x2=\"475.1884\" y2=\"-58.8622\" gradientTransform=\"matrix(6.1102 0.342 0.342 -6.1102 -2188.8755 702.1841)\">\n" +
+    "                                            <stop  offset=\"0.1882\" style=\"stop-color:#CAA04E\"/>\n" +
+    "                                            <stop  offset=\"0.3683\" style=\"stop-color:#FFEBC3\"/>\n" +
+    "                                            <stop  offset=\"0.3952\" style=\"stop-color:#F7DFB1\"/>\n" +
+    "                                            <stop  offset=\"0.5063\" style=\"stop-color:#D7B26A\"/>\n" +
+    "                                            <stop  offset=\"0.5581\" style=\"stop-color:#CAA04E\"/>\n" +
+    "                                            <stop  offset=\"1\" style=\"stop-color:#F3DB7F\"/>\n" +
+    "                                        </linearGradient>\n" +
+    "                                        <polygon fill=\"url(#SVGID_1_)\" points=\"784.624,1164.16 768.712,1150.084 722.812,1203.939 695.271,1180.684 681.195,1196.596  724.648,1233.316 \"/>\n" +
+    "                                        <path fill=\"#9A7D46\" d=\"M735.664,1257.796c-38.556,0-69.768-31.212-69.768-69.769c0-38.556,31.212-69.768,69.768-69.768  s69.768,31.212,69.768,69.768C805.432,1226.584,774.22,1257.796,735.664,1257.796z M735.664,1124.38  c-34.884,0-63.648,28.765-63.648,63.648s28.765,63.647,63.648,63.647s63.648-28.764,63.648-63.647S770.548,1124.38,735.664,1124.38z  \"/>\n" +
+    "                                    </svg>\n" +
+    "                                </div>\n" +
+    "                                <!--<div class=\"\" >-->\n" +
+    "                                <div class=\"positive-feedback-content body-copy \" ng-bind-html=\"positiveFeedback\"></div>\n" +
+    "                                <!--</div>-->\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "            </div> \n" +
@@ -7163,11 +7144,11 @@ angular.module('newplayer').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('scripts/component/npFlashCards/npFlashCards.html',
     "<div np-flash-cards id=\"{{npFlashCards.id}} \" class=\"{{component.type}} np-cmp-wrapper np-flash-card\" ng-controller=\"npFlashCardsController as npFlashCards\">\n" +
-    "    <div class=\"debug\">\n" +
-    "        <h3>{{component.type}} -- \n" +
+    "<!--    <div class=\"debug\">\n" +
+    "        <h3>{{component.type}}\n" +
     "            <small>{{component.idx}}</small>\n" +
     "        </h3>\n" +
-    "    </div>\n" +
+    "    </div>-->\n" +
     "    <!--::::::::::::  flash-card  ::::::::::::::::-->\n" +
     "    <div id=\"flash-cards\" class=\"row\">\n" +
     "        <div np-swipe-angular-draggable  class=\"col-sm-12\">\n" +
