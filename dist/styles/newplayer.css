@@ -2,6 +2,7 @@
 /*main bootstrap override classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";*/
+/*@import "_variables";*/
 /*::::Primary::::*/
 /*Primary Blue*/
 /*Primary White*/
@@ -12116,7 +12117,7 @@ button.close {
     bottom: 0;
     width: 25px; }
   #np_reNutriv .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #np_reNutriv .button-content p {
     padding: 0;

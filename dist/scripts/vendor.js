@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.15
+ * @license AngularJS v1.3.18
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -627,8 +627,8 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
  */
 angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
   var LINKY_URL_REGEXP =
-        /((ftp|https?):\/\/|(www\.)|(mailto:)?[A-Za-z0-9._%+-]+@)\S*[^\s.;,(){}<>"”’]/,
-      MAILTO_REGEXP = /^mailto:/;
+        /((ftp|https?):\/\/|(www\.)|(mailto:)?[A-Za-z0-9._%+-]+@)\S*[^\s.;,(){}<>"”’]/i,
+      MAILTO_REGEXP = /^mailto:/i;
 
   return function(text, target) {
     if (!text) return text;
@@ -679,7 +679,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 })(window, window.angular);
 
 /**
- * @license AngularJS v1.3.15
+ * @license AngularJS v1.3.18
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -706,6 +706,10 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 // define ngTouch module
 /* global -ngTouch */
 var ngTouch = angular.module('ngTouch', []);
+
+function nodeName_(element) {
+  return angular.lowercase(element.nodeName || (element[0] && element[0].nodeName));
+}
 
 /* global ngTouch: false */
 
@@ -747,11 +751,9 @@ ngTouch.factory('$swipe', [function() {
   };
 
   function getCoordinates(event) {
-    var touches = event.touches && event.touches.length ? event.touches : [event];
-    var e = (event.changedTouches && event.changedTouches[0]) ||
-        (event.originalEvent && event.originalEvent.changedTouches &&
-            event.originalEvent.changedTouches[0]) ||
-        touches[0].originalEvent || touches[0];
+    var originalEvent = event.originalEvent || event;
+    var touches = originalEvent.touches && originalEvent.touches.length ? originalEvent.touches : [originalEvent];
+    var e = (originalEvent.changedTouches && originalEvent.changedTouches[0]) || touches[0];
 
     return {
       x: e.clientX,
@@ -873,7 +875,9 @@ ngTouch.factory('$swipe', [function() {
   };
 }]);
 
-/* global ngTouch: false */
+/* global ngTouch: false,
+  nodeName_: false
+*/
 
 /**
  * @ngdoc directive
@@ -1015,7 +1019,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
       lastLabelClickCoordinates = null;
     }
     // remember label click coordinates to prevent click busting of trigger click event on input
-    if (event.target.tagName.toLowerCase() === 'label') {
+    if (nodeName_(event.target) === 'label') {
       lastLabelClickCoordinates = [x, y];
     }
 
@@ -1031,7 +1035,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
     event.preventDefault();
 
     // Blur focused form elements
-    event.target && event.target.blur();
+    event.target && event.target.blur && event.target.blur();
   }
 
 
@@ -1094,8 +1098,10 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
 
       startTime = Date.now();
 
-      var touches = event.touches && event.touches.length ? event.touches : [event];
-      var e = touches[0].originalEvent || touches[0];
+      // Use jQuery originalEvent
+      var originalEvent = event.originalEvent || event;
+      var touches = originalEvent.touches && originalEvent.touches.length ? originalEvent.touches : [originalEvent];
+      var e = touches[0];
       touchStartX = e.clientX;
       touchStartY = e.clientY;
     });
@@ -1111,9 +1117,12 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
     element.on('touchend', function(event) {
       var diff = Date.now() - startTime;
 
-      var touches = (event.changedTouches && event.changedTouches.length) ? event.changedTouches :
-          ((event.touches && event.touches.length) ? event.touches : [event]);
-      var e = touches[0].originalEvent || touches[0];
+      // Use jQuery originalEvent
+      var originalEvent = event.originalEvent || event;
+      var touches = (originalEvent.changedTouches && originalEvent.changedTouches.length) ?
+          originalEvent.changedTouches :
+          ((originalEvent.touches && originalEvent.touches.length) ? originalEvent.touches : [originalEvent]);
+      var e = touches[0];
       var x = e.clientX;
       var y = e.clientY;
       var dist = Math.sqrt(Math.pow(x - touchStartX, 2) + Math.pow(y - touchStartY, 2));
@@ -23559,143 +23568,207 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 		_tickerActive = false; //ensures that the first official animation forces a ticker.tick() to update the time when it is instantiated
 
 })((typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window, "TweenMax");
-/*
- * Angular matchMedia Module
- * Version 0.2.2
- * Uses Bootstrap 3 breakpoint sizes
- * Exposes service "screenSize" which returns true if breakpoint(s) matches.
- * Includes matchMedia polyfill for backward compatibility.
- * Copyright © 2013-2014 Jack Tarantino.
- **/
-
-angular.module('matchMedia', [])
-
-
-.run(function initializeNgMatchMedia() {
-  /*! matchMedia() polyfill - Test a CSS media type/query in JS.
-   * Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight.
-   * Dual MIT/BSD license
-   **/
-
-  window.matchMedia || (window.matchMedia = function matchMediaPolyfill() {
-    'use strict';
-
-    // For browsers that support matchMedium api such as IE 9 and webkit
-    var styleMedia = (window.styleMedia || window.media);
-
-    // For those that don't support matchMedium
-    if (!styleMedia) {
-      var style = document.createElement('style'),
-        script = document.getElementsByTagName('script')[0],
-        info = null;
-
-      style.type = 'text/css';
-      style.id = 'matchmediajs-test';
-
-      script.parentNode.insertBefore(style, script);
-
-      // 'style.currentStyle' is used by IE <= 8
-      // 'window.getComputedStyle' for all other browsers
-      info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
-
-      styleMedia = {
-        matchMedium: function(media) {
-          var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
-
-          // 'style.styleSheet' is used by IE <= 8
-          // 'style.textContent' for all other browsers
-          if (style.styleSheet) {
-            style.styleSheet.cssText = text;
-          } else {
-            style.textContent = text;
-          }
-
-          // Test if media query is true or false
-          return info.width === '1px';
-        }
-      };
-    }
-
-    return function(media) {
-      return {
-        matches: styleMedia.matchMedium(media || 'all'),
-        media: media || 'all'
-      };
-    };
-  }());
-})
-
-
-// takes a comma-separated list of screen sizes to match.
-// returns true if any of them match.
-.service('screenSize', ["$rootScope", function screenSize($rootScope) {
+(function() {
   'use strict';
 
-  var defaultRules = {
-    lg: '(min-width: 1200px)',
-    md: '(min-width: 992px) and (max-width: 1199px)',
-    sm: '(min-width: 768px) and (max-width: 991px)',
-    xs: '(max-width: 767px)'
-  };
+  /*
+   * Angular matchMedia Module
+   * Version 0.4.1
+   * Uses Bootstrap 3 breakpoint sizes
+   * Exposes service "screenSize" which returns true if breakpoint(s) matches.
+   * Includes matchMedia polyfill for backward compatibility.
+   * Copyright © 2013-2014 Jack Tarantino.
+   **/
 
-  var that = this;
 
-  // Executes Angular $apply in a safe way
-  var safeApply = function(fn, scope) {
-    scope = scope || $rootScope;
-    var phase = scope.$root.$$phase;
-    if (phase === '$apply' || phase === '$digest') {
-      if (fn && (typeof(fn) === 'function')) {
-        fn();
+  var app = angular.module('matchMedia', []);
+
+
+  app.run(function initializeNgMatchMedia() {
+    /*! matchMedia() polyfill - Test a CSS media type/query in JS.
+     * Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight.
+     * Dual MIT/BSD license
+     **/
+
+    window.matchMedia || (window.matchMedia = function matchMediaPolyfill() {
+
+      // For browsers that support matchMedium api such as IE 9 and webkit
+      var styleMedia = (window.styleMedia || window.media);
+
+      // For those that don't support matchMedium
+      if (!styleMedia) {
+        var style = document.createElement('style'),
+          script = document.getElementsByTagName('script')[0],
+          info = null;
+
+        style.type = 'text/css';
+        style.id = 'matchmediajs-test';
+
+        script.parentNode.insertBefore(style, script);
+
+        // 'style.currentStyle' is used by IE <= 8
+        // 'window.getComputedStyle' for all other browsers
+        info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
+
+        styleMedia = {
+          matchMedium: function(media) {
+            var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
+
+            // 'style.styleSheet' is used by IE <= 8
+            // 'style.textContent' for all other browsers
+            if (style.styleSheet) {
+              style.styleSheet.cssText = text;
+            } else {
+              style.textContent = text;
+            }
+
+            // Test if media query is true or false
+            return info.width === '1px';
+          }
+        };
       }
-    } else {
-      scope.$apply(fn);
-    }
-  };
 
-  this.is = function(list) {
-    var rules = this.rules || defaultRules;
+      return function(media) {
+        return {
+          matches: styleMedia.matchMedium(media || 'all'),
+          media: media || 'all'
+        };
+      };
+    }());
+  });
 
-    // validate that we're getting a string or array.
-    if (typeof list !== 'string' && Object.prototype.toString.call(list) === '[object Array]') {
-      throw new Error('screenSize requires array or comma-separated list');
-    }
 
-    // if it's a string, convert to array.
-    if (typeof list === 'string') {
-      list = list.split(/\s*,\s*/);
-    }
+  // takes a comma-separated list of screen sizes to match.
+  // returns true if any of them match.
+  app.service('screenSize', ["$rootScope", function screenSize($rootScope) {
 
-    return list.some(function(size, index, arr) {
-      if (window.matchMedia(rules[size]).matches) {
-        return true;
+    var defaultRules = {
+      lg: '(min-width: 1200px)',
+      md: '(min-width: 992px) and (max-width: 1199px)',
+      sm: '(min-width: 768px) and (max-width: 991px)',
+      xs: '(max-width: 767px)'
+    };
+
+    var that = this;
+
+    // Executes Angular $apply in a safe way
+    var safeApply = function(fn, scope) {
+      scope = scope || $rootScope;
+      var phase = scope.$root.$$phase;
+      if (phase === '$apply' || phase === '$digest') {
+        if (fn && (typeof(fn) === 'function')) {
+          fn();
+        }
+      } else {
+        scope.$apply(fn);
       }
-    });
-  };
+    };
 
-  // Executes the callback function on window resize with the match truthiness as the first argument.
-  // Returns the current match truthiness.
-  // The 'scope' parameter is optional. If it's not passed in, '$rootScope' is used.
-  this.on = function(list, callback, scope) {
-    window.addEventListener('resize', function(event) {
-      safeApply(callback(that.is(list)), scope);
-    });
+    this.is = function(list) {
+      var rules = this.rules || defaultRules;
 
-    return that.is(list);
-  };
+      // validate that we're getting a string or array.
+      if (typeof list !== 'string' && Object.prototype.toString.call(list) === '[object Array]') {
+        throw new Error('screenSize requires array or comma-separated list');
+      }
 
-  // Executes the callback only when inside of the particular screensize.
-  // The 'scope' parameter is optional. If it's not passed in, '$rootScope' is used.
-  this.when = function(list, callback, scope) {
-    window.addEventListener('resize', function(event) {
-      if (that.is(list) === true) {
+      // if it's a string, convert to array.
+      if (typeof list === 'string') {
+        list = list.split(/\s*,\s*/);
+      }
+
+      return list.some(function(size, index, arr) {
+        if (window.matchMedia(rules[size]).matches) {
+          return true;
+        }
+      });
+    };
+
+    // Return the actual size (it's string name defined in the rules)
+    this.get = function() {
+      var rules = this.rules || defaultRules;
+
+      for (var prop in rules) {
+        if (window.matchMedia(rules[prop]).matches) {
+          return prop;
+        }
+      }
+    };
+
+    // Executes the callback function on window resize with the match truthiness as the first argument.
+    // Returns the current match truthiness.
+    // The 'scope' parameter is optional. If it's not passed in, '$rootScope' is used.
+    this.on = function(list, callback, scope) {
+      window.addEventListener('resize', function(event) {
         safeApply(callback(that.is(list)), scope);
-      }
-    });
+      });
 
-    return that.is(list);
-  };
-}]);
+      return that.is(list);
+    };
+
+    // Executes the callback only when inside of the particular screensize.
+    // The 'scope' parameter is optional. If it's not passed in, '$rootScope' is used.
+    this.when = function(list, callback, scope) {
+      window.addEventListener('resize', function(event) {
+        if (that.is(list) === true) {
+          safeApply(callback(that.is(list)), scope);
+        }
+      });
+
+      return that.is(list);
+    };
+  }]);
+
+  app.filter('media', ['screenSize', function(screenSize) {
+
+      var mediaFilter = function(inputValue, options) {
+
+        // Get actual size
+        var size = screenSize.get();
+
+        // Variable for the value being return (either a size/rule name or a group name)
+        var returnedName = '';
+
+        if (!options) {
+
+          // Return the size/rule name
+          return size;
+
+        }
+
+      // Replace placeholder with group name in input value
+      if (options.groups) {
+
+        for (var prop in options.groups) {
+          var index = options.groups[prop].indexOf(size);
+          if (index >= 0) {
+            returnedName = prop;
+          }
+        }
+
+        // If no group name is found for size use the size itself
+        if (returnedName === '') {
+          returnedName = size;
+        }
+
+      }
+
+      // Replace or return size/rule name?
+      if (options.replace && typeof options.replace === 'string' && options.replace.length > 0) {
+        return inputValue.replace(options.replace, returnedName);
+      } else {
+        return returnedName;
+      }
+
+      };
+
+      // Since AngularJS 1.3, filters which are not stateless (depending at the scope)
+      // have to explicit define this behavior.
+      mediaFilter.$stateful = true;
+      return mediaFilter;
+  }]);
+
+})();
 
 /*!
  * EventEmitter v4.2.11 - git.io/ee
