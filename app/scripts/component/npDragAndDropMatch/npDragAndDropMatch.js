@@ -189,8 +189,6 @@
                             Draggable.create(element, {
                                 type: "x,y",
                                 edgeResistance: 0.65,
-//                                autoScroll: 1,
-                                bounds: "#draggableContainer",
                                 throwProps: true,
                                 overlapThreshold: '50%',
                                 onDrag: function (e) {
