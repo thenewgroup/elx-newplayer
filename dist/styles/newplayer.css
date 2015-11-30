@@ -6072,7 +6072,7 @@ button.close {
   #ANR .positive-feedback-image polygon, #ANR path {
     fill: #040A2B; }
   #ANR .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #ANR rect {
     position: fixed;
@@ -7215,7 +7215,7 @@ button.close {
   #ANR2 .positive-feedback-image polygon, #ANR2 .positive-feedback-image path {
     fill: #080F30; }
   #ANR2 .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #ANR2 rect {
     position: fixed;
@@ -8410,7 +8410,7 @@ button.close {
   #BSFL .positive-feedback-image polygon, #BSFL path {
     fill: #040A2B; }
   #BSFL .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #BSFL rect {
     position: fixed;
@@ -8524,6 +8524,1019 @@ button.close {
   #BSFL .pos19 {
     top: 94.73%; }
   #BSFL .pos20 {
+    top: 100%; }
+
+#holiday {
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player page type wrapper classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*When setting this ID for New Player use: 'newplayer-background'*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*Holiday font classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player npPage classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player button classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player padding wrapper classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*When setting this ID for New Player use: content-background */
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player HotSpot classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Flash Cards classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Quiz classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Quiz Answer classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Quiz Questions classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Result classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Trivia/Spinner classes*/
+  /*
+  ////////////////////////////////////////////////////////////////////////////////
+  :::::::::::::                 Spinner classes                      :::::::::::::
+  // FROM - http://codepen.io/Aldlevine/pen/yGLqd
+  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  */
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Reveal classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*
+  ////////////////////////////////////////////////////////////////////////////////
+  ::::::::::::: evenly ditribute navigation begin ::::::::::::::::::::::::::::::::
+  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  */
+  /*
+  ////////////////////////////////////////////////////////////////////////////////
+  ::::::::::::: evenly ditribute navigation end ::::::::::::::::::::::::::::::::::
+  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  */
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player List classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Drag and Drop Select classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Drag and Drop Prioritize classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*New Player Drag and Drop match classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*Hotspot button left position classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  /*Hotspot button top position classes*/
+  /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/ }
+  #holiday #np_newplayer-background {
+    position: fixed;
+    background-color: #000000;
+    background-size: cover;
+    content: "";
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0; }
+  #holiday #background-image {
+    position: fixed;
+    background-image: url("../assets/images/HOL15_RedGlitter--bg-crop--align-top-rt.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-origin: content-box;
+    width: 100%;
+    height: 100%; }
+  #holiday .renutriv-logo-image {
+    position: relative;
+    height: 12px;
+    padding-bottom: 11px;
+    text-transform: uppercase;
+    color: #c78b50;
+    letter-spacing: 1.8px; }
+  #holiday #holiday .renutriv-logo-image:after {
+    content: "Holiday #howitsdone"; }
+  #holiday .headline {
+    text-transform: uppercase;
+    font-family: "optimadisplaylightlight";
+    font-size: 36px;
+    color: #FFFFFF;
+    letter-spacing: 1.5px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    display: inline-block;
+    line-height: 1.2;
+    margin-bottom: 25px; }
+  #holiday .instructional {
+    font-family: "akzidenz-grotesk_bqregular";
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.2;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    display: inline-block;
+    margin-bottom: 14px; }
+  #holiday .h1, #holiday .h2, #holiday .h3, #holiday .h4, #holiday .h5 {
+    color: #FFFFFF; }
+  #holiday .subhead-copy {
+    display: none; }
+  #holiday .body-copy-strong {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-bottom: 20px; }
+  @media (max-width: 992px) {
+    #holiday .headline {
+      font-size: 40px;
+      letter-spacing: 1.5px; }
+    #holiday .subhead-copy {
+      font-size: 17px; }
+    #holiday .body-copy-strong {
+      font-size: 17px; } }
+  #holiday .body-copy {
+    word-wrap: break-word;
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1.2;
+    margin-bottom: 20px; }
+  @media (max-width: 992px) {
+    #holiday .body-copy {
+      font-size: 14px;
+      line-height: 1.1; } }
+  #holiday small {
+    color: #040A2B; }
+  #holiday .header-dark {
+    font-family: "optimadisplaylightlight";
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: inline-block; }
+  #holiday .npPage-title {
+    display: none; }
+  #holiday .npPage-subTitle {
+    display: none; }
+  #holiday .npPage-instructional {
+    display: none; }
+  #holiday .np_outside-padding {
+    padding: 31px 27px; }
+  #holiday .gold {
+    /*color: #9a7d46;*/
+    color: #9a7d46; }
+  #holiday .btn span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.25em; }
+  #holiday .btn {
+    position: relative;
+    border-color: #FFFFFF;
+    background-color: rgba(121, 0, 0, 0.9);
+    width: auto !important;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin-top: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 3px; }
+  #holiday .btn span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #holiday .btn-next {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    width: 120px;
+    height: 42px; }
+  #holiday .btn-next span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0; }
+  #holiday .btn-submit {
+    margin: 17px 0 0;
+    width: 120px;
+    height: 42px; }
+  @media (max-width: 768px) {
+    #holiday .btn-next {
+      position: absolute;
+      right: 110px;
+      bottom: 0px;
+      margin-right: 0px;
+      margin-bottom: 50px; } }
+  #holiday .content-background {
+    background-color: rgba(255, 255, 255, 0.5); }
+  #holiday .npHotspot {
+    top: 0;
+    left: 0; }
+  #holiday .hotspotImage {
+    position: relative;
+    max-width: 575px;
+    margin-bottom: 10%; }
+  #holiday .hotspotButton {
+    position: absolute;
+    max-width: 90px;
+    height: auto;
+    margin: 0;
+    margin-top: -.75rem;
+    margin-left: -3.25rem;
+    padding: 0;
+    cursor: pointer; }
+  #holiday .hotspotButtonImage {
+    position: relative;
+    background-image: url("../assets/images/hotspot.png");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px; }
+  #holiday .npHotspot-feedback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 20px; }
+  #holiday .content-background-svg rect {
+    fill: rgba(255, 255, 255, 0.5);
+    stroke: #040A2B;
+    stroke-width: 4px; }
+  #holiday .np-flash-card {
+    position: fixed;
+    content: "";
+    width: 100%;
+    left: 0;
+    right: 0; }
+  #holiday #flash-cards {
+    position: relative;
+    padding-top: 45px !important;
+    margin-left: 0px; }
+  #holiday .flash-cards-object {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 560px;
+    /*min-height: 800px;*/
+    margin-bottom: 222px;
+    padding-bottom: 15px; }
+  @media (max-width: 768px) {
+    #holiday .flash-cards-object {
+      width: 280px; } }
+  #holiday .flash-card-overlay {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #FFFFFF; }
+  #holiday .flash-card-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: auto;
+    cursor: pointer; }
+  #holiday .button-holder {
+    position: relative;
+    fill: #040A2B; }
+  #holiday .flash-card-front-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 475px; }
+  #holiday .flash-card-content-front {
+    position: absolute;
+    padding: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    box-shadow: inset 0px 0px 1px 1px #040A2B;
+    min-height: 475px; }
+  #holiday .flash-card-content-front p {
+    color: #040A2B; }
+  #holiday .flash-card-back-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  #holiday .flash-card-content-back {
+    position: absolute;
+    padding: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #FFFFFF;
+    box-shadow: inset 0px 0px 1px 1px #040A2B;
+    min-height: 475px; }
+  #holiday .flash-card-content-back p {
+    color: #040A2B; }
+  #holiday .quiz-label {
+    display: none; }
+  #holiday .question-submit-wrapper {
+    width: auto; }
+  #holiday .npQuestion .col-sm-9 {
+    clear: left; }
+  #holiday input {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #holiday .answer-text-input {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    color: #737373;
+    letter-spacing: 2px;
+    border-color: #9a7d46;
+    background-color: #333333;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65); }
+  #holiday .answer-text-checkbox {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #holiday .answer-text span {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #holiday .npAnswer-label {
+    font-family: "optimadisplaylightlight";
+    font-size: 24px;
+    font-weight: bold; }
+  #holiday .answer-wrapper {
+    margin: 20px 0; }
+  #holiday .answer-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 5px 0 0; }
+  #holiday .checkbox-box {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65); }
+  #holiday .checkbox-box svg rect {
+    fill: rgba(184, 39, 39, 0.8);
+    opacity: 0.75;
+    stroke: #FFFFFF;
+    stroke-width: 3; }
+  #holiday .checkbox-x {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: auto; }
+  #holiday .checkbox-x svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    margin: auto; }
+  #holiday .checkbox-x svg line {
+    stroke: #FFFFFF !important; }
+  #holiday .answer-content-wrapper {
+    padding: 6px;
+    margin-left: 20px; }
+  #holiday .answer-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #040A2B;
+    letter-spacing: 2px; }
+  #holiday .question-text {
+    font-family: "optimadisplaylightlight";
+    font-weight: bold;
+    font-size: 24px;
+    color: #e6a15c;
+    margin-bottom: 34px; }
+  #holiday .question-feedback-wrapper {
+    background: rgba(0, 0, 0, 0.72);
+    color: #FFFFFF;
+    box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.25);
+    margin-top: -1px;
+    border: 1px solid #fff;
+    padding: 15px 33px 21px 16px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%; }
+  #holiday .question-feedback-outline {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  #holiday .question-feedback-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    letter-spacing: 1.1px;
+    margin: 0 0 0 38px; }
+  #holiday .positive-feedback-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    left: 16px; }
+  #holiday .negative-feedback-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    left: 16px; }
+  #holiday .question-feedback-label {
+    font-family: "akzidenz-grotesk_bqregular";
+    size: 23px;
+    color: #737373;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px; }
+  #holiday .question-feedback-wrapper svg polygon {
+    fill: #FFFFFF; }
+  #holiday .question-feedback-wrapper svg path {
+    fill: #FFFFFF; }
+  #holiday .np-result {
+    font-family: "optimadisplaylightlight";
+    color: #FFFFFF; }
+  #holiday .np-result-summary {
+    position: relative;
+    height: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 1.2em; }
+    @media (max-width: 992px) {
+      #holiday .np-result-summary {
+        font-size: 0.5em;
+        padding-left: 15px;
+        padding-right: 0px; } }
+  #holiday .results-wrapper-correct {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    letter-spacing: 2px;
+    left: 100px;
+    right: 100px;
+    padding: 25px;
+    text-align: center; }
+    @media (max-width: 992px) {
+      #holiday .results-wrapper-correct {
+        left: 10px;
+        right: 10px;
+        padding: 5px; } }
+  #holiday .results-wrapper-incorrect {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    letter-spacing: 2px;
+    left: 100px;
+    right: 100px;
+    padding: 25px;
+    text-align: center; }
+    @media (max-width: 992px) {
+      #holiday .results-wrapper-incorrect {
+        left: 10px;
+        right: 10px;
+        padding: 5px; } }
+  #holiday .results-summary-text {
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-align: center;
+    height: 100%; }
+  #holiday .results-summary-amount-wrapper {
+    padding-top: 20px;
+    height: 100%;
+    display: inline-block; }
+    @media (max-width: 992px) {
+      #holiday .results-summary-amount-wrapper {
+        padding-top: 5px; } }
+  #holiday .results-summary-label-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    font-size: 36px;
+    letter-spacing: 2px;
+    float: left;
+    margin-left: auto;
+    width: auto; }
+  #holiday .results-summary-pecentage {
+    font-size: 100px;
+    letter-spacing: 2px;
+    float: left;
+    margin-right: auto;
+    width: auto;
+    line-height: 1; }
+  #holiday .results-summary-pecentage-character {
+    font-size: 60px;
+    letter-spacing: 2px;
+    float: right;
+    margin-right: auto;
+    width: auto;
+    line-height: 1; }
+  #holiday .results-wrapper-incorrect .results-summary-pecentage {
+    line-height: 0.15; }
+  #holiday .np-result-container {
+    height: 100%;
+    opacity: 0.65; }
+  #holiday .np-result-container rect {
+    stroke: #040A2B;
+    fill: #FFFFFF;
+    stroke-width: 6; }
+  #holiday .np-spinner-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65); }
+  #holiday .np-spinner {
+    color: #7a0000;
+    width: 155px; }
+  #holiday .np-gold-pointer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 18px; }
+  #holiday .method2 {
+    -webkit-mask-image: -webkit-linear-gradient(top, #f8f8aa, rgba(202, 160, 78, 0.5) 50%, #f8f8aa);
+    -webkit-mask-image: linear-gradient(top, #f8f8aa, rgba(202, 160, 78, 0.5) 50%, #f8f8aa); }
+  #holiday .np-spinner div {
+    font-family: "BauerBodoniStd-Roman";
+    color: #c70000;
+    font-size: 35px;
+    line-height: 2.1em;
+    text-align: center; }
+  #holiday .np-spinner svg rect {
+    fill: transparent;
+    stroke: #7a0000;
+    stroke-width: 4; }
+  #holiday .np-gold-pointer svg polygon {
+    fill: #7a0000 !important;
+    box-shadow: 10px 10px 25px -5px rgba(0, 0, 0, 0.75);
+    z-index: 10000; }
+  #holiday .np-spinner-content div:nth-last-child(2) {
+    color: #040A2B; }
+  #holiday .np-gold-border {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    box-shadow: inset 0 0 30px 15px rgba(0, 0, 0, 0.5); }
+  #holiday .wheels {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+    /*clip the container for those not supporting csstransforms3d*/ }
+    .no-csstransforms3d #holiday .wheels {
+      overflow: hidden;
+      height: 65px; }
+    #holiday .wheels .wheel {
+      position: relative;
+      height: 600px;
+      top: 69px; }
+      #holiday .wheels .wheel > div {
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        z-index: 999;
+        background-color: #FFFFFF;
+        outline: 1px solid transparent;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden; }
+  #holiday .reveal-object {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 765px; }
+  #holiday .np-reveal {
+    position: relative;
+    width: 100%;
+    height: 600px; }
+  #holiday .reveal-button {
+    cursor: pointer; }
+  #holiday .reveal-navigation {
+    width: 100%;
+    height: 100px; }
+  #holiday .reveal-button-image {
+    position: absolute;
+    height: 62px;
+    width: 62px;
+    background-color: #FFFFFF;
+    overflow: hidden; }
+  #holiday .reveal-button-container {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 765px; }
+  #holiday .reveal-button-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; }
+  #holiday .button-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(184, 39, 39, 0.8); }
+  #holiday .reveal-button {
+    position: relative;
+    width: 62px;
+    height: 62px; }
+  #holiday .reveal-item-wrapper {
+    max-width: 100%;
+    display: table;
+    margin: 0 auto; }
+  #holiday .reveal-item {
+    display: table;
+    margin: 0 auto;
+    max-width: 100%; }
+  #holiday .reveal-video {
+    height: auto;
+    max-width: 100%; }
+  #holiday .reveal-content-wrapper {
+    position: relative; }
+  #holiday .reveal-content-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  #holiday .reveal-content-text ol {
+    font-weight: bold; }
+  #holiday .reveal-content-text li {
+    margin-bottom: 14px; }
+  #holiday .reveal-content-text ol p {
+    margin-bottom: 2px; }
+  #holiday .reveal-content-text ol em {
+    font-weight: normal;
+    font-style: normal; }
+  #holiday .reveal-heading-text {
+    margin-top: -5px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px; }
+  #holiday .reveal-text-body {
+    margin-bottom: 0; }
+  #holiday .reveal-content-text {
+    color: #FFFFFF;
+    background-color: rgba(121, 0, 0, 0.8);
+    padding: 12px 18px 4px;
+    margin-top: 30px; }
+  #holiday .reveal-background {
+    display: none; }
+  #holiday .list-item {
+    display: none; }
+  #holiday .list-object video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto; }
+  #holiday .media {
+    margin-top: 0; }
+  #holiday .media-body {
+    padding: 12px 18px 14px;
+    background-color: rgba(121, 0, 0, 0.8); }
+  #holiday .media-body .body-copy {
+    margin: 0; }
+  #holiday .list-body-text {
+    color: #040A2B;
+    letter-spacing: 2px;
+    font-size: 14px; }
+  #holiday .npList .column-1.col-md-12 .media-left.media-middle {
+    display: block; }
+  #holiday .npList .column-1.col-md-4,
+  #holiday .npList .column-2.col-md-12 {
+    display: none; }
+  #holiday .npList .column-2.col-md-8 {
+    width: 100%; }
+  #holiday .npList .column-2 {
+    margin-bottom: 42px; }
+  #holiday #hit-area-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  #holiday #select-hit-area-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65); }
+  #holiday .select-button-wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  #holiday .btn-select-submit {
+    position: relative;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px; }
+  #holiday .btn-select-submit span {
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  #holiday .select-button-completion-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px; }
+  #holiday .select-response-wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%; }
+  #holiday .select-response-wrapper p, #holiday h2 {
+    color: #040A2B; }
+  #holiday .select-response-wrapper polygon, #holiday .select-response-wrapper path {
+    fill: #040A2B !important; }
+  #holiday .select-response-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65); }
+  #holiday .select-response-correct {
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 10px; }
+  #holiday .select-response-incorrect {
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 10px; }
+  #holiday .left-column-select {
+    text-align: right; }
+  #holiday .right-column-select {
+    text-align: left;
+    margin-top: 3px; }
+  #holiday .response-icon-wrapper {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    margin-top: 1px;
+    margin-bottom: 20px; }
+  #holiday .button-prioritize-content {
+    position: relative;
+    display: block; }
+  #holiday .hit-area-prioritize-content {
+    position: absolute;
+    float: right;
+    right: 43%;
+    top: 43%; }
+  #holiday .hit-area-number {
+    font-size: 7em;
+    color: #000000;
+    opacity: .15;
+    text-align: center;
+    padding-left: 20px; }
+  #holiday .button-completion-prioritize-content {
+    position: absolute;
+    float: right;
+    right: 50%;
+    top: 36%; }
+  #holiday .centered-prioritize-content {
+    width: 100%;
+    height: 100%;
+    float: right;
+    right: -50%;
+    position: relative; }
+  #holiday .column-no-wrap {
+    float: none; }
+  #holiday .boxElements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: left;
+    color: #040A2B;
+    margin-bottom: 1.5%; }
+  #holiday .hit-area-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.25); }
+  #holiday .completeCheck {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: 2.5%; }
+  #holiday foreignobject {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 35px; }
+  #holiday .button-completion-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    margin: auto;
+    min-height: 100%; }
+  #holiday .centered-content {
+    padding-top: 3em;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    resize: vertical; }
+  #holiday .positive-feedback-content {
+    padding-top: 10px;
+    margin-left: 35px; }
+  #holiday .positive-feedback-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25px; }
+  #holiday .positive-feedback-image polygon, #holiday path {
+    fill: #040A2B; }
+  #holiday .button-content {
+    padding: 5%; }
+  #holiday rect {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+  #holiday .button-content p {
+    padding: 0;
+    margin: 0; }
+    @media (max-width: 414px) {
+      #holiday .button-content p {
+        font-size: 13px; } }
+  #holiday .draggableButton {
+    cursor: pointer; }
+  #holiday .draggableButton rect {
+    stroke: #FFFFFF;
+    fill: rgba(121, 0, 0, 0.9); }
+  #holiday .hit-area {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  #holiday .hit-area rect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    opacity: .90; }
+  #holiday .hit-area svg rect {
+    fill: rgba(121, 0, 0, 0.9);
+    opacity: 0.75;
+    stroke: #FFFFFF;
+    stroke-width: 3; }
+  #holiday .posA {
+    left: 0%; }
+  #holiday .posB {
+    left: 6.25%; }
+  #holiday .posC {
+    left: 12.50%; }
+  #holiday .posD {
+    left: 18.75%; }
+  #holiday .posE {
+    left: 25%; }
+  #holiday .posF {
+    left: 31.25%; }
+  #holiday .posG {
+    left: 37.5%; }
+  #holiday .posH {
+    left: 43.75%; }
+  #holiday .posI {
+    left: 50%; }
+  #holiday .posJ {
+    left: 56.25%; }
+  #holiday .posK {
+    left: 62.5%; }
+  #holiday .posL {
+    left: 68.75%; }
+  #holiday .posM {
+    left: 75%; }
+  #holiday .posN {
+    left: 81.25%; }
+  #holiday .posO {
+    left: 87.5%; }
+  #holiday .posP {
+    left: 93.75%; }
+  #holiday .posQ {
+    left: 100%; }
+  #holiday .pos1 {
+    top: 0%; }
+  #holiday .pos2 {
+    top: 5.26%; }
+  #holiday .pos3 {
+    top: 10.52%; }
+  #holiday .pos4 {
+    top: 15.78%; }
+  #holiday .pos5 {
+    top: 21.05%; }
+  #holiday .pos6 {
+    top: 26.31%; }
+  #holiday .pos7 {
+    top: 31.57%; }
+  #holiday .pos8 {
+    top: 36.84%; }
+  #holiday .pos9 {
+    top: 42.10%; }
+  #holiday .pos10 {
+    top: 47.36%; }
+  #holiday .pos11 {
+    top: 52.63%; }
+  #holiday .pos12 {
+    top: 57.89%; }
+  #holiday .pos13 {
+    top: 63.15%; }
+  #holiday .pos14 {
+    top: 68.42%; }
+  #holiday .pos15 {
+    top: 73.68%; }
+  #holiday .pos16 {
+    top: 78.94%; }
+  #holiday .pos17 {
+    top: 84.21%; }
+  #holiday .pos18 {
+    top: 89.47%; }
+  #holiday .pos19 {
+    top: 94.73%; }
+  #holiday .pos20 {
     top: 100%; }
 
 #GMTC {
@@ -9559,7 +10572,7 @@ button.close {
   #GMTC .positive-feedback-image polygon, #GMTC path {
     fill: #040A2B; }
   #GMTC .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #GMTC rect {
     position: fixed;
@@ -10746,7 +11759,7 @@ button.close {
   #ND .positive-feedback-image polygon, #ND path {
     fill: #040A2B; }
   #ND .button-content {
-    position: relative;
+    /*position: relative;*/
     padding: 5%; }
   #ND rect {
     position: fixed;
