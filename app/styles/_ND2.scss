@@ -493,11 +493,7 @@ table tr td:last-child{
 /*New Player Quiz classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .quiz-label{
-    font-family: $font-family-sans-serif;
-    color: $brand-primary;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
+    display: none;
 }
 input{ 
     font-family: $re-nu-serif;
