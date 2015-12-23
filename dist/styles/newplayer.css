@@ -13322,24 +13322,25 @@ button.close {
     height: 12px;
     padding-bottom: 11px;
     text-transform: uppercase;
-    color: #FFE296;
+    color: #000000;
     letter-spacing: 1.8px; }
   #SP .renutriv-logo-image:after {
     content: "Spring Preview"; }
   #SP .headline {
     font-family: "optimadisplaylightlight";
     font-size: 36px;
-    color: #FFFFFF;
+    color: #000000;
     letter-spacing: 2px;
     padding-top: 10px;
     padding-bottom: 0px;
     margin-top: 10px;
     display: inline-block;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-weight: bold; }
   #SP .instructional {
     font-family: "akzidenz-grotesk_bqregular";
     font-size: 14px;
-    color: #FFFFFF;
+    color: #000000;
     letter-spacing: 2px;
     line-height: 1.35;
     padding-top: 0px;
@@ -13727,7 +13728,7 @@ button.close {
   #SP .question-text {
     font-family: "optimadisplaylightlight";
     size: 23px;
-    color: #FFFFFF;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 2px; }
   #SP .question-feedback-wrapper {
