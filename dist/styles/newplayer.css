@@ -11165,9 +11165,9 @@ button.close {
     width: 100%;
     /*overflow: hidden;*/
     height: 475px; }
-  @media (max-width: 768px) {
+  /*@media (max-width: 768px) {
     #ND .flash-card-front-wrapper {
-      height: 235px; } }
+      height: 235px; } }*/
   #ND .flash-card-content-front {
     position: absolute;
     padding: 2em;
@@ -11292,6 +11292,9 @@ button.close {
     color: #FFFFFF;
     letter-spacing: 2px;
     /*margin-right: 20px;*/ }
+  @media (max-width: 768px) {
+    #ND .answer-wrapper {
+      padding: 15px; } }
   #ND .question-text {
     font-family: "optimadisplaylightlight";
     size: 23px;
