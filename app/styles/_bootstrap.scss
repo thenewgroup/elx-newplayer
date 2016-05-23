@@ -71,6 +71,12 @@
 #SP {
     @import "_SP.scss";
 }
+#FP {
+    @import "_SP.scss";
+    .renutriv-logo-image:after {
+        content: "Fall Preview";
+    }
+}
 #np_products {
     @import "_products.scss";
 }
