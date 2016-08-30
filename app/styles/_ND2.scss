@@ -4,126 +4,196 @@
 /*When setting this ID for New Player use: 'newplayer-background'*/
 #np_newplayer-background{
     position: fixed;
-    background-color: $gray-base;
+    background-color: $ND-primary;
     background-size: cover;
     content: "";
-    width: 100%;
-    height: auto;
+    width:100%;
+    height:auto;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
 }
 #background-image {
-    position:fixed;
-    background-image: url('../assets/images/HOL15_RedGlitter--bg-crop--align-top-rt.jpg');
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-origin: content-box;
-    width:100%;
-    height:100%;
+    position: fixed;
+    background-image: url('../assets/images/ESTL-006-ND-bg.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
 }
 .renutriv-logo-image {
     position: relative;
-    height: 12px;
+    background-image: url("../assets/images/NDLogo.png");
+    background-repeat: no-repeat;
+    width: 312px;
+    height: 19px;
     padding-bottom: 11px;
-    text-transform: uppercase;
-    color: $holiday-camel;
-    letter-spacing: 1.8px;
-}
-.renutriv-logo-image:after {
-    content: "Holiday #howitsdone";
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*Holiday font classes*/
+/*ReNutriv font classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .headline{
-    text-transform: uppercase;
     font-family: $font-family-serif;
-    font-size: 36px;
-    color: $brand-primary-light;
-    letter-spacing: 1.5px;
-    padding-top: 1px;
+    font-size: $font-size-36;
+    color: $brand-primary-light; 
+    letter-spacing: 2px;
+    padding-top: 10px;
     padding-bottom: 0px;
     margin-top: 10px;
     display: inline-block;
-    line-height: 1.2;
-    margin-bottom: 25px;
+    margin-bottom: $line-height-computed;
 }
 .instructional{
     font-family: $font-family-sans-serif;
-    font-size: 18px;
-    color: $holiday-red;
-    line-height: 1.2;
+    font-size: $font-size-h5;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    line-height: 1.35;
     padding-top: 0px;
-    padding-bottom: 0px;
     margin-top: 0px;
     display: inline-block;
-    margin-bottom: 14px;
 }
 .h1, .h2, .h3, .h4, .h5{
     color: $brand-primary-light;
 }
 .subhead-copy{
-    display: none;
+    font-family: $font-family-sans-serif;
+    color: $brand-primary;
+    font-size: $font-size-18;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $line-height-computed;
+}
+.subhead-ND{
+    font-family: $font-family-sans-serif;
+    color: $brand-primary;
+    font-size: $font-size-18;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $line-height-computed;
 }
 .body-copy-strong{
     font-family: $font-family-sans-serif;
-    color: $brand-primary-light;
+    color: $brand-primary;
     font-size: $font-size-18;
+    letter-spacing: 2px;
     margin-bottom: $line-height-computed;
 }
 @media (max-width: $screen-md) {
-    .headline{
-        font-size: $font-size-40;
-        letter-spacing: 1.5px;
-    }
     .subhead-copy{
         font-size: $font-size-16;
+        letter-spacing: 1px;
     }
     .body-copy-strong{
         font-size: $font-size-16;
+        letter-spacing: 1px;
     }
 }
 .body-copy{
-    word-wrap: break-word;
     font-family: $font-family-sans-serif;
-    color: $brand-primary-light;
+    color: $brand-primary;
     font-size: $font-size-17;
-    line-height: 1.2;
+    letter-spacing: 2px;
+    line-height: 1.35;
     margin-bottom: $line-height-computed;
 }
 @media (max-width: $screen-md) {
     .body-copy{
         font-size: $font-size-base;
-        line-height: 1.1;
+        letter-spacing: 1px;
+        line-height: 1.25;
     }
 }
 small{
     color: $brand-primary;
 }
-.header-dark {
-    font-family: $font-family-serif;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 0px;
-    padding-bottom: 0px;
+.dark .h1, .h2, .h3, .h4, .h5 {
+    /*color: $gray-dark;*/
+}
+.header-dark {  
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #FFFFFF;
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px;
+    padding-top: 35px;
     display: inline-block;
+    background-image: url("../assets/svgs/ND_header_bg.svg");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+li{
+   font-size: 18px;
+}
+.tab{
+   margin-left: 40px;
+}
+table{
+   border-collapse: collapse;
+}
+table td{
+   text-align: center;
+   border: 1px solid black;
+   height: 150px;
+}
+table tr:nth-child(5) td:nth-child(2){
+   text-align: left;
+   padding-left: 20px;
+   padding-top: 20px;
+}
+table tr:nth-child(6) td:nth-child(2){
+   text-align: left;
+   padding-left: 20px;
+   padding-top: 20px;
+   padding-right: 20px;
+}
+table tr:first-child td{
+   border-top: 0;
+}
+table tr:last-child td{
+   border-bottom: 0;
+}
+table tr td:first-child{
+   border-left: 0;
+   width:20%;
+}
+table tr td:nth-child(2){
+   width:40%;
+}
+table tr td:last-child{
+   border-right: 0;
+   width:40%;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player npPage classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .npPage-title{
-    display: none;
+    font-family: $font-family-serif;
+    color: $brand-primary-light;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: $line-height-computed;
 }
 .npPage-subTitle{
-    display: none;
+    font-family: $font-family-sans-serif;
+    color: $brand-primary-light;
+    font-size: $font-size-18;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $line-height-computed;
+    display: inline-block;
 }
 .npPage-instructional{
-    display: none;
-}
-.np_outside-padding {
-    padding: 31px 27px;
+    font-size: $font-size-h5;
+    color: $brand-primary-light;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    display: inline-block;
+    margin-bottom: $line-height-computed;
 }
 .gold {
     /*color: #9a7d46;*/
@@ -132,16 +202,16 @@ small{
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player button classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.btn span{
+.btn span{ 
     font-family: $font-family-sans-serif;
     color: $brand-primary-light;
     text-transform: uppercase;
     letter-spacing: 0.25em;
 }
-.btn{
+.btn{ 
     position: relative;
     border-color: $brand-primary-light;
-    background-color: rgba(121, 0, 0, 0.9);
+    background-color: $ND-primary;
     width: auto !important;
     min-width: fit-content;
     margin-top: 5px;
@@ -151,21 +221,20 @@ small{
     padding-top: 5px;
     padding-bottom: 3px;
 }
-.btn span{
+.btn span{ 
     font-family: $font-family-sans-serif;
     color: $brand-primary-light;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.btn-next{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+.btn-next{ 
+    position: absolute;
+    right: 80px;
+    bottom: 0px;
+    margin-right: 30px;
     margin-bottom: 50px;
-    width: 120px;
-    height: 42px;
 }
-.btn-next span{
+.btn-next span{ 
     font-family: $font-family-sans-serif;
     color: $brand-primary-light;
     text-transform: uppercase;
@@ -173,14 +242,13 @@ small{
     padding: 0;
 }
 .btn-submit{
-    margin: 17px 0 0;
-    width: 120px;
-    height: 42px;
+    margin-top: 10px;
+    margin-left: 60px;
 }
-.btn-submit span{
+.btn-submit span{ 
 }
 @media (max-width: $screen-sm) {
-    .btn-next{
+    .btn-next{ 
         position: absolute;
         right: 110px;
         bottom: 0px;
@@ -192,7 +260,15 @@ small{
 /*New Player padding wrapper classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*When setting this ID for New Player use: content-background */
+/*.npHotspot-feedback p{
+    position: relative;
+    height: 100%;
+
+}*/
 .content-background{
+    /*    position: absolute;
+    left: 10px;
+    right: 20px;*/
     background-color:hsla(100%,100%,100%,0.5);
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -206,6 +282,10 @@ small{
     position: relative;
     max-width: 575px;
     margin-bottom: 10%;
+    /*overflow: hidden;*/
+}
+.content-area{
+    /*padding-left: 10px;*/
 }
 .hotspotButton{
     position: absolute;
@@ -237,13 +317,13 @@ small{
 }
 .content-background-svg rect{
     fill: hsla(100%,100%,100%,0.5);
-    stroke: $brand-primary;
+    stroke: $ND-primary;
     stroke-width: 4px;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Flash Cards classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.np-flash-card{
+.np-flash-card{  
     position: fixed;
     content: "";
     width: 100%;
@@ -252,18 +332,24 @@ small{
 }
 #flash-cards {
     position: relative;
-    padding-top: 45px !important;
+    padding-top: 55px !important;
     margin-left: 0px;
+}
+.flash-card-text-heading {
+    color: $ND-primary;
+    font-size: $font-size-h4;
+    text-transform: uppercase;
 }
 ///////////////cards/////////////////
 .flash-cards-object {
     position: relative;
     display: inline-block;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 560px;
-    /*min-height: 800px;*/
     margin-bottom: 222px;
     padding-bottom: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
 }
 @media (max-width: $screen-sm) {
     .flash-cards-object {
@@ -277,29 +363,34 @@ small{
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #FFFFFF;
+    /*background-color: $ND-primary;*/
 }
 ///////////////button/////////////////
 .flash-card-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 25px;
+    right: 20px;
     width: 40px;
     height: auto;
     cursor: pointer;
 }
 .button-holder{
     position: relative;
-    fill: $brand-primary;
+    fill: #d9d9d9;
 }
 ///////////////front/////////////////
 .flash-card-front-wrapper {
     position: absolute;
-    top:0;
+    top:25px;
     bottom:0;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 475px;
+}
+@media (max-width: $screen-sm) {
+    .flash-card-front-wrapper {
+        height: 235px;
+    }
 }
 .flash-card-content-front {
     position: absolute;
@@ -309,19 +400,18 @@ small{
     top: 0;
     bottom: 0;
     overflow: hidden;
-    background-color: #FFFFFF;
-    box-shadow: inset 0px 0px 1px 1px $brand-primary;
-    min-height: 475px;
+    /*background-color: #FFFFFF;*/
+    /*min-height: 475px;*/
 }
 .flash-card-content-front p{
-    color: $brand-primary;
+    /*color: #000000;*/
 }
 ///////////////back/////////////////
 .flash-card-back-wrapper {
     position: absolute;
-    top:0;
+    top: 25px;
     width: 100%;
-    height:100%;
+    height: 100%;
 }
 .flash-card-content-back {
     position: absolute;
@@ -329,160 +419,228 @@ small{
     left: 0;
     right: 0;
     top: 0;
-    background-color: #FFFFFF;
-    box-shadow: inset 0px 0px 1px 1px $brand-primary;
+    /*background-color: #FFFFFF;*/
     min-height: 475px;
 }
 .flash-card-content-back p{
-    color: $brand-primary;
+    /*color: #000000;*/
 }
+.flash-card-background {
+    position: absolute;
+    width: 150%;
+    margin-left: -25%;
+    height: 120%;
+    margin-top: -20%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url("../assets/images/ESTL-006-ND-cloudcontain1.png");
+    background-size: 100% 100%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*New Player Matching Game classes*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*.matching-game{
+    height:450px;
+}
+.question-match{
+    position: relative;
+    height:auto;
+    float: left;
+    width: 100%;
+}
+.question-match-outline{
+    position: absolute;
+    height: 360px;
+    right: 39%;
+    left: 39%;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 105px 50px rgba(0,0,0,0.5);
+}
+.question-match-outline-inner{
+    height:100%;
+}
+.question-match-set{
+    position: absolute;
+    height:100%;
+    right: 0;
+    left: 0;
+}
+.btn-match-submit-wrapper{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+}
+.btn-match-submit{
+    font-family: $re-nu-serif;
+    color: $brand-primary-light;
+    border-color: #9a7d46;
+    background-color: #000000;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 33%;
+}*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Quiz classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .quiz-label{
     display: none;
 }
-.question-submit-wrapper {
-    width: auto;
-}
-.npQuestion .col-sm-9 {
-    clear: left;
-}
-input{
+input{ 
     font-family: $re-nu-serif;
     size: $font-size-small;
     color: #313131;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.answer-text-input{
+.answer-text-input{ 
     font-family: $re-nu-serif;
     size: $font-size-small;
     color: #737373;
     letter-spacing: 2px;
-    border-color: $gold;
-    background-color: $gray-dark;
+    border-color: $brand-primary-light;
+    background-color: $ND-primary;
     box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65);
 }
-.answer-text-checkbox {
+.answer-text-checkbox { 
     font-family: $re-nu-serif;
     size: $font-size-small;
     color: $brand-primary-light;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.answer-text span{
+.answer-text-radio { 
     font-family: $re-nu-serif;
     size: $font-size-small;
     color: $brand-primary-light;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.npAnswer-label {
-    font-family: $font-family-serif;
-    font-size: 24px;
-    font-weight: bold;
+.answer-text span{ 
+    font-family: $re-nu-serif;
+    size: $font-size-small;
+    color: $brand-primary-light;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Quiz Answer classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.answer-wrapper{
-    margin: 20px 0;
+.answer-wrapper{ 
+    padding: 20px;
 }
-.answer-checkbox{
+.answer-checkbox{ 
     position: relative;
     width: 20px;
     height: 20px;
     cursor: pointer;
-    padding: 5px 0 0;
 }
-.checkbox-box{
+.checkbox-box{ 
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: block;
     margin: auto;
     box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65);
 }
 .checkbox-box svg rect{
-    fill: $holiday-brick;
+    fill: #FFFFFF;
     opacity: 0.75;
-    stroke: $brand-primary-light;
+    stroke: #FFFFFF;
     stroke-width: 3;
 }
-.checkbox-x{
+.checkbox-x{ 
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: block;
     margin: auto;
 }
-.checkbox-x svg{
+.checkbox-x svg{ 
     position: absolute;
     top:0;
     left:0;
+    /*opacity: 0;*/
     display: block;
     margin: auto;
 }
-.checkbox-x svg line{
-    stroke: $brand-primary-light !important;
+.checkbox-x svg line{ 
+    stroke: $brand-primary !important;
 }
-.answer-content-wrapper {
+.answer-content-wrapper { 
     padding: 6px;
+    opacity: .75;
+    background-color: #FFFFFF;
     margin-left: 20px;
 }
-.answer-text{
+.answer-text{ 
     font-family: $font-family-sans-serif;
-    color: $brand-primary;
+    /*float: left;*/
+    color: $brand-primary-light;
     letter-spacing: 2px;
+    /*margin-right: 20px;*/
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Quiz Questions classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.question-text{
+.question-text{ 
     font-family: $font-family-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: $holiday-faded-orange;
-    margin-bottom: 34px;
-}
-.question-feedback-wrapper{
-    background: $holiday-black-72;
+    size: $font-size-h3;
     color: $brand-primary-light;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.question-feedback-wrapper{ 
+    position: relative;
+    background-color: #FFFFFF;
     box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.25);
-    margin-top: -1px;
-    border: 1px solid #fff;
-    padding: 15px 33px 21px 16px;
+    padding: 20px;
     width: 100%;
     height: 100%;
     min-height: 100%;
 }
-.question-feedback-outline{
+.question-feedback{ 
+    position: relative;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*margin-right: 15px;*/
+}
+.question-feedback-outline{ 
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.question-feedback-text{
+.question-feedback-text{ 
     font-family: $font-family-sans-serif;
-    color: $brand-primary-light;
-    letter-spacing: 1.1px;
-    margin: 0 0 0 38px;
+    float: left;
+    color: $brand-primary;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-left: 40px;
 }
-.positive-feedback-icon{
+.positive-feedback-icon{ 
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 18px;
-    left: 16px;
+    width: 25px;
+    left: 20px;
 }
-.negative-feedback-icon{
+.negative-feedback-icon{ 
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 18px;
-    left: 16px;
+    width: 25px;
+    left: 20px;
 }
-.question-feedback-label{
+.question-feedback-label{ 
     font-family: $font-family-sans-serif;
     size: $font-size-h3;
     color: #737373;
@@ -490,77 +648,57 @@ input{
     text-align: center;
     letter-spacing: 2px;
 }
-.question-feedback-wrapper svg polygon{
-    fill: $brand-primary-light;
+.question-feedback-wrapper svg polygon{ 
+    fill: $brand-primary;
 }
-.question-feedback-wrapper svg path{
-    fill: $brand-primary-light;
+.question-feedback-wrapper svg path{ 
+    fill: $brand-primary;
+}
+.question-submit-wrapper{
+/*    text-align: center;
+    margin-top: 3em;*/
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Result classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .np-result{
     font-family: $font-family-serif;
-    color: $brand-primary-light;
+    color: $brand-primary;
 }
 .np-result-summary{
     position: relative;
-    height: 100%;
     padding-left: 100px;
     padding-right: 100px;
     font-size: 1.2em;
-    @media (max-width: $screen-md) {
-        font-size: 0.5em;
-        padding-left: 15px;
-        padding-right: 0px;
-    }
 }
 .results-wrapper-correct{
     position: absolute;
     top:0;
     bottom:0;
-    height: 100%;
     letter-spacing: 2px;
     left: 100px;
     right: 100px;
-    padding: 25px;
+    padding: 50px;
     text-align: center;
-    @media (max-width: $screen-md) {
-        left: 10px;
-        right: 10px;
-        padding: 5px;
-    }
 }
-
 .results-wrapper-incorrect{
     position: absolute;
     top:0;
     bottom:0;
-    height: 100%;
     letter-spacing: 2px;
     left: 100px;
     right: 100px;
-    padding: 25px;
+    padding: 50px;
     text-align: center;
-    @media (max-width: $screen-md) {
-        left: 10px;
-        right: 10px;
-        padding: 5px;
-    }
 }
 .results-summary-text{
     font-size: $font-size-h1;
     letter-spacing: 2px;
     text-align: center;
-    height: 100%;
 }
 .results-summary-amount-wrapper{
     padding-top: 20px;
-    height: 100%;
     display: inline-block;
-    @media (max-width: $screen-md) {
-        padding-top: 5px;
-    }
 }
 .results-summary-label-text{
     font-family: $font-family-sans-serif;
@@ -589,16 +727,97 @@ input{
 .results-wrapper-incorrect .results-summary-pecentage{
     line-height: 0.15;
 }
+.results-wrapper-incorrect .results-summary-pecentage-character{
+    /*line-height: 0;*/
+}
 .np-result-container {
-    height: 100%;
     opacity: 0.65;
 }
 .np-result-container rect{
-    stroke: $brand-primary;
+    stroke: #125AA0;
     fill: $brand-primary-light;
     stroke-width: 6;
 }
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*New Player Matching Game classes*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*.matching-game-row{
+    display: inline-block; 
+    width: 400px; 
+}
+#np_matchgame {
+    color: #fff;
+    background: #000;
+    position: relative;
+    background-image: url("../assets/images/ESTL-005_ReNutriv_bg_img.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10rem;
+    z-index: 9999;
 
+    .npMatchRow { 
+        background-color: transparent; 
+    }
+    .matchbox {
+        background-color: #fff;
+        color: #000; 
+    }
+    #np_matchgame .npMatch-content {
+        text-align: center;
+        padding: 50px; 
+    }
+    .npMatch-content {
+        text-align: center; 
+    }
+    button {
+        margin-top: 10px;
+        background-color: #000;
+        border: 2px solid $gold;
+    }
+    .question-feedback { 
+        position: relative;
+        height: 160px;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        margin-right: 30px;
+    }
+    .question-feedback-wrapper { 
+        width: 300px;
+    }
+    .negative-feedback-icon {
+        width: 20px;
+        margin-right: 10px ;
+        float: left;
+        margin-top: 45px;
+        &.bad-feedback {
+            opacity: 1 !important;
+        }
+    }
+    .question-feedback-label { 
+        font-family: $font-family-sans-serif;
+        size: $font-size-h3;
+        color: #737373;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        padding-top: 12.5%;
+    }
+    .correct {
+        font-size: 100px;
+        top: 20%;
+        left: 30%;
+        position: absolute; 
+    }
+}*/
+// .rsContent {
+//     width: 100%;
+//     height: 300px;
+//     position: relative;
+// }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Trivia/Spinner classes*/
 
@@ -608,17 +827,18 @@ input{
     height: 400px;
     background-color: $brand-primary-light;
     box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65);
+    /*width: 135px;*/
 }
 .np-spinner{
-    color: #7a0000;
+    color: $gold;
     width: 155px;
 }
 .np-gold-pointer{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 18px;
+    top:0;
+    bottom:0;
+    right:0;
+    width:33px;
 }
 .method2 {
     -webkit-mask-image: -webkit-linear-gradient(top, rgba(248,248,170,1), rgba(202,160,78,.5) 50%, rgba(248,248,170,1));
@@ -626,23 +846,23 @@ input{
 }
 .np-spinner div{
     font-family: $re-nu-serif;
-    color: lighten(#7a0000, 15%);
+    color: $ND-primary;
     font-size: floor(($font-size-base * 2.5));
     line-height: 2.1em;
     text-align: center;
 }
 .np-spinner svg rect{
     fill: rgba(0, 0, 0, 0.0);
-    stroke: #7a0000;
+    stroke: #040A2B;
     stroke-width: 4;
 }
 .np-gold-pointer svg polygon{
-    fill: #7a0000 !important;
+    fill: #040A2B !important;
     box-shadow: 10px 10px 25px -5px rgba(0,0,0,0.75);
     z-index: 10000;
 }
 .np-spinner-content div:nth-last-child(2) {
-    color: $brand-primary;
+    color: $brand-primary; 
 }
 .np-gold-border {
     position: absolute;
@@ -662,7 +882,8 @@ input{
     top: 100px;
     text-align: center;
     width: 100%;
-    /*clip the container for those not supporting csstransforms3d*/
+    /*height: 600px;*/
+    /*clip the container for those not supporting csstransforms3d*/ 
     .no-csstransforms3d & {
         overflow: hidden;
         height: 65px;
@@ -678,6 +899,8 @@ input{
             height: 70px;
             z-index: 999;
             background-color: $brand-primary-light;
+            border-bottom: solid 1px;
+            border-bottom-color: $brand-primary;
             outline: 1px solid transparent;
             backface-visibility:hidden;
         }
@@ -693,7 +916,7 @@ input{
     right: 0;
     margin: auto;
     width: 100%;
-    max-width: 765px;
+    max-width: 770px;
 }
 .np-reveal {
     position: relative;
@@ -711,7 +934,8 @@ input{
     position: absolute;
     height: 62px;
     width: 62px;
-    background-color: $brand-primary-light;
+    padding: 5.5%;
+    background-color:#FFFFFF;
     overflow: hidden;
 }
 /*
@@ -723,7 +947,7 @@ input{
     position: relative;
     display: flex;
     justify-content: space-between;
-    max-width: 765px;
+    max-width: 770px;
 }
 .reveal-button-wrap {
     position: absolute;
@@ -739,12 +963,14 @@ input{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $holiday-brick;
+    background-color: $ND-primary;
 }
 .reveal-button {
     position: relative;
-    width: 62px;
-    height: 62px;
+    width: 4.46em;
+    height: 4.46em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
 }
 /*
 ////////////////////////////////////////////////////////////////////////////////
@@ -759,7 +985,7 @@ input{
 .reveal-item{
     display: table;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 100%; 
 }
 .reveal-video{
     height: auto;
@@ -775,19 +1001,6 @@ input{
     right: 0;
     bottom: 0;
 }
-.reveal-content-text ol {
-    font-weight: bold;
-}
-.reveal-content-text li {
-    margin-bottom: 14px;
-}
-.reveal-content-text ol p {
-    margin-bottom: 2px;
-}
-.reveal-content-text ol em {
-    font-weight: normal;
-    font-style: normal;
-}
 .reveal-heading-text{
     margin-top: -5px;
     padding-top: 25px;
@@ -795,56 +1008,46 @@ input{
     padding-right: 15px;
 }
 .reveal-text-body{
-    margin-bottom: 0;
+    padding-bottom: 15px;
 }
 .reveal-content-text{
-    color: $brand-primary-light;
-    background-color: $holiday-dark-red-80;
-    padding: 12px 18px 4px;
-    margin-top: 30px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .reveal-background{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.75;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player List classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .list-item{
-    display: none;
+    color: $brand-primary;
+    letter-spacing: 2px;
+}
+.column-1{
+    margin-bottom: 1.5%;
 }
 .list-object video{
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: auto;
-}
-.media {
-    margin-top: 0;
 }
 .media-body{
-    padding: 12px 18px 14px;
-    background-color: $holiday-dark-red-80;
-}
-.media-body .body-copy {
-    margin: 0;
+    padding: 5%;
+    background-color: #FFFFFF;
+    opacity: 0.75;
+    /*box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.65);*/
 }
 .list-body-text{
     color: $brand-primary;
     letter-spacing: 2px;
     font-size: $font-size-base;
-}
-.npList .column-1.col-md-12 .media-left.media-middle {
-    display: block;
-}
-.npList .column-1.col-md-4,
-.npList .column-2.col-md-12 {
-    display: none;
-}
-.npList .column-2.col-md-8 {
-    width: 100%;
-}
-.npList .column-2 {
-    margin-bottom: 42px;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Drag and Drop Select classes*/
@@ -877,7 +1080,7 @@ input{
     padding-left: 10px;
     padding-right: 10px;
 }
-.btn-select-submit span{
+.btn-select-submit span{ 
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -940,6 +1143,10 @@ input{
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Drag and Drop Prioritize classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*p ul ol{
+    font-size: $font-size-17;
+    color: $brand-primary;
+}*/
 .button-prioritize-content{
     position: relative;
     display:block;
@@ -999,6 +1206,9 @@ input{
     background-color: #FFFFFF;
     box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.25);
 }
+.boxElements svg{
+    /*fill:#313131;*/
+}
 .completeCheck {
     position:absolute;
     width:100%;
@@ -1008,7 +1218,7 @@ input{
     bottom:0;
     right:0;
     text-align: left;
-    color: $brand-primary-light;
+    color: $brand-primary;
     margin-bottom: 2.5%;
 }
 foreignobject{
@@ -1019,7 +1229,6 @@ foreignobject{
     left:0;
     bottom:0;
     right:0;
-    margin-bottom: 35px;
 }
 .button-completion-content{
     position: absolute;
@@ -1028,7 +1237,6 @@ foreignobject{
     top: 10%;
     bottom: 0;
     margin: auto;
-    min-height: 100%;
 }
 .centered-content{
     padding-top: 3em;
@@ -1044,13 +1252,14 @@ foreignobject{
 .positive-feedback-image{
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 10px;
     width: 25px;
 }
 .positive-feedback-image polygon, path{
     fill: $brand-primary;
 }
 .button-content{
+    /*position: relative;*/
     padding: 5%;
 }
 rect{
@@ -1065,21 +1274,22 @@ rect{
 .button-content p{
     padding: 0;
     margin: 0;
-    @media (max-width: 414px) {
-        font-size: 13px;
-    }
 }
 .draggableButton{
     cursor: pointer;
 }
 .draggableButton rect{
-    stroke: $brand-primary-light;
-    fill: rgba(121, 0, 0, 0.9);
+    stroke: $ND-primary;
+    /*stroke-width: 1.5px;*/
+    fill: $brand-primary-light;
 }
 .hit-area{
     position: relative;
     width: 100%;
     height: 100%;
+}
+.hit-area svg{
+    /*fill: #313131;*/
 }
 .hit-area rect{
     position: relative;
@@ -1092,13 +1302,16 @@ rect{
     margin: 0;
     padding: 0;
     opacity: .90;
-}
+}  
 .hit-area svg rect{
-    fill: rgba(121, 0, 0, 0.9);
+    fill: #FFFFFF;
     opacity: 0.75;
-    stroke: $brand-primary-light;
+    stroke: #FFFFFF;
     stroke-width: 3;
 }
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/* Hotspot Grid */
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*Hotspot button left position classes*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

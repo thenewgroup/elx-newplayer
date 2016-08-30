@@ -345,11 +345,11 @@ small{
     /*overflow: hidden;*/
     height: 475px;
 }
-@media (max-width: $screen-sm) {
+/*@media (max-width: $screen-sm) {
     .flash-card-front-wrapper {
         height: 235px;
     }
-}
+}*/
 .flash-card-content-front {
     position: absolute;
     padding: 2em;
@@ -548,6 +548,11 @@ input{
     color: $brand-primary-light;
     letter-spacing: 2px;
     /*margin-right: 20px;*/
+}
+@media (max-width: $screen-sm){
+  .answer-wrapper {
+    padding: 15px;
+  }
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*New Player Quiz Questions classes*/
